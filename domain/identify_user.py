@@ -3,7 +3,7 @@ from authentication import authentication_menu
 import os
 import domain
 
-# json_path="database/user_data.json"
+
 json_path=os.path.join("database","user_data.json")
 def findinguser(email,password):
     try:
@@ -14,20 +14,7 @@ def findinguser(email,password):
         obj=domain.log(error,__name__)
         print("Error While Loading User Wata")
         return
-    # for user in users:
-        # for key,value in user.items():        
-            # if user.get("email")==email:
-                # if user.get("password")==password:
-                    # if user.get("role")=="admin":
-                        # admin_menu.admin_menu()
-                        # return authentication_menu.menu()
-                    # elif user.get("role")=="staff":
-                        # staff_menu.staff_menu()
-                        # return authentication_menu.menu()
-                # else:
-                    # print("You entered wrong passord")
-                    # return authentication_menu.menu()
-        # print("Email not found")
+    
     try:
         for user in users:
             name=str(user["name"])

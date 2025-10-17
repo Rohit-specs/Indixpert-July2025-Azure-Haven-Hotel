@@ -1,6 +1,5 @@
 import re
 def valid_name(a="your"):
-    # name=name.strip()
     while True:
         print("Please enter",a,"name: ",end="")
         name=input()
