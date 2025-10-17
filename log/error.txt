@@ -1,0 +1,146 @@
+Log Time: 2025-10-11 16:08:31  | Error Type: invalid literal for int() with base 10: 'asdf'  | Module Name: authentication.authentication_menu
+Log Time: 2025-10-11 16:08:57  | Error Type: invalid literal for int() with base 10: 'asdf'  | Module Name: domain.admin_menu
+Log Time: 2025-10-11 16:09:13  | Error Type: invalid literal for int() with base 10: 'menu'  | Module Name: domain.admin_menu
+Log Time: 2025-10-11 16:13:40  | Error Type: invalid literal for int() with base 10: 'python -u "c:\\Users\\lenovo\\Desktop\\Python Project\\Indixpert-July2025-Azure-Haven-Hotel\\main.py"'  | Module Name: domain.admin_menu
+Log Time: 2025-10-13 12:16:31  | Error Type: invalid literal for int() with base 10: 'python -u "c:\\Users\\lenovo\\Desktop\\Python Project\\Indixpert-July2025-Azure-Haven-Hotel\\main.py"'  | Module Name: domain.admin_menu
+Log Time: 2025-10-13 12:29:41  | Error Type: Tablebooking.__init__() takes 1 positional argument but 2 were given  | Module Name: domain.staff_menu
+Log Time: 2025-10-13 12:32:41  | Error Type: argument should be integer or None, not '_io.TextIOWrapper'  | Module Name: domain.staff_menu
+Log Time: 2025-10-13 12:37:11  | Error Type: invalid literal for int() with base 10: 'python -u "c:\\Users\\lenovo\\Desktop\\Python Project\\Indixpert-July2025-Azure-Haven-Hotel\\main.py"'  | Module Name: domain.staff_menu
+Log Time: 2025-10-13 12:37:19  | Error Type: argument should be integer or None, not '_io.TextIOWrapper'  | Module Name: domain.staff_menu
+Log Time: 2025-10-13 12:41:36  | Error Type: invalid literal for int() with base 10: 'python -u "c:\\Users\\lenovo\\Desktop\\Python Project\\Indixpert-July2025-Azure-Haven-Hotel\\main.py"'  | Module Name: domain.staff_menu
+Log Time: 2025-10-13 12:41:43  | Error Type: argument should be integer or None, not '_io.TextIOWrapper'  | Module Name: domain.staff_menu
+Log Time: 2025-10-13 12:45:13  | Error Type: argument should be integer or None, not '_io.TextIOWrapper'  | Module Name: domain.staff_menu
+Log Time: 2025-10-13 12:49:50  | Error Type: invalid literal for int() with base 10: 'cls'  | Module Name: domain.staff_menu
+Log Time: 2025-10-13 12:56:17  | Error Type: argument should be integer or None, not '_io.TextIOWrapper'  | Module Name: domain.staff_menu
+Log Time: 2025-10-13 12:58:35  | Error Type: invalid literal for int() with base 10: 'python -u "c:\\Users\\lenovo\\Desktop\\Python Project\\Indixpert-July2025-Azure-Haven-Hotel\\main.py"'  | Module Name: domain.staff_menu
+Log Time: 2025-10-13 12:58:57  | Error Type: argument should be integer or None, not '_io.TextIOWrapper'  | Module Name: domain.staff_menu
+Log Time: 2025-10-13 13:06:19  | Error Type: argument should be integer or None, not '_io.TextIOWrapper'  | Module Name: domain.staff_menu
+Log Time: 2025-10-13 13:13:10  | Error Type: invalid literal for int() with base 10: 'python -u "c:\\Users\\lenovo\\Desktop\\Python Project\\Indixpert-July2025-Azure-Haven-Hotel\\main.py"'  | Module Name: domain.staff_menu
+Log Time: 2025-10-13 13:13:31  | Error Type: argument should be integer or None, not '_io.TextIOWrapper'  | Module Name: domain.staff_menu
+Log Time: 2025-10-13 13:20:35  | Error Type: invalid literal for int() with base 10: 'python -u "c:\\Users\\lenovo\\Desktop\\Python Project\\Indixpert-July2025-Azure-Haven-Hotel\\main.py"'  | Module Name: domain.staff_menu
+Log Time: 2025-10-13 13:21:05  | Error Type: argument should be integer or None, not '_io.TextIOWrapper'  | Module Name: domain.staff_menu
+Log Time: 2025-10-13 13:29:10  | Error Type: invalid literal for int() with base 10: 'python -u "c:\\Users\\lenovo\\Desktop\\Python Project\\Indixpert-July2025-Azure-Haven-Hotel\\main.py"'  | Module Name: domain.staff_menu
+Log Time: 2025-10-13 13:29:31  | Error Type: argument should be integer or None, not '_io.TextIOWrapper'  | Module Name: domain.staff_menu
+Log Time: 2025-10-13 13:37:16  | Error Type: invalid literal for int() with base 10: 'python -u "c:\\Users\\lenovo\\Desktop\\Python Project\\Indixpert-July2025-Azure-Haven-Hotel\\main.py"'  | Module Name: domain.staff_menu
+Log Time: 2025-10-13 13:37:31  | Error Type: argument should be integer or None, not '_io.TextIOWrapper'  | Module Name: domain.staff_menu
+Log Time: 2025-10-13 13:44:16  | Error Type: invalid literal for int() with base 10: 'python -u "c:\\Users\\lenovo\\Desktop\\Python Project\\Indixpert-July2025-Azure-Haven-Hotel\\main.py"'  | Module Name: authentication.authentication_menu
+Log Time: 2025-10-13 13:44:33  | Error Type: argument should be integer or None, not '_io.TextIOWrapper'  | Module Name: domain.staff_menu
+Log Time: 2025-10-13 13:46:08  | Error Type: argument should be integer or None, not '_io.TextIOWrapper'  | Module Name: domain.staff_menu
+Log Time: 2025-10-13 13:46:39  | Error Type: invalid literal for int() with base 10: 'python -u "c:\\Users\\lenovo\\Desktop\\Python Project\\Indixpert-July2025-Azure-Haven-Hotel\\main.py"'  | Module Name: domain.staff_menu
+Log Time: 2025-10-13 13:46:59  | Error Type: argument should be integer or None, not '_io.TextIOWrapper'  | Module Name: domain.staff_menu
+Log Time: 2025-10-13 13:54:02  | Error Type: invalid literal for int() with base 10: 'python -u "c:\\Users\\lenovo\\Desktop\\Python Project\\Indixpert-July2025-Azure-Haven-Hotel\\main.py"'  | Module Name: domain.staff_menu
+Log Time: 2025-10-13 13:54:30  | Error Type: argument should be integer or None, not '_io.TextIOWrapper'  | Module Name: domain.staff_menu
+Log Time: 2025-10-13 14:14:29  | Error Type: argument should be integer or None, not '_io.TextIOWrapper'  | Module Name: domain.Staff_menu
+Log Time: 2025-10-13 14:14:40  | Error Type: argument should be integer or None, not '_io.TextIOWrapper'  | Module Name: domain.Staff_menu
+Log Time: 2025-10-13 15:07:42  | Error Type: invalid literal for int() with base 10: 'python -u "c:\\Users\\lenovo\\Desktop\\Python Project\\Indixpert-July2025-Azure-Haven-Hotel\\main.py"'  | Module Name: domain.Staff_menu
+Log Time: 2025-10-13 15:07:59  | Error Type: argument should be integer or None, not '_io.TextIOWrapper'  | Module Name: domain.Staff_menu
+Log Time: 2025-10-13 15:21:04  | Error Type: invalid literal for int() with base 10: 'python -u "c:\\Users\\lenovo\\Desktop\\Python Project\\Indixpert-July2025-Azure-Haven-Hotel\\main.py"'  | Module Name: domain.Staff_menu
+Log Time: 2025-10-13 15:21:28  | Error Type: argument should be integer or None, not '_io.TextIOWrapper'  | Module Name: domain.Staff_menu
+Log Time: 2025-10-13 15:21:44  | Error Type: argument should be integer or None, not '_io.TextIOWrapper'  | Module Name: domain.Staff_menu
+Log Time: 2025-10-13 15:21:44  | Error Type: argument should be integer or None, not '_io.TextIOWrapper'  | Module Name: domain.Staff_menu
+Log Time: 2025-10-13 15:21:44  | Error Type: argument should be integer or None, not '_io.TextIOWrapper'  | Module Name: domain.Staff_menu
+Log Time: 2025-10-13 15:21:44  | Error Type: argument should be integer or None, not '_io.TextIOWrapper'  | Module Name: domain.Staff_menu
+Log Time: 2025-10-13 15:21:45  | Error Type: argument should be integer or None, not '_io.TextIOWrapper'  | Module Name: domain.Staff_menu
+Log Time: 2025-10-13 15:21:45  | Error Type: argument should be integer or None, not '_io.TextIOWrapper'  | Module Name: domain.Staff_menu
+Log Time: 2025-10-13 15:21:46  | Error Type: argument should be integer or None, not '_io.TextIOWrapper'  | Module Name: domain.Staff_menu
+Log Time: 2025-10-13 15:21:46  | Error Type: argument should be integer or None, not '_io.TextIOWrapper'  | Module Name: domain.Staff_menu
+Log Time: 2025-10-13 15:21:46  | Error Type: argument should be integer or None, not '_io.TextIOWrapper'  | Module Name: domain.Staff_menu
+Log Time: 2025-10-13 15:21:46  | Error Type: argument should be integer or None, not '_io.TextIOWrapper'  | Module Name: domain.Staff_menu
+Log Time: 2025-10-13 15:21:47  | Error Type: argument should be integer or None, not '_io.TextIOWrapper'  | Module Name: domain.Staff_menu
+Log Time: 2025-10-13 15:21:47  | Error Type: argument should be integer or None, not '_io.TextIOWrapper'  | Module Name: domain.Staff_menu
+Log Time: 2025-10-13 15:21:47  | Error Type: argument should be integer or None, not '_io.TextIOWrapper'  | Module Name: domain.Staff_menu
+Log Time: 2025-10-13 15:21:47  | Error Type: argument should be integer or None, not '_io.TextIOWrapper'  | Module Name: domain.Staff_menu
+Log Time: 2025-10-13 15:21:48  | Error Type: argument should be integer or None, not '_io.TextIOWrapper'  | Module Name: domain.Staff_menu
+Log Time: 2025-10-13 15:21:33  | Error Type: argument should be integer or None, not '_io.TextIOWrapper'  | Module Name: domain.Staff_menu
+Log Time: 2025-10-13 15:21:34  | Error Type: argument should be integer or None, not '_io.TextIOWrapper'  | Module Name: domain.Staff_menu
+Log Time: 2025-10-13 15:21:35  | Error Type: argument should be integer or None, not '_io.TextIOWrapper'  | Module Name: domain.Staff_menu
+Log Time: 2025-10-13 15:21:35  | Error Type: argument should be integer or None, not '_io.TextIOWrapper'  | Module Name: domain.Staff_menu
+Log Time: 2025-10-13 15:21:36  | Error Type: argument should be integer or None, not '_io.TextIOWrapper'  | Module Name: domain.Staff_menu
+Log Time: 2025-10-13 15:21:36  | Error Type: argument should be integer or None, not '_io.TextIOWrapper'  | Module Name: domain.Staff_menu
+Log Time: 2025-10-13 15:21:36  | Error Type: argument should be integer or None, not '_io.TextIOWrapper'  | Module Name: domain.Staff_menu
+Log Time: 2025-10-13 15:21:36  | Error Type: argument should be integer or None, not '_io.TextIOWrapper'  | Module Name: domain.Staff_menu
+Log Time: 2025-10-13 15:21:37  | Error Type: argument should be integer or None, not '_io.TextIOWrapper'  | Module Name: domain.Staff_menu
+Log Time: 2025-10-13 15:21:37  | Error Type: argument should be integer or None, not '_io.TextIOWrapper'  | Module Name: domain.Staff_menu
+Log Time: 2025-10-13 15:21:37  | Error Type: argument should be integer or None, not '_io.TextIOWrapper'  | Module Name: domain.Staff_menu
+Log Time: 2025-10-13 15:21:37  | Error Type: argument should be integer or None, not '_io.TextIOWrapper'  | Module Name: domain.Staff_menu
+Log Time: 2025-10-13 15:21:37  | Error Type: argument should be integer or None, not '_io.TextIOWrapper'  | Module Name: domain.Staff_menu
+Log Time: 2025-10-13 15:21:38  | Error Type: argument should be integer or None, not '_io.TextIOWrapper'  | Module Name: domain.Staff_menu
+Log Time: 2025-10-13 15:21:41  | Error Type: argument should be integer or None, not '_io.TextIOWrapper'  | Module Name: domain.Staff_menu
+Log Time: 2025-10-13 15:21:41  | Error Type: argument should be integer or None, not '_io.TextIOWrapper'  | Module Name: domain.Staff_menu
+Log Time: 2025-10-13 15:21:42  | Error Type: argument should be integer or None, not '_io.TextIOWrapper'  | Module Name: domain.Staff_menu
+Log Time: 2025-10-13 15:21:42  | Error Type: argument should be integer or None, not '_io.TextIOWrapper'  | Module Name: domain.Staff_menu
+Log Time: 2025-10-13 15:21:42  | Error Type: argument should be integer or None, not '_io.TextIOWrapper'  | Module Name: domain.Staff_menu
+Log Time: 2025-10-13 15:21:42  | Error Type: argument should be integer or None, not '_io.TextIOWrapper'  | Module Name: domain.Staff_menu
+Log Time: 2025-10-13 15:21:42  | Error Type: argument should be integer or None, not '_io.TextIOWrapper'  | Module Name: domain.Staff_menu
+Log Time: 2025-10-13 15:21:43  | Error Type: argument should be integer or None, not '_io.TextIOWrapper'  | Module Name: domain.Staff_menu
+Log Time: 2025-10-13 15:21:43  | Error Type: argument should be integer or None, not '_io.TextIOWrapper'  | Module Name: domain.Staff_menu
+Log Time: 2025-10-13 15:21:43  | Error Type: argument should be integer or None, not '_io.TextIOWrapper'  | Module Name: domain.Staff_menu
+Log Time: 2025-10-13 15:21:43  | Error Type: argument should be integer or None, not '_io.TextIOWrapper'  | Module Name: domain.Staff_menu
+Log Time: 2025-10-13 15:21:43  | Error Type: argument should be integer or None, not '_io.TextIOWrapper'  | Module Name: domain.Staff_menu
+Log Time: 2025-10-13 15:21:44  | Error Type: argument should be integer or None, not '_io.TextIOWrapper'  | Module Name: domain.Staff_menu
+Log Time: 2025-10-13 15:21:48  | Error Type: argument should be integer or None, not '_io.TextIOWrapper'  | Module Name: domain.Staff_menu
+Log Time: 2025-10-13 15:21:48  | Error Type: argument should be integer or None, not '_io.TextIOWrapper'  | Module Name: domain.Staff_menu
+Log Time: 2025-10-13 15:51:04  | Error Type: argument should be integer or None, not '_io.TextIOWrapper'  | Module Name: domain.Staff_menu
+Log Time: 2025-10-13 15:52:54  | Error Type: invalid literal for int() with base 10: 'cd "c:\\Users\\lenovo\\Desktop\\Python Project\\Indixpert-July2025-Azure-Haven-Hotel\\" ; if ($?) { gcc test.c -o test } ; if ($?) { .\\test }'  | Module Name: domain.Staff_menu
+Log Time: 2025-10-13 16:18:29  | Error Type: string indices must be integers, not 'str'  | Module Name: domain.Staff_menu
+Log Time: 2025-10-14 12:20:46  | Error Type: module 'ntpath' has no attribute 'exist'  | Module Name: domain.Staff_menu
+Log Time: 2025-10-14 12:24:03  | Error Type: 'table'  | Module Name: domain.Staff_menu
+Log Time: 2025-10-14 12:32:45  | Error Type: invalid literal for int() with base 10: 'python -u "c:\\Users\\lenovo\\Desktop\\Python Project\\Indixpert-July2025-Azure-Haven-Hotel\\main.py"'  | Module Name: domain.Staff_menu
+Log Time: 2025-10-14 12:35:29  | Error Type: 'tablebooking' object has no attribute 'table_no'  | Module Name: domain.Staff_menu
+Log Time: 2025-10-14 12:52:19  | Error Type: unbound method datetime.date() needs an argument  | Module Name: domain.Staff_menu
+Log Time: 2025-10-14 13:48:50  | Error Type: invalid literal for int() with base 10: 'python -u "c:\\Users\\lenovo\\Desktop\\Python Project\\Indixpert-July2025-Azure-Haven-Hotel\\main.py"'  | Module Name: domain.Staff_menu
+Log Time: 2025-10-15 12:27:27  | Error Type: 'NoneType' object is not iterable  | Module Name: domain.Staff_menu
+Log Time: 2025-10-15 12:31:46  | Error Type: 'NoneType' object has no attribute 'items'  | Module Name: domain.Staff_menu
+Log Time: 2025-10-15 12:32:22  | Error Type: invalid literal for int() with base 10: 'python -u "c:\\Users\\lenovo\\Desktop\\Python Project\\Indixpert-July2025-Azure-Haven-Hotel\\main.py"'  | Module Name: domain.Staff_menu
+Log Time: 2025-10-15 12:32:43  | Error Type: 'NoneType' object has no attribute 'items'  | Module Name: domain.identify_user
+Log Time: 2025-10-15 12:34:53  | Error Type: 'NoneType' object has no attribute 'items'  | Module Name: domain.identify_user
+Log Time: 2025-10-15 12:35:33  | Error Type: invalid literal for int() with base 10: 'python -u "c:\\Users\\lenovo\\Desktop\\Python Project\\Indixpert-July2025-Azure-Haven-Hotel\\main.py"'  | Module Name: authentication.authentication_menu
+Log Time: 2025-10-15 12:35:39  | Error Type: invalid literal for int() with base 10: ''  | Module Name: authentication.authentication_menu
+Log Time: 2025-10-15 12:35:58  | Error Type: 'list' object has no attribute 'items'  | Module Name: domain.identify_user
+Log Time: 2025-10-15 12:44:02  | Error Type: too many values to unpack (expected 2)  | Module Name: domain.identify_user
+Log Time: 2025-10-15 12:46:25  | Error Type: too many values to unpack (expected 2)  | Module Name: domain.identify_user
+Log Time: 2025-10-15 12:49:45  | Error Type: cannot access local variable 'payment_details' where it is not associated with a value  | Module Name: domain.identify_user
+Log Time: 2025-10-15 12:51:10  | Error Type: 'dict' object has no attribute 'key'  | Module Name: domain.identify_user
+Log Time: 2025-10-15 12:54:40  | Error Type: invalid literal for int() with base 10: 'python -u "c:\\Users\\lenovo\\Desktop\\Python Project\\Indixpert-July2025-Azure-Haven-Hotel\\main.py"'  | Module Name: authentication.authentication_menu
+Log Time: 2025-10-15 13:16:33  | Error Type: invalid literal for int() with base 10: 'python -u "c:\\Users\\lenovo\\Desktop\\Python Project\\Indixpert-July2025-Azure-Haven-Hotel\\main.py"'  | Module Name: domain.Staff_menu
+Log Time: 2025-10-15 13:17:42  | Error Type: 'tablebooking' object has no attribute 'get_invoice'  | Module Name: domain.identify_user
+Log Time: 2025-10-15 13:23:48  | Error Type: invalid literal for int() with base 10: 'python -u "c:\\Users\\lenovo\\Desktop\\Python Project\\Indixpert-July2025-Azure-Haven-Hotel\\main.py"'  | Module Name: domain.Staff_menu
+Log Time: 2025-10-15 15:57:31  | Error Type: invalid literal for int() with base 10: 'Saurab'  | Module Name: validation.valid_table
+Log Time: 2025-10-15 15:57:31  | Error Type: cannot access local variable 'table_no' where it is not associated with a value  | Module Name: domain.identify_user
+Log Time: 2025-10-15 16:10:24  | Error Type: invalid literal for int() with base 10: 'python -u "c:\\Users\\lenovo\\Desktop\\Python Project\\Indixpert-July2025-Azure-Haven-Hotel\\main.py"'  | Module Name: validation.valid_table
+Log Time: 2025-10-15 16:10:24  | Error Type: cannot access local variable 'table_no' where it is not associated with a value  | Module Name: domain.identify_user
+Log Time: 2025-10-15 16:16:49  | Error Type: 'tablebooking' object has no attribute 'booked_table_date'  | Module Name: domain.identify_user
+Log Time: 2025-10-15 16:21:07  | Error Type: 'tablebooking' object has no attribute 'booked_table_data'  | Module Name: domain.identify_user
+Log Time: 2025-10-15 16:25:53  | Error Type: invalid literal for int() with base 10: 'python -u "c:\\Users\\lenovo\\Desktop\\Python Project\\Indixpert-July2025-Azure-Haven-Hotel\\main.py"'  | Module Name: authentication.authentication_menu
+Log Time: 2025-10-15 16:32:17  | Error Type: 'tablebooking' object has no attribute 'booked_table_data'  | Module Name: domain.identify_user
+Log Time: 2025-10-15 16:39:00  | Error Type: invalid literal for int() with base 10: 'python -u "c:\\Users\\lenovo\\Desktop\\Python Project\\Indixpert-July2025-Azure-Haven-Hotel\\main.py"'  | Module Name: authentication.authentication_menu
+Log Time: 2025-10-15 16:39:51  | Error Type: unsupported operand type(s) for +: 'int' and 'str'  | Module Name: domain.identify_user
+Log Time: 2025-10-15 16:51:19  | Error Type: invalid literal for int() with base 10: 'python -u "c:\\Users\\lenovo\\Desktop\\Python Project\\Indixpert-July2025-Azure-Haven-Hotel\\main.py"'  | Module Name: authentication.authentication_menu
+Log Time: 2025-10-15 16:51:24  | Error Type: invalid literal for int() with base 10: 'python -u "c:\\Users\\lenovo\\Desktop\\Python Project\\Indixpert-July2025-Azure-Haven-Hotel\\main.py"'  | Module Name: authentication.authentication_menu
+Log Time: 2025-10-15 16:52:58  | Error Type: unsupported operand type(s) for +: 'int' and 'str'  | Module Name: domain.identify_user
+Log Time: 2025-10-15 16:53:33  | Error Type: invalid literal for int() with base 10: 'python -u "c:\\Users\\lenovo\\Desktop\\Python Project\\Indixpert-July2025-Azure-Haven-Hotel\\main.py"'  | Module Name: authentication.authentication_menu
+Log Time: 2025-10-15 16:54:13  | Error Type: unsupported operand type(s) for *: 'NoneType' and 'int'  | Module Name: domain.identify_user
+Log Time: 2025-10-15 16:57:02  | Error Type: invalid literal for int() with base 10: 'python -u "c:\\Users\\lenovo\\Desktop\\Python Project\\Indixpert-July2025-Azure-Haven-Hotel\\main.py"'  | Module Name: authentication.authentication_menu
+Log Time: 2025-10-15 16:57:41  | Error Type: unsupported operand type(s) for *: 'NoneType' and 'int'  | Module Name: domain.identify_user
+Log Time: 2025-10-16 12:26:53  | Error Type: name 'domain' is not defined  | Module Name: domain.Staff_menu
+Log Time: 2025-10-16 12:40:31  | Error Type: invalid literal for int() with base 10: 'python -u "c:\\Users\\lenovo\\Desktop\\Python Project\\Indixpert-July2025-Azure-Haven-Hotel\\main.py"'  | Module Name: domain.Staff_menu
+Log Time: 2025-10-16 12:40:51  | Error Type: cannot access local variable 'time_price' where it is not associated with a value  | Module Name: domain.Table_booking
+Log Time: 2025-10-16 12:44:12  | Error Type: unsupported operand type(s) for *: 'NoneType' and 'int'  | Module Name: domain.Table_booking
+Log Time: 2025-10-16 12:46:34  | Error Type: invalid literal for int() with base 10: 'python -u "c:\\Users\\lenovo\\Desktop\\Python Project\\Indixpert-July2025-Azure-Haven-Hotel\\main.py"'  | Module Name: domain.Staff_menu
+Log Time: 2025-10-16 12:46:56  | Error Type: Expecting value: line 1 column 1 (char 0)  | Module Name: domain.Staff_menu
+Log Time: 2025-10-16 13:17:29  | Error Type: invalid literal for int() with base 10: 'python -u "c:\\Users\\lenovo\\Desktop\\Python Project\\Indixpert-July2025-Azure-Haven-Hotel\\main.py"'  | Module Name: authentication.authentication_menu
+Log Time: 2025-10-16 14:54:54  | Error Type: 'AnsiFore' object has no attribute 'Red'  | Module Name: domain.Staff_menu
+Log Time: 2025-10-16 14:54:56  | Error Type: 'AnsiFore' object has no attribute 'Red'  | Module Name: domain.Staff_menu
+Log Time: 2025-10-16 14:54:56  | Error Type: 'AnsiFore' object has no attribute 'Red'  | Module Name: domain.Staff_menu
+Log Time: 2025-10-16 14:54:57  | Error Type: 'AnsiFore' object has no attribute 'Red'  | Module Name: domain.Staff_menu
+Log Time: 2025-10-16 14:54:57  | Error Type: 'AnsiFore' object has no attribute 'Red'  | Module Name: domain.Staff_menu
+Log Time: 2025-10-16 14:55:13  | Error Type: 'AnsiFore' object has no attribute 'Red'  | Module Name: domain.Admin_menu
+Log Time: 2025-10-16 15:22:19  | Error Type: invalid literal for int() with base 10: 'python -u "c:\\Users\\lenovo\\Desktop\\Python Project\\Indixpert-July2025-Azure-Haven-Hotel\\main.py"'  | Module Name: domain.Admin_menu
+Log Time: 2025-10-16 15:40:09  | Error Type: invalid literal for int() with base 10: 'python -u "c:\\Users\\lenovo\\Desktop\\Python Project\\Indixpert-July2025-Azure-Haven-Hotel\\main.py"'  | Module Name: domain.Admin_menu
+Log Time: 2025-10-16 16:12:53  | Error Type: can only concatenate str (not "datetime.date") to str  | Module Name: domain.Table_booking
+Log Time: 2025-10-16 16:18:05  | Error Type: invalid literal for int() with base 10: 'python -u "c:\\Users\\lenovo\\Desktop\\Python Project\\Indixpert-July2025-Azure-Haven-Hotel\\main.py"'  | Module Name: domain.Staff_menu
+Log Time: 2025-10-16 16:18:29  | Error Type: unsupported operand type(s) for +: 'int' and 'str'  | Module Name: domain.Table_booking
+Log Time: 2025-10-16 16:18:34  | Error Type: unsupported operand type(s) for +: 'int' and 'str'  | Module Name: domain.Table_booking
+Log Time: 2025-10-16 16:34:32  | Error Type: invalid literal for int() with base 10: 'python -u "c:\\Users\\lenovo\\Desktop\\Python Project\\Indixpert-July2025-Azure-Haven-Hotel\\main.py"'  | Module Name: domain.Staff_menu
+Log Time: 2025-10-16 16:39:47  | Error Type: 'dict' object has no attribute 'remove'  | Module Name: domain.Update_menu
+Log Time: 2025-10-16 16:40:07  | Error Type: 'dict' object has no attribute 'remove'  | Module Name: domain.Update_menu

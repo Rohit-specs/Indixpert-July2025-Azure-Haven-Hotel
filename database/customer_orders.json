@@ -1,0 +1,36 @@
+[
+  {
+    "id": "b1e427f0-0409-45a5-a5f5-1eb1cffd0c81",
+    "customer name": "Aryan",
+    "ordered items": [
+      {
+        "Kadhai Paneer": "full plate"
+      },
+      {
+        "Plain Naan": "full plate"
+      }
+    ],
+    "prices": [
+      {
+        "Kadhai Paneer": "200"
+      },
+      {
+        "Plain Naan": "25"
+      }
+    ]
+  },
+  {
+    "id": "3f8cbe85-476c-4d0d-9c65-7f392beea2a2",
+    "customer name": "Nayan",
+    "ordered items": [
+      {
+        "Paneer Tikka": "half plate"
+      }
+    ],
+    "prices": [
+      {
+        "Paneer Tikka": "120"
+      }
+    ]
+  }
+]

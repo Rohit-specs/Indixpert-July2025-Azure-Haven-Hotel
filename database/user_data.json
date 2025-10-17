@@ -1,0 +1,26 @@
+[
+   {
+      "name": "Rohit",
+      "email": "rohit@gmail.com",
+      "password": "Vots@123",
+      "role": "admin"
+   },
+   {
+      "name": "Amit",
+      "email": "amit@gmail.com",
+      "password": "Vots@123",
+      "role": "staff"
+   },
+   {
+      "name": "Karan",
+      "email": "karan@gmail.com",
+      "password": "Vots@123",
+      "role": "admin"
+   },
+   {
+      "name": "Tara Singh Korange",
+      "email": "tara@gmail.com",
+      "password": "Vots@123",
+      "role": "admin"
+   }
+]

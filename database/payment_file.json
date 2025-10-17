@@ -1,0 +1,29 @@
+[
+  {
+    "order_id": "b1e427f0-0409-45a5-a5f5-1eb1cffd0c81",
+    "customer_name": "Aryan",
+    "ordered_items": [
+      {
+        "Kadhai Paneer": "200"
+      },
+      {
+        "Plain Naan": "25"
+      }
+    ],
+    "total_amount": 572.25,
+    "payment_method": "UPI",
+    "booking duration(min)": 40
+  },
+  {
+    "order_id": "3f8cbe85-476c-4d0d-9c65-7f392beea2a2",
+    "customer_name": "Nayan",
+    "ordered_items": [
+      {
+        "Paneer Tikka": "120"
+      }
+    ],
+    "total_amount": 378.0,
+    "payment_method": "Cash",
+    "booking duration(min)": 30
+  }
+]

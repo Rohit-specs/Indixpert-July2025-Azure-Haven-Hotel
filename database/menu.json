@@ -1,0 +1,52 @@
+{
+    "veg starters": [
+      {"item": "Paneer Tikka", "half plate": "120", "full plate": "220"},
+      {"item": "Veg Manchurian (Dry)", "half plate": "100", "full plate": "180"},
+      {"item": "Hara Bhara Kebab", "half plate": "90", "full plate": "170"},
+      {"item": "Crispy Chilli Potato", "half plate": "80", "full plate": "150"},
+      {"item": "Mushroom Chilli", "half plate": "110", "full plate": "200"}
+    ],
+    "non veg starters": [
+      {"item": "Chicken Tikka", "half plate": "150", "full plate": "280"},
+      {"item": "Chicken Lollipop", "half plate": "130", "full plate": "240"},
+      {"item": "Fish Fry", "half plate": "160", "full plate": "300"},
+      {"item": "Mutton Seekh Kebab", "half plate": "180", "full plate": "340"},
+      {"item": "Egg Pakora", "half plate": "70", "full plate": "120"}
+    ],
+    "veg main course": [
+      {"item": "Paneer Butter Masala", "half plate": "110", "full plate": "200"},
+      {"item": "Kadhai Paneer", "half plate": "110", "full plate": "200"},
+      {"item": "Mix Veg Curry", "half plate": "90", "full plate": "160"},
+      {"item": "Dal Makhani", "half plate": "80", "full plate": "150"},
+      {"item": "Chana Masala", "half plate": "80", "full plate": "140"}
+    ],
+    "non veg main course": [
+      {"item": "Butter Chicken", "half plate": "160", "full plate": "290"},
+      {"item": "Chicken Curry", "half plate": "140", "full plate": "260"},
+      {"item": "Mutton Rogan Josh", "half plate": "180", "full plate": "340"},
+      {"item": "Egg Curry", "half plate": "90", "full plate": "160"},
+      {"item": "Fish Curry", "half plate": "160", "full plate": "300"}
+    ],
+    "rice and biryani": [
+      {"item": "Veg Fried Rice", "half plate": "80", "full plate": "150"},
+      {"item": "Chicken Biryani", "half plate": "130", "full plate": "240"},
+      {"item": "Mutton Biryani", "half plate": "160", "full plate": "300"},
+      {"item": "Jeera Rice", "half plate": "60", "full plate": "100"},
+      {"item": "Plain Rice", "half plate": "40", "full plate": "70"}
+    ],
+    "indian breads": [
+      {"item": "Tandoori Roti", "price": "15"},
+      {"item": "Butter Naan", "price": "30"},
+      {"item": "Plain Naan", "price": "25"},
+      {"item": "Lachha Paratha", "price": "35"},
+      {"item": "Missi Roti", "price": "20"}
+    ],
+    "beverages": [
+      {"item": "Masala Chai", "price": "20"},
+      {"item": "Cold Coffee", "price": "60"},
+      {"item": "Sweet Lassi", "price": "50"},
+      {"item": "Salted Lassi", "price": "50"},
+      {"item": "Fresh Lime Soda", "price": "40"}
+    ]
+}
+  

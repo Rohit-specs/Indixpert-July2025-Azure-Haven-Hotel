@@ -1,0 +1,22 @@
+[
+  {
+    "id": "b1e427f0-0409-45a5-a5f5-1eb1cffd0c81",
+    "table no": 12,
+    "table booking date": "2025-10-16",
+    "booking start time": "14:20",
+    "booking end time": "15:0",
+    "staff who booked": "Amit",
+    "customer name": "Aryan",
+    "booked time in min": 40
+  },
+  {
+    "id": "3f8cbe85-476c-4d0d-9c65-7f392beea2a2",
+    "table no": 24,
+    "table booking date": "2025-10-16",
+    "booking start time": "20:20",
+    "booking end time": "20:50",
+    "staff who booked": "Amit",
+    "customer name": "Nayan",
+    "booked time in min": 30
+  }
+]
