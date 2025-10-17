@@ -163,7 +163,6 @@ class tablebooking:
             print(Fore.GREEN+"\n---------------ALL_BOOKINGS---------------")
             booking_no=1
             for booking in self.table_booking_data:
-                # for key,value in booking.items():
                 print(Fore.RED,"\nBooking no=",booking_no,Fore.CYAN)
                 print("ID:",booking.get("id"))
                 print("Customer name:",booking.get("customer name"))
@@ -178,87 +177,6 @@ class tablebooking:
             obj=domain.log(error,__name__)
             print("Error Occurred While loading Booking data")
     
-
-    # def take_order(self):
-    #     if self.table_booking_data==[]:
-    #         print("There are no booking left")
-    #         return
-    #     else:
-    #         for customer in self.table_booking_data:
-    #             table=validation.valid_table("Booked table no")
-    #             name=validation.valid_name("customer")
-    #             if (customer.get("table no")==table and
-    #                 customer.get("table booking date")==str(datetime.datetime.now().date()) and
-    #                 customer.get("customer name")==name):
-                    
-    #                 staff=validation.valid_name("staff who booked for customer")
-    #                 if customer.get(staff)==staff:
-    #                     food=[]
-    #                     while True:
-    #                         order_data={
-    #                             "id":customer.get("id"),
-    #                             "customer name":customer.get("name"),
-    #                             "all items":food
-    #                         }
-    #                         category=input("Enter food category: ")
-    #                         if category not in self.menu:
-    #                             print("Category not found")
-    #                             return
-
-    #                         for key,value in self.menu.items():
-    #                             if category==key:
-    #                                 sample=value[0]
-    #                                 if "half plate" in sample and "full plate" in sample:
-    #                                     for dish in value:
-    #                                         item=input("Enter your dish name: ")
-                                    
-    #                                         if dish["item"]==item:
-    #                                             print("1. for full plate")
-    #                                             print("2. for half plate")
-    #                                             choice=int(input("Enter your choice: "))
-    #                                             if choice==1:
-    #                                                 dish={item:"full plate"}
-    #                                                 string="price "+item
-    #                                                 price={string:dish.get("full plate")}
-    #                                                 food.append(dish)
-    #                                                 food.append(price)
-    #                                             elif choice==2:
-
-    #                                                 dish={item:"full plate"}
-    #                                                 food.append(dish)
-    #                                                 string="price "+item
-    #                                                 price={string:dish.get("full plate")}
-    #                                                 food.append(price)
-    #                                                 option=input("Do you wanna order more(yes/else):")
-    #                                                 if option.lower()=="yes":
-    #                                                     continue
-    #                                                 else:
-    #                                                     self.order_json.append(order_data)
-    #                                                     self.order_save()
-    #                                                     return
-                                                    
-    #                                             else:
-    #                                                 print("invalid option!\nPlease try again")
-    #                                 else:
-    #                                     for dish in value:
-    #                                         item=input("Enter your dish name: ")
-    #                                         if dish.get("item")==item:
-    #                                             dish={item:"full plate"}
-    #                                             food.append(dish)
-    #                                             string="price "+item
-    #                                             price={string:dish.get("full plate")}
-    #                                             food.append(price)
-    #                                             option=input("Do you wanna order more(yes/else):")
-    #                                             if option.lower()=="yes":
-    #                                                 continue
-    #                                             else:
-    #                                                 self.order_json.append(order_data)
-    #                                                 self.order_save()
-    #                                                 return
-    #                 else:
-    #                     print("Staff name not matched")
-    
-                       
                         
     def take_order(self):
         try:
@@ -271,11 +189,6 @@ class tablebooking:
                 for data in self.table_booking_data:
                     if data.get("id")==id:
 
-                # table = validation.valid_table("Booked table no") 
-                # name = validation.valid_name("customer")
-
-                #         staff = validation.valid_name("staff who booked for customer")
-                        # if customer.get("staff who booked") == staff:
                         for customer in self.table_booking_data:
                             if customer.get("id")==id:
                             
@@ -450,8 +363,6 @@ class tablebooking:
     def get_invoice(self):
         try:
             id=input("Enter Order ID: ")
-            # self.payment_json
-            # self.order_json
             print(Fore.RED+"\n\n                 AZURE HAVEN HOTEL")
             print("                 Family Restaurant")
             print("        Palaspa Phata,Mumbai Pune Highway")
@@ -502,7 +413,6 @@ class tablebooking:
 
 
     def cancel_booking(self):
-        # self.table_booking_data
         try:
             print(Fore.GREEN+"\n--------------CANCEL BOOKING--------------"+Fore.CYAN)
             id=input("Enter id: ")
