@@ -85,7 +85,7 @@ class tablebooking:
             self.booked_table_endtime=validation.valid_time("end")
             self.staff_booked_table=staff_booked_table
             self.customer_name=validation.valid_name("customer")
-            id=str(uuid.uuid4())
+            id=str(uuid.uuid4())[:6]
             time=0
             list_start_time=[]
             list_end_time=[]
