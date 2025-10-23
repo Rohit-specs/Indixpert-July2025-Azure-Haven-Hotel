@@ -63,7 +63,7 @@ class update_staff:
                 
     def add_staff(self):
         print(Fore.GREEN+"\n--------------ADDING STAFF--------------"+Fore.YELLOW)
-        name=valid_name()
+        name=valid_name("staff")
         email=valid_email()
         while True:
             password=valid_password()

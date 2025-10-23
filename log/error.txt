@@ -144,3 +144,27 @@ Log Time: 2025-10-16 16:18:34  | Error Type: unsupported operand type(s) for +: 
 Log Time: 2025-10-16 16:34:32  | Error Type: invalid literal for int() with base 10: 'python -u "c:\\Users\\lenovo\\Desktop\\Python Project\\Indixpert-July2025-Azure-Haven-Hotel\\main.py"'  | Module Name: domain.Staff_menu
 Log Time: 2025-10-16 16:39:47  | Error Type: 'dict' object has no attribute 'remove'  | Module Name: domain.Update_menu
 Log Time: 2025-10-16 16:40:07  | Error Type: 'dict' object has no attribute 'remove'  | Module Name: domain.Update_menu
+Log Time: 2025-10-23 14:03:15  | Error Type: invalid literal for int() with base 10: 'vinod@gmail.com'  | Module Name: authentication.authentication_menu
+Log Time: 2025-10-23 15:09:50  | Error Type: invalid literal for int() with base 10: 'python -u "c:\\Users\\lenovo\\Desktop\\Python Project\\Indixpert-July2025-Azure-Haven-Hotel\\main.py"'  | Module Name: domain.Staff_menu
+Log Time: 2025-10-23 15:17:51  | Error Type: unsupported operand type(s) for +: 'int' and 'NoneType'  | Module Name: domain.Table_booking
+Log Time: 2025-10-23 15:24:13  | Error Type: unsupported operand type(s) for +: 'int' and 'NoneType'  | Module Name: domain.Table_booking
+Log Time: 2025-10-23 15:33:45  | Error Type: unsupported operand type(s) for +: 'float' and 'NoneType'  | Module Name: domain.Table_booking
+Log Time: 2025-10-23 15:34:48  | Error Type: unsupported operand type(s) for +: 'float' and 'NoneType'  | Module Name: domain.Staff_menu
+Log Time: 2025-10-23 15:57:19  | Error Type: cannot access local variable 'item' where it is not associated with a value  | Module Name: domain.Table_booking
+Log Time: 2025-10-23 15:59:30  | Error Type: invalid literal for int() with base 10: 'python -u "c:\\Users\\lenovo\\Desktop\\Python Project\\Indixpert-July2025-Azure-Haven-Hotel\\main.py"'  | Module Name: domain.Staff_menu
+Log Time: 2025-10-23 16:01:31  | Error Type: invalid literal for int() with base 10: '                                    if category not in self.menu:'  | Module Name: domain.Staff_menu
+Log Time: 2025-10-23 16:01:31  | Error Type: invalid literal for int() with base 10: '                                        print("Category not found")'  | Module Name: domain.Staff_menu
+Log Time: 2025-10-23 16:01:31  | Error Type: invalid literal for int() with base 10: '                                        continue'  | Module Name: domain.Staff_menu
+Log Time: 2025-10-23 16:01:31  | Error Type: invalid literal for int() with base 10: '                                    else:'  | Module Name: domain.Staff_menu
+Log Time: 2025-10-23 16:01:31  | Error Type: invalid literal for int() with base 10: '                                        dishes=self.menu.get(category)'  | Module Name: domain.Staff_menu
+Log Time: 2025-10-23 16:01:31  | Error Type: invalid literal for int() with base 10: '                                        for dish in dishes:'  | Module Name: domain.Staff_menu
+Log Time: 2025-10-23 16:01:31  | Error Type: invalid literal for int() with base 10: '                                            items=dish.get(item)'  | Module Name: domain.Staff_menu
+Log Time: 2025-10-23 16:01:31  | Error Type: invalid literal for int() with base 10: '                                            half_price=dish.get("half plate")'  | Module Name: domain.Staff_menu
+Log Time: 2025-10-23 16:01:31  | Error Type: invalid literal for int() with base 10: '                                            full_price=dish.get("full plate")'  | Module Name: domain.Staff_menu
+Log Time: 2025-10-23 16:02:16  | Error Type: cannot access local variable 'item' where it is not associated with a value  | Module Name: domain.Table_booking
+Log Time: 2025-10-23 16:05:49  | Error Type: invalid literal for int() with base 10: 'python -u "c:\\Users\\lenovo\\Desktop\\Python Project\\Indixpert-July2025-Azure-Haven-Hotel\\main.py"'  | Module Name: domain.Staff_menu
+Log Time: 2025-10-23 16:07:25  | Error Type: cannot access local variable 'item' where it is not associated with a value  | Module Name: domain.Table_booking
+Log Time: 2025-10-23 16:10:10  | Error Type: invalid literal for int() with base 10: 'python -u "c:\\Users\\lenovo\\Desktop\\Python Project\\Indixpert-July2025-Azure-Haven-Hotel\\main.py"'  | Module Name: domain.Staff_menu
+Log Time: 2025-10-23 16:23:27  | Error Type: invalid literal for int() with base 10: 'python -u "c:\\Users\\lenovo\\Desktop\\Python Project\\Indixpert-July2025-Azure-Haven-Hotel\\main.py"'  | Module Name: domain.Staff_menu
+Log Time: 2025-10-23 16:24:23  | Error Type: 'dict' object has no attribute 'key'  | Module Name: domain.Table_booking
+Log Time: 2025-10-23 16:25:00  | Error Type: 'dict' object has no attribute 'key'  | Module Name: domain.Table_booking

@@ -12,15 +12,9 @@
       "role": "staff"
    },
    {
-      "name": "Karan",
-      "email": "karan@gmail.com",
+      "name": "Vinod",
+      "email": "vinod@gmail.com",
       "password": "Vots@123",
-      "role": "admin"
-   },
-   {
-      "name": "Tara Singh Korange",
-      "email": "tara@gmail.com",
-      "password": "Vots@123",
-      "role": "admin"
+      "role": "staff"
    }
 ]

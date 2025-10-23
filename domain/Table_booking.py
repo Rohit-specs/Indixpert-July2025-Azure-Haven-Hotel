@@ -79,7 +79,7 @@ class tablebooking:
     def book_table(self,staff_booked_table):
         try:
             print(Fore.GREEN+"\n-------------TABLE_BOOKING-------------"+Fore.CYAN)
-            self.table_no=validation.valid_table()
+            
             self.booked_table_date=validation.valid_date()
             self.booked_table_starttime=validation.valid_time("starting")
             self.booked_table_endtime=validation.valid_time("end")
@@ -99,8 +99,61 @@ class tablebooking:
             for i in order_end:
                 data=int(i)
                 list_end_time.append(data)
-            time=((list_end_time[0]*60+list_end_time[1])-(list_start_time[0]*60+list_start_time[1]))
                 
+            booking_start_time=(list_start_time[0]*60+list_start_time[1])
+            booking_end_time=(list_end_time[0]*60+list_end_time[1])
+            time=(booking_end_time-booking_start_time)
+            
+            booked_tables=[]
+            for booking in self.table_booking_data:
+                
+                if booking.get("table booking date")==self.booked_table_date:
+                    old_start=booking.get("booking start time")
+                    old_end=booking.get("booking end time")
+                    
+                    old_start_parts = old_start.split(":")
+                    old_end_parts = old_end.split(":")
+
+                    old_start_hour = int(old_start_parts[0])
+                    old_start_minute = int(old_start_parts[1])
+                    old_end_hour = int(old_end_parts[0])
+                    old_end_minute = int(old_end_parts[1])
+
+                    old_start_minutes = (old_start_hour * 60) + old_start_minute
+                    old_end_minutes = (old_end_hour * 60) + old_end_minute
+                    if booking_start_time < old_end_minutes and booking_end_time > old_start_minutes:
+                        booked_tables.append(booking.get("table no"))
+                        
+                        
+                        
+            avialable_table=[]
+            for i in range(1,51):
+                if i not in booked_tables:
+                    avialable_table.append(i)
+            print("Aviliable table on",self.booked_table_date,"from",self.booked_table_starttime,"to",self.booked_table_endtime)
+            if len(avialable_table)>0:
+                print(Fore.CYAN,avialable_table)
+            else:
+                print(Fore.RED+"No table avialiable at this time.")
+                    
+            
+            
+            self.table_no=validation.valid_table()
+            
+            
+            
+            while True:
+                try:
+                    self.no_of_seats = int(input("Enter number of seats to book (max 6): "))
+                    if 1 <= self.no_of_seats <= 6:
+                        break
+                    else:
+                        print("Seats must be between 1 and 6")
+                except Exception as error:
+                    obj=domain.log(error,__name__)
+                    print("Invalid input. Please enter a number.")
+            
+            
             
             for booking in self.table_booking_data:
                
@@ -147,6 +200,7 @@ class tablebooking:
                 "booking end time":self.booked_table_endtime,
                 "staff who booked":self.staff_booked_table,
                 "customer name":self.customer_name,
+                "no of seats":self.no_of_seats,
                 "booked time in min":time
                 }
             self.table_booking_data.append(modified_data)
@@ -170,6 +224,7 @@ class tablebooking:
                 print("Table Booking For Date: ",booking.get("table booking date"))
                 print("Start Time: ",booking.get("booking start time"))
                 print("End Time: ",booking.get("booking end time"))
+                print("Seats Booked By:",booking.get("no_of_seats"))
                 print("Table Booked By: ",booking.get("staff who booked"))  
                 booking_no+=1
             print(Style.RESET_ALL)
@@ -201,10 +256,20 @@ class tablebooking:
                                         "ordered items": food_items,
                                         "prices": food_prices
                                     }
+                                    # print(self.menu.key())
                                     category = input("Enter food category: ").lower()
                                     if category not in self.menu:
                                         print("Category not found")
                                         continue
+                                    else:
+                                        dishes=self.menu.get(category)
+                                        for dish in dishes:
+                                            item_name=dish.get("item")
+                                            # half_price=str(dish.get("half plate"))
+                                            # full_price=str(dish.get("full plate"))
+                                            print(item_name," "*(20-len(item_name)))
+                                            # print(half_price," "*(8-len(half_price)),full_price)
+                                            
                                     for key, value in self.menu.items():
                                         if category.lower() == key:
                                             sample = value[0]
@@ -279,6 +344,7 @@ class tablebooking:
                     ordered_items = data.get("prices")
                     total = 0
                     time=0
+                    no_of_seats=0
 
                     for item in ordered_items:
                         for key, value in item.items():
@@ -287,22 +353,28 @@ class tablebooking:
                     for data in self.table_booking_data:
                         if data.get("id")==id:
                             time=data.get("booked time in min")
+                            no_of_seats=data.get("no of seats")
+
+                    seat_charge_per_person=50
+                    seat_total=no_of_seats*seat_charge_per_person
+                    time_charge=time*4
+                    gst=((seat_total+time_charge+total))*(2.5/100)
+                    total_bill=(total+(4*time))+(gst*2)
 
                     print(Fore.GREEN+"\n--------------PAYMENT OVERVIEW--------------"+Fore.CYAN)
                     print("ID                :",id)
                     print("Customer Name     :",customer_name)
-                    print("Booking duration  :","(",time,"x 8"+")")
-                    print("Booking time Price:",time*8)
+                    print("Seat Charge(50ea.):",seat_total)
+                    print("Booking duration  :","(",time,"x 4"+")=",time_charge)
+                    print("Booking time Price:",time_charge)
                     print("\t\tDishes"+" "*15,"Price")
                     for item in ordered_items:
                         for key,value in item.items():
                             space=" "*(21-len(key))
                             print("\t\t"+key+space+"{"+value+"}"+"x1")
-                    gst=((8*time)+(total))*(2.5/100)
-                    total_bill=(total+(8*time))+(gst*2)
 
                     print("\n\t\tDishes total         : ",total)
-                    print("\t\tSubtotal(Tdish+Ttime): ",total+(8*time))
+                    print("\t\tSubtotal(Tdish+Ttime): ",total+(4*time)+seat_total)
                     print("\t\tCGST(2.5%)           : ",gst)
                     print("\t\tCGST(2.5%)           : ",gst)
                     print("\t\tTotal GST            : ",gst+gst)
@@ -344,7 +416,8 @@ class tablebooking:
                         "total_amount": total_bill,
                         "payment_method": payment_method,
                         "booking duration(min)":time,
-
+                        "no of seats":no_of_seats,
+                        "seats charge total":seat_total
                     }
 
                     self.payment_json.append(payment_details)
@@ -376,6 +449,8 @@ class tablebooking:
                 if data.get("order_id")==id:
                     items=data.get("ordered_items")
                     time=data.get("booking duration(min)")
+                    seats=data.get("no of seats")
+                    seat_total=data.get("seats charge total")
                     dish_total=0
                     for item in items:
                         for key,value in item.items():
@@ -385,22 +460,22 @@ class tablebooking:
                             space2=" "*3
                             space3=" "*(9-len(str_value))
                             print(key,space1,"1",space2,value,space3,value)
-                            dish_total+=int(value)
+                            dish_total+=float(value)
                             
-                    time_price=time*8
-                    gst=(((time_price)+dish_total)*(2.5/100))
+                    time_price=time*4
+                    gst=((time_price+dish_total+seat_total)*(2.5/100))
                     sub_total=dish_total+(time_price)
                     print(" "*26,"--------------------")
-                    print(" "*26,"Time book :  ",time)
+                    print(" "*26,"Seat total:  ",seat_total)
                     print(" "*26,"Time price:  ",time_price)
                     print(" "*26,"Dish total:  ",dish_total)
                     print(" "*26,"Sub Total :  ",sub_total)
                     print(" "*26,"SGST(2.5%):  ",gst)
                     print(" "*26,"CGST(2.5%):  ",gst)
                     print(" "*26,"--------------------")
-                    print(" "*26,"Food Total:  ",(time_price)+dish_total+(gst*2))
+                    print(" "*26,"Food Total:  ",(time_price)+dish_total+seat_total+(gst*2))
                     print("-"*47)
-                    print(Fore.RED+str(datetime.datetime.now().date())," "*13,"TOTAL:"," "*7,round(time_price+dish_total+(gst*2)))
+                    print(Fore.RED+str(datetime.datetime.now().date())," "*13,"TOTAL:"," "*7,round(time_price+dish_total+seat_total+(gst*2)))
                     print(Fore.YELLOW+"-"*47)
                     print(Style.RESET_ALL+"time:",datetime.datetime.now().time(),end="   ")
                     print("Thank you",end="   ")

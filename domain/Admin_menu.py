@@ -4,7 +4,7 @@ import os
 def admin_menu():
     while True:
         print(Fore.RED+"\n\t--------------ADMIN_MENU--------------")
-        print(Fore.GREEN+"1. Menu")
+        print(Style.RESET_ALL+"1. Menu")
         print("2. Delete Dish")
         print("3. Add Dish")
         print("4. Add New Category")
@@ -13,7 +13,7 @@ def admin_menu():
         print("7. Add Staff Member")
         print("8. Remove Staff Member")
         print("9. Show Staff")
-        print("10. Exit"+Fore.YELLOW)
+        print("10. Log Out"+Fore.YELLOW)
         
         try:
             choice=int(input("Enter Your Choice: "))

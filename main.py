@@ -1,3 +1,3 @@
-from authentication import authentication_menu
-authentication_menu.menu()
+from authentication import menu
+menu()
 

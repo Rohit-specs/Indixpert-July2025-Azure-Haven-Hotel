@@ -18,5 +18,49 @@
     "staff who booked": "Amit",
     "customer name": "Nayan",
     "booked time in min": 30
+  },
+  {
+    "id": "cb8f86",
+    "table no": 12,
+    "table booking date": "2025-10-23",
+    "booking start time": "16:0",
+    "booking end time": "17:0",
+    "staff who booked": "Amit",
+    "customer name": "Prakash",
+    "no of seats": 4,
+    "booked time in min": 60
+  },
+  {
+    "id": "e31144",
+    "table no": 13,
+    "table booking date": "2025-10-23",
+    "booking start time": "16:0",
+    "booking end time": "17:0",
+    "staff who booked": "Amit",
+    "customer name": "Yuvraj",
+    "no of seats": 2,
+    "booked time in min": 60
+  },
+  {
+    "id": "3d578f",
+    "table no": 11,
+    "table booking date": "2025-10-23",
+    "booking start time": "16:0",
+    "booking end time": "17:0",
+    "staff who booked": "Vinod",
+    "customer name": "Aadi",
+    "no of seats": 6,
+    "booked time in min": 60
+  },
+  {
+    "id": "4c8f30",
+    "table no": 50,
+    "table booking date": "2025-10-23",
+    "booking start time": "20:0",
+    "booking end time": "20:40",
+    "staff who booked": "Amit",
+    "customer name": "Harsh",
+    "no of seats": 6,
+    "booked time in min": 40
   }
 ]

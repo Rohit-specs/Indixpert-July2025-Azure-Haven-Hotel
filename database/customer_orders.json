@@ -32,5 +32,67 @@
         "Paneer Tikka": "120"
       }
     ]
+  },
+  {
+    "id": "f406d8",
+    "customer name": "Priyanshu",
+    "ordered items": [
+      {
+        "Veg Fried Rice": "half plate"
+      }
+    ],
+    "prices": [
+      {
+        "Veg Fried Rice": "80"
+      }
+    ]
+  },
+  {
+    "id": "cb8f86",
+    "customer name": "Prakash",
+    "ordered items": [
+      {
+        "Paneer Tikka": "full plate"
+      },
+      {
+        "Hara Bhara Kebab": "full plate"
+      }
+    ],
+    "prices": [
+      {
+        "Paneer Tikka": "220"
+      },
+      {
+        "Hara Bhara Kebab": "170"
+      }
+    ]
+  },
+  {
+    "id": "3d578f",
+    "customer name": "Aadi",
+    "ordered items": [
+      {
+        "Mushroom Chilli": "full plate"
+      }
+    ],
+    "prices": [
+      {
+        "Mushroom Chilli": "200"
+      }
+    ]
+  },
+  {
+    "id": "4c8f30",
+    "customer name": "Harsh",
+    "ordered items": [
+      {
+        "Paneer Tikka": "full plate"
+      }
+    ],
+    "prices": [
+      {
+        "Paneer Tikka": "220"
+      }
+    ]
   }
 ]
