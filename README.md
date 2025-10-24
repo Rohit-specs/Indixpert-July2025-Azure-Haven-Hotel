@@ -19,8 +19,10 @@ A command-line based Hotel Management System for managing table bookings, food o
 
 - Python 3.12.4 and #(Python 3.4.4 sometimes)
 - JSON for data storage
+- RE for validation
+- Getpass for password masking
 - Colorama for colored terminal output
-- Txt for log storage
+- Txt file for log storage
 
 ## Project Structure
 
