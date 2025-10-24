@@ -263,6 +263,7 @@ class tablebooking:
                                         continue
                                     else:
                                         dishes=self.menu.get(category)
+                                        print("dishes in "+category)
                                         for dish in dishes:
                                             item_name=dish.get("item")
                                             # half_price=str(dish.get("half plate"))
