@@ -3,7 +3,7 @@ import domain
 import os
 def admin_menu():
     while True:
-        print(Fore.RED+"\n\t--------------ADMIN_MENU--------------")
+        print(Fore.RED+Style.BRIGHT+"\n\t--------------ADMIN_MENU--------------")
         print(Style.RESET_ALL+"1. Menu")
         print("2. Delete Dish")
         print("3. Add Dish")
