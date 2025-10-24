@@ -62,5 +62,27 @@
     "customer name": "Harsh",
     "no of seats": 6,
     "booked time in min": 40
+  },
+  {
+    "id": "6a25b4",
+    "table no": 50,
+    "table booking date": "2025-10-24",
+    "booking start time": "15:20",
+    "booking end time": "15:50",
+    "staff who booked": "Amit",
+    "customer name": "Krishna",
+    "no of seats": 6,
+    "booked time in min": 30
+  },
+  {
+    "id": "f21f18",
+    "table no": 34,
+    "table booking date": "2025-10-24",
+    "booking start time": "20:0",
+    "booking end time": "21:0",
+    "staff who booked": "Amit",
+    "customer name": "Nitin",
+    "no of seats": 6,
+    "booked time in min": 60
   }
 ]

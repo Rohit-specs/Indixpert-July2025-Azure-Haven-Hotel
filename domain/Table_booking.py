@@ -80,11 +80,12 @@ class tablebooking:
         try:
             print(Fore.GREEN+"\n-------------TABLE_BOOKING-------------"+Fore.CYAN)
             
+            self.customer_name=validation.valid_name("customer")
             self.booked_table_date=validation.valid_date()
             self.booked_table_starttime=validation.valid_time("starting")
             self.booked_table_endtime=validation.valid_time("end")
             self.staff_booked_table=staff_booked_table
-            self.customer_name=validation.valid_name("customer")
+            
             id=str(uuid.uuid4())[:6]
             time=0
             list_start_time=[]

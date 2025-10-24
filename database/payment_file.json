@@ -1,19 +1,16 @@
 [
   {
-    "order_id": "cb8f86",
-    "customer_name": "Prakash",
+    "order_id": "f21f18",
+    "customer_name": "Nitin",
     "ordered_items": [
       {
-        "Paneer Tikka": "220"
-      },
-      {
-        "Hara Bhara Kebab": "170"
+        "Mix Veg Curry": "160"
       }
     ],
-    "total_amount": 671.5,
-    "payment_method": "Cash",
+    "total_amount": 735.0,
+    "payment_method": "UPI",
     "booking duration(min)": 60,
-    "no of seats": 4,
-    "seats charge total": 200
+    "no of seats": 6,
+    "seats charge total": 300
   }
 ]

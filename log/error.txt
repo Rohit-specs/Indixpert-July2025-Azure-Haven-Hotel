@@ -168,3 +168,7 @@ Log Time: 2025-10-23 16:10:10  | Error Type: invalid literal for int() with base
 Log Time: 2025-10-23 16:23:27  | Error Type: invalid literal for int() with base 10: 'python -u "c:\\Users\\lenovo\\Desktop\\Python Project\\Indixpert-July2025-Azure-Haven-Hotel\\main.py"'  | Module Name: domain.Staff_menu
 Log Time: 2025-10-23 16:24:23  | Error Type: 'dict' object has no attribute 'key'  | Module Name: domain.Table_booking
 Log Time: 2025-10-23 16:25:00  | Error Type: 'dict' object has no attribute 'key'  | Module Name: domain.Table_booking
+Log Time: 2025-10-24 12:44:10  | Error Type: invalid literal for int() with base 10: '6a25b4'  | Module Name: domain.Staff_menu
+Log Time: 2025-10-24 12:52:23  | Error Type: invalid literal for int() with base 10: 'cls'  | Module Name: authentication.authentication_menu
+Log Time: 2025-10-24 13:33:46  | Error Type: invalid literal for int() with base 10: 'python -u "c:\\Users\\lenovo\\Desktop\\Python Project\\Indixpert-July2025-Azure-Haven-Hotel\\main.py"'  | Module Name: authentication.authentication_menu
+Log Time: 2025-10-24 15:06:18  | Error Type: invalid literal for int() with base 10: 'python -u "c:\\Users\\lenovo\\Desktop\\Python Project\\Indixpert-July2025-Azure-Haven-Hotel\\main.py"'  | Module Name: domain.Admin_menu

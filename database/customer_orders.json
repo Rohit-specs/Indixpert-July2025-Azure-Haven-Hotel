@@ -1,97 +1,15 @@
 [
   {
-    "id": "b1e427f0-0409-45a5-a5f5-1eb1cffd0c81",
-    "customer name": "Aryan",
+    "id": "f21f18",
+    "customer name": "Nitin",
     "ordered items": [
       {
-        "Kadhai Paneer": "full plate"
-      },
-      {
-        "Plain Naan": "full plate"
+        "Mix Veg Curry": "full plate"
       }
     ],
     "prices": [
       {
-        "Kadhai Paneer": "200"
-      },
-      {
-        "Plain Naan": "25"
-      }
-    ]
-  },
-  {
-    "id": "3f8cbe85-476c-4d0d-9c65-7f392beea2a2",
-    "customer name": "Nayan",
-    "ordered items": [
-      {
-        "Paneer Tikka": "half plate"
-      }
-    ],
-    "prices": [
-      {
-        "Paneer Tikka": "120"
-      }
-    ]
-  },
-  {
-    "id": "f406d8",
-    "customer name": "Priyanshu",
-    "ordered items": [
-      {
-        "Veg Fried Rice": "half plate"
-      }
-    ],
-    "prices": [
-      {
-        "Veg Fried Rice": "80"
-      }
-    ]
-  },
-  {
-    "id": "cb8f86",
-    "customer name": "Prakash",
-    "ordered items": [
-      {
-        "Paneer Tikka": "full plate"
-      },
-      {
-        "Hara Bhara Kebab": "full plate"
-      }
-    ],
-    "prices": [
-      {
-        "Paneer Tikka": "220"
-      },
-      {
-        "Hara Bhara Kebab": "170"
-      }
-    ]
-  },
-  {
-    "id": "3d578f",
-    "customer name": "Aadi",
-    "ordered items": [
-      {
-        "Mushroom Chilli": "full plate"
-      }
-    ],
-    "prices": [
-      {
-        "Mushroom Chilli": "200"
-      }
-    ]
-  },
-  {
-    "id": "4c8f30",
-    "customer name": "Harsh",
-    "ordered items": [
-      {
-        "Paneer Tikka": "full plate"
-      }
-    ],
-    "prices": [
-      {
-        "Paneer Tikka": "220"
+        "Mix Veg Curry": "160"
       }
     ]
   }
