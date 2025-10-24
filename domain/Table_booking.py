@@ -257,18 +257,21 @@ class tablebooking:
                                         "prices": food_prices
                                     }
                                     # print(self.menu.key())
+                                    print("ALL Category:-")
+                                    for key,value in self.menu.items():
+                                        print("\t-",key)
                                     category = input("Enter food category: ").lower()
                                     if category not in self.menu:
                                         print("Category not found")
                                         continue
                                     else:
                                         dishes=self.menu.get(category)
-                                        print("dishes in "+category)
+                                        print("\nDishes in "+category)
                                         for dish in dishes:
                                             item_name=dish.get("item")
                                             # half_price=str(dish.get("half plate"))
                                             # full_price=str(dish.get("full plate"))
-                                            print(item_name," "*(20-len(item_name)))
+                                            print("\t-",item_name," "*(20-len(item_name)))
                                             # print(half_price," "*(8-len(half_price)),full_price)
                                             
                                     for key, value in self.menu.items():
@@ -360,7 +363,8 @@ class tablebooking:
                     seat_total=no_of_seats*seat_charge_per_person
                     time_charge=time*4
                     gst=((seat_total+time_charge+total))*(2.5/100)
-                    total_bill=(total+(4*time))+(gst*2)
+                    sub_total=total+time_charge+seat_total
+                    total_bill=sub_total+(gst*2)
 
                     print(Fore.GREEN+"\n--------------PAYMENT OVERVIEW--------------"+Fore.CYAN)
                     print("ID                :",id)
@@ -375,7 +379,7 @@ class tablebooking:
                             print("\t\t"+key+space+"{"+value+"}"+"x1")
 
                     print("\n\t\tDishes total         : ",total)
-                    print("\t\tSubtotal(Tdish+Ttime): ",total+(4*time)+seat_total)
+                    print("\t\tSubtotal             : ",sub_total)
                     print("\t\tCGST(2.5%)           : ",gst)
                     print("\t\tCGST(2.5%)           : ",gst)
                     print("\t\tTotal GST            : ",gst+gst)
