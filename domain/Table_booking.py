@@ -254,13 +254,15 @@ class tablebooking:
                                     order_data = {
                                         "id": customer.get("id"),
                                         "customer name": customer.get("customer name"),
+                                        "date":str(datetime.datetime.now()),#here are some changes
                                         "ordered items": food_items,
                                         "prices": food_prices
                                     }
                                     # print(self.menu.key())
                                     print("ALL Category:-")
                                     for key,value in self.menu.items():
-                                        print("\t-",key)
+                                        print(Style.RESET_ALL,"\t-",key)#here and in next print 
+                                    print(Fore.CYAN)
                                     category = input("Enter food category: ").lower()
                                     if category not in self.menu:
                                         print("Category not found")
@@ -272,7 +274,7 @@ class tablebooking:
                                             item_name=dish.get("item")
                                             # half_price=str(dish.get("half plate"))
                                             # full_price=str(dish.get("full plate"))
-                                            print("\t-",item_name," "*(20-len(item_name)))
+                                            print(Style.RESET_ALL,"\t-",item_name," "*(20-len(item_name)),Fore.CYAN)#some changes
                                             # print(half_price," "*(8-len(half_price)),full_price)
                                             
                                     for key, value in self.menu.items():
@@ -418,6 +420,7 @@ class tablebooking:
                     payment_details = {
                         "order_id": id,
                         "customer_name": customer_name,
+                        "payment_date":str(datetime.datetime.now())
                         "ordered_items": ordered_items,
                         "total_amount": total_bill,
                         "payment_method": payment_method,
