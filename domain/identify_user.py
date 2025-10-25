@@ -1,5 +1,4 @@
 import json
-from authentication import authentication_menu 
 import os
 import domain
 
@@ -22,19 +21,16 @@ def findinguser(email,password):
                 if user.get("password") == password:
                     if user.get("role") == "admin":
                         domain.admin_menu()
-                        # authentication_menu.menu()
                         return
                         
                     elif user.get("role") == "staff":
                         domain.staff_menu(name)
-                        # authentication_menu.menu()
                         return
                 else:
                     print("You entered wrong password")
-                    # authentication_menu.menu()
                     return
     except Exception as error:
         print(error)
         obj=domain.log(error,__name__)
         return
-    # print("user not found")
+    print("user not found")
