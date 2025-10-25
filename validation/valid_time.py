@@ -11,7 +11,7 @@ def valid_time(option="starting"):
                 print("Hour must be between 0 and 23")
                 continue
             if hour<current_hour:
-                print(hour,"is incorrect\nWe can't time travel")
+                print(hour,"is incorrect\nWe can't travel back in time")
                 continue
         except Exception as error:
             obj=domain.log(error,__name__)
