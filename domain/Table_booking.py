@@ -247,6 +247,10 @@ class tablebooking:
 
                         for customer in self.table_booking_data:
                             if customer.get("id")==id:
+                                date=customer.get("table booking date")#new lines
+                                if date!=str(datetime.date.today()):#new lines
+                                    print("Not booked for today\n")#new lines
+                                    return#new lines
                             
                                 food_items = []
                                 food_prices = []
@@ -345,6 +349,11 @@ class tablebooking:
         try:
             print(Fore.GREEN+"\n---------------PAYMENT---------------"+Fore.CYAN)
             id = input("Enter order id: ")
+            for payment in self.payment_json:#new lines
+                old_id=payment.get("order_id")#new lines
+                if id==old_id:#new lines
+                    print("You have already paid for meal")#new lines
+                    return#new lines
             for data in self.order_json:
                 if data.get("id") == id:
                     customer_name = data.get("customer name")
@@ -420,7 +429,7 @@ class tablebooking:
                     payment_details = {
                         "order_id": id,
                         "customer_name": customer_name,
-                        "payment_date":str(datetime.datetime.now())
+                        "payment_date":str(datetime.date.today())#added date in dictionary
                         "ordered_items": ordered_items,
                         "total_amount": total_bill,
                         "payment_method": payment_method,
@@ -444,13 +453,15 @@ class tablebooking:
 
     def get_invoice(self):
         try:
+            for payment in self.payment_json:#new changes
+                date=payment.get("payment_date")#new changes
             id=input("Enter Order ID: ")
             print(Fore.RED+"\n\n                 AZURE HAVEN HOTEL")
             print("                 Family Restaurant")
             print("        Palaspa Phata,Mumbai Pune Highway")
             print("             Near ONGC Colony,Panvel"+Fore.YELLOW)
             print("--------------------INVOICE--------------------")
-            print("date:",datetime.datetime.now().date())
+            print("Payment date:",date)#modified date
             print("-"*47)
             print("ITEMS                    Qty    Rate     Amount")
             print("-"*47)
