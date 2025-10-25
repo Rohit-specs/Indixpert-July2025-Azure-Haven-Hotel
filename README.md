@@ -21,6 +21,7 @@ A command-line based Hotel Management System for managing table bookings, food o
 - JSON for data storage
 - RE for validation
 - Getpass for password masking
+- Collection to get most ordered food
 - Colorama for colored terminal output
 - Txt file for log storage
 
