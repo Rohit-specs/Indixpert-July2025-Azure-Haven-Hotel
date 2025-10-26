@@ -2,6 +2,10 @@ from colorama import init,Fore,Back,Style
 import domain
 import os
 def admin_menu():
+    path=os.path.join("database","menu.json")
+    path1=os.path.join("database","user_data.json")
+    obj1=domain.update_menu(path)
+    obj2=domain.update_staff(path1)
     while True:
         print(Fore.RED+Style.BRIGHT+"\n\t--------------ADMIN_MENU--------------")
         print(Style.RESET_ALL+"1.  Menu")
@@ -23,32 +27,23 @@ def admin_menu():
             obj=domain.log(error,__name__)
             continue
 
-        path=os.path.join("database","menu.json")
-        path1=os.path.join("database","user_data.json")
         
         try:
             if choice==1:
                 obj=domain.show_menu()
             elif choice==2:
-                obj1=domain.update_menu(path)
                 obj1.delete_dish()
             elif choice==3:
-                obj1=domain.update_menu(path)
                 obj1.add_dish()
             elif choice==4:
-                obj1=domain.update_menu(path)
                 obj1.add_category()
             elif choice==5:
-                obj1=domain.update_menu(path)
                 obj1.del_category()
             elif choice==6:
-                obj1=domain.update_menu(path)
                 obj1.update_price()
             elif choice==7:
-                obj2=domain.update_staff(path1)
                 obj2.add_staff()
             elif choice==8:
-                obj2=domain.update_staff(path1)
                 obj2.remove_staff()
             elif choice==9:
                 domain.staff_data()
