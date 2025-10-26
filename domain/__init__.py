@@ -7,3 +7,4 @@ from .Update_staff_details import update_staff
 from .Show_staff import staff_data
 from .Loging import log
 from .Table_booking import tablebooking
+from .Report_Menu import report_menu

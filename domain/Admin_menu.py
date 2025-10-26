@@ -4,16 +4,17 @@ import os
 def admin_menu():
     while True:
         print(Fore.RED+Style.BRIGHT+"\n\t--------------ADMIN_MENU--------------")
-        print(Style.RESET_ALL+"1. Menu")
-        print("2. Delete Dish")
-        print("3. Add Dish")
-        print("4. Add New Category")
-        print("5. Delete Category")
-        print("6. Update Dish Price")
-        print("7. Add Staff Member")
-        print("8. Remove Staff Member")
-        print("9. Show Staff")
-        print("10. Log Out"+Fore.YELLOW)
+        print(Style.RESET_ALL+"1.  Menu")
+        print("2.  Delete Dish")
+        print("3.  Add Dish")
+        print("4.  Add New Category")
+        print("5.  Delete Category")
+        print("6.  Update Dish Price")
+        print("7.  Add Staff Member")
+        print("8.  Remove Staff Member")
+        print("9.  Show Staff")
+        print("10. Report")
+        print("11. Log Out"+Fore.YELLOW)
         
         try:
             choice=int(input("Enter Your Choice: "))
@@ -52,6 +53,8 @@ def admin_menu():
             elif choice==9:
                 domain.staff_data()
             elif choice==10:
+                domain.report_menu()
+            elif choice==11:
                 print("Exiting Admin Menu...")
                 break
             else:
