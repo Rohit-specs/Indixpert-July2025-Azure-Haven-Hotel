@@ -68,7 +68,7 @@ class Report_data:
                 month_booking=booking.get("table booking date")
                 if self.modified_current_month in month_booking:
                     current_month_booking+=1  
-                print("\nCurrent month number of booking:",Fore.RED,current_month_booking)
+            print("\nCurrent month number of booking:",Fore.RED,current_month_booking)
         except Exception as error:
             print("Unexpected error:",error)
             obj=log(error,__name__)
