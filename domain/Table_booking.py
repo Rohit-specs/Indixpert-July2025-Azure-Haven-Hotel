@@ -106,103 +106,165 @@ class tablebooking:
             booking_end_time=(list_end_time[0]*60+list_end_time[1])
             time=(booking_end_time-booking_start_time)
             
-            if booking_start_time>booking_end_time:
-                print("Please book table again.\n You have enter wrong time")
+            if booking_start_time>=booking_end_time:
+                print(Fore.RED+"Please book table again.\nEnd time must be after start time")
                 return
             
-            booked_tables=[]
-            for booking in self.table_booking_data:
+
+            # booked_tables=[]
+            # for booking in self.table_booking_data:
                 
-                if booking.get("table booking date")==self.booked_table_date:
-                    old_start=booking.get("booking start time")
-                    old_end=booking.get("booking end time")
+            #     if booking.get("table booking date")==self.booked_table_date:
+            #         old_start=booking.get("booking start time")
+            #         old_end=booking.get("booking end time")
                     
+            #         old_start_parts = old_start.split(":")
+            #         old_end_parts = old_end.split(":")
+
+            #         old_start_hour = int(old_start_parts[0])
+            #         old_start_minute = int(old_start_parts[1])
+            #         old_end_hour = int(old_end_parts[0])
+            #         old_end_minute = int(old_end_parts[1])
+
+            #         old_start_minutes = (old_start_hour * 60) + old_start_minute
+            #         old_end_minutes = (old_end_hour * 60) + old_end_minute
+            #         if booking_start_time < old_end_minutes and booking_end_time > old_start_minutes:
+            #             booked_tables.append(booking.get("table no"))
+                        
+                        
+                        
+            # avialable_table=[]
+            # for i in range(1,51):
+            #     if i not in booked_tables:
+            #         avialable_table.append(i)
+
+            total_capacity=6
+            print(Fore.BLUE+"\nAviliable table on",self.booked_table_date,"from",self.booked_table_starttime,"to",self.booked_table_endtime)
+            # if len(avialable_table)>0:
+            #     # print(Fore.CYAN,avialable_table)
+            #     i=1
+            #     for table in avialable_table:
+            #         print(table,end=" ")
+            #         if i%10==0:
+            #             print()
+            #         i+=1
+            # else:
+            #     print(Fore.RED+"No table avialiable at this time")
+            table_no=1
+            while table_no<=50:
+                remaining_seats=total_capacity
+
+                for booking in self.table_booking_data:
+                    if booking.get("table no")==table_no and booking.get("table booking date")==self.booked_table_date:
+                        old_start=booking.get("booking start time")
+                        old_start=booking.get("booking end time")
+                        old_start_parts=old_start_parts.split(":")
+                        old_end_parts=old_end_parts.split(":")
+                        old_start_min=int(old_start_parts[0])*60+int(old_start_parts[1])
+                        old_end_min=int(old_end_parts[0])*60+int(old_end_parts[1])
+                        if booking_start_time<old_end_min and old_start_min<booking_end_time:
+                            remaining_seats-=booking.get("no of seats",0)
+                if remaining_seats>0:
+                    print("Table "+Fore.GREEN+str(table_no)+": "+str(remaining_seats))
+                else:
+                    print("Table "Fore.RED+Fore.RED+str(table_no)+": FULL")
+                table_no+=1           
+            
+            print()
+
+            self.table_no=validation.valid_table()
+
+            remaining_seats = total_capacity
+
+            for booking in self.table_booking_data:
+                if booking.get("table no") == self.table_no and booking.get("table booking date") == self.booked_table_date:
+                    old_start = booking.get("booking start time")
+                    old_end = booking.get("booking end time")
+
                     old_start_parts = old_start.split(":")
                     old_end_parts = old_end.split(":")
 
-                    old_start_hour = int(old_start_parts[0])
-                    old_start_minute = int(old_start_parts[1])
-                    old_end_hour = int(old_end_parts[0])
-                    old_end_minute = int(old_end_parts[1])
+                    old_start_min = int(old_start_parts[0]) * 60 + int(old_start_parts[1])
+                    old_end_min = int(old_end_parts[0]) * 60 + int(old_end_parts[1])
 
-                    old_start_minutes = (old_start_hour * 60) + old_start_minute
-                    old_end_minutes = (old_end_hour * 60) + old_end_minute
-                    if booking_start_time < old_end_minutes and booking_end_time > old_start_minutes:
-                        booked_tables.append(booking.get("table no"))
-                        
-                        
-                        
-            avialable_table=[]
-            for i in range(1,51):
-                if i not in booked_tables:
-                    avialable_table.append(i)
-            print(Fore.BLUE+"\nAviliable table on",self.booked_table_date,"from",self.booked_table_starttime,"to",self.booked_table_endtime)
-            if len(avialable_table)>0:
-                # print(Fore.CYAN,avialable_table)
-                i=1
-                for table in avialable_table:
-                    print(table,end=" ")
-                    if i%10==0:
-                        print()
-                    i+=1
+                    if booking_start_time < old_end_min and booking_end_time > old_start_min:
+                        remaining_seats -= booking.get("no of seats", 0)
+
+            if remaining_seats <= 0:
+                print(Fore.RED +"Sorry, this table is already full for that time")
+                return
             else:
-                print(Fore.RED+"No table avialiable at this time.")
-                    
-            
-            print()
-            self.table_no=validation.valid_table()
-            
-            
+                print(Fore.GREEN +"Table "+str(self.table_no)+" has "+str(remaining_seats)+" seats available")
+
             
             while True:
                 try:
                     self.no_of_seats = int(input("Enter number of seats to book (max 6): "))
-                    if 1 <= self.no_of_seats <= 6:
+                    if 1 <= self.no_of_seats <= remaining_seats:
                         break
                     else:
-                        print(Fore.RED+"Seats must be between 1 and 6")
+                        print(Fore.RED + "Only "+str(remaining_seats)+" seats available Please enter a valid number")
                 except Exception as error:
-                    obj=domain.log(error,__name__)
-                    print("Invalid input. Please enter a number.")
-            
-            
-            
-            for booking in self.table_booking_data:
-               
-                if booking.get("table no")==self.table_no:
-                        if booking.get("table booking date")==self.booked_table_date:
-                            list_old_start_time=[]
-                            list_old_end_time=[]
-                            list_new_start_time=[]
-                            list_new_end_time=[]
-                            old_order_start=booking.get("booking start time")
-                            old_order_start=old_order_start.split(":")
-                            old_order_end=booking.get("booking end time")
-                            old_order_end=old_order_end.split(":")
-                            new_order_start=self.booked_table_starttime
-                            new_order_start=new_order_start.split(":")
-                            new_order_end=self.booked_table_endtime
-                            new_order_end=new_order_end.split(":")
-                            for i in old_order_start:
-                                data=int(i)
-                                list_old_start_time.append(data)
-                            for i in old_order_end:
-                                data=int(i)
-                                list_old_end_time.append(data)
-                            for i in new_order_start:
-                                data=int(i)
-                                list_new_start_time.append(data)
-                            for i in new_order_end:
-                                data=int(i)
-                                list_new_end_time.append(data)
+                    obj = domain.log(error, __name__)
+                    print("Invalid input. Please enter a number")
 
-                            old_start_minutes = list_old_start_time[0]*60 + list_old_start_time[1]
-                            old_end_minutes = list_old_end_time[0]*60+ list_old_end_time[1]
-                            new_start_minutes = list_new_start_time[0]*60 + list_new_start_time[1]
-                            new_end_minutes = list_new_end_time[0]*60 + list_new_end_time[1]
-                            if new_start_minutes < old_end_minutes and new_end_minutes > old_start_minutes:
-                                print(Fore.RED+"This table is already booked For same time you want!")
-                                return
+
+            remaining_seats=total_capacity
+            for booking in self.table_booking_data:
+                if (booking.get("table no") == self.table_no
+                and booking.get("table booking date") == self.booked_table_date):
+
+                old_start = booking.get("booking start time")
+                old_end = booking.get("booking end time")
+
+                old_start_parts = old_start.split(":")
+                old_end_parts = old_end.split(":")
+                old_start_min = int(old_start_parts[0])*60+int(old_start_parts[1])
+                old_end_min = int(old_end_parts[0])*60+int(old_end_parts[1])
+
+                if booking_start_time < old_end_min and booking_end_time > old_start_min:
+                    remaining_seats -= booking.get("no of seats", 0)
+
+            if remaining_seats <= 0:
+                print(Fore.RED + "Sorry, Table "+str(self.table_no)+" is fully booked for that time")
+                return
+            
+            # for booking in self.table_booking_data:
+               
+            #     if booking.get("table no")==self.table_no:
+            #             if booking.get("table booking date")==self.booked_table_date:
+            #                 list_old_start_time=[]
+            #                 list_old_end_time=[]
+            #                 list_new_start_time=[]
+            #                 list_new_end_time=[]
+            #                 old_order_start=booking.get("booking start time")
+            #                 old_order_start=old_order_start.split(":")
+            #                 old_order_end=booking.get("booking end time")
+            #                 old_order_end=old_order_end.split(":")
+            #                 new_order_start=self.booked_table_starttime
+            #                 new_order_start=new_order_start.split(":")
+            #                 new_order_end=self.booked_table_endtime
+            #                 new_order_end=new_order_end.split(":")
+            #                 for i in old_order_start:
+            #                     data=int(i)
+            #                     list_old_start_time.append(data)
+            #                 for i in old_order_end:
+            #                     data=int(i)
+            #                     list_old_end_time.append(data)
+            #                 for i in new_order_start:
+            #                     data=int(i)
+            #                     list_new_start_time.append(data)
+            #                 for i in new_order_end:
+            #                     data=int(i)
+            #                     list_new_end_time.append(data)
+
+            #                 old_start_minutes = list_old_start_time[0]*60 + list_old_start_time[1]
+            #                 old_end_minutes = list_old_end_time[0]*60+ list_old_end_time[1]
+            #                 new_start_minutes = list_new_start_time[0]*60 + list_new_start_time[1]
+            #                 new_end_minutes = list_new_end_time[0]*60 + list_new_end_time[1]
+            #                 if new_start_minutes < old_end_minutes and new_end_minutes > old_start_minutes:
+            #                     print(Fore.RED+"This table is already booked For same time you want!")
+            #                     return
             
             modified_data={
                 "id":id,
