@@ -1,1 +1,1 @@
-from Report import Report_data
+from .Report import Report_data
