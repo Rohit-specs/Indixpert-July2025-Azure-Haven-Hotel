@@ -59,7 +59,7 @@ class Report_data:
             number_of_booking=len(self.table_booking_data)
             print("\nTotal number of booking:",Fore.RED,number_of_booking)
         except Exception as error:
-            obj=domain.log(error,__name__)
+            obj=log(error,__name__)
             print("Unexpected error:",error)
     def current_number_of_booking(self):
         try:
@@ -71,7 +71,7 @@ class Report_data:
                 print("\nCurrent month number of booking:",Fore.RED,current_month_booking)
         except Exception as error:
             print("Unexpected error:",error)
-            obj=domain.log(error,__name__)
+            obj=log(error,__name__)
 
     def average_booking_duration(self):
         try:
@@ -89,11 +89,11 @@ class Report_data:
                 average_booking_duration=average_booking_duration/number_of_booking
             except Exception as error:
                 print("Unexpected Error:",error)
-                obj=domain.log(error,__name__)
+                obj=log(error,__name__)
             print("\nAverage booking duration:",Fore.RED,average_booking_duration)
         except Exception as error:
             print("Unexpected error:",error)
-            obj=domain.log(error,__name__)
+            obj=log(error,__name__)
 
     def current_month_average_booking_duration(self):
 
@@ -115,11 +115,11 @@ class Report_data:
                 current_month_average_booking_duration=current_month_average_booking_duration/current_month_booking
             except Exception as error:
                 print("Unexpected error:",error)
-                obj=domain.log(error,__name__)
+                obj=log(error,__name__)
             print("\nCurrent month average booking duration:",Fore.RED,current_month_average_booking_duration)
         except Exception as error:
             print("Unexpected error:",error)
-            obj=domain.log(error,__name__)
+            obj=log(error,__name__)
 
     def most_ordered_dish(self):
         
@@ -137,7 +137,7 @@ class Report_data:
             print("\nMost ordered dish:",Fore.RED,most_ordered_dish,"(X"+str(most_ordered_dish_count)+")")
         except Exception as error:
             print("Unexpected error:",error)
-            obj=domain.log(error,__name__)
+            obj=log(error,__name__)
 
     def current_month_most_ordered_dish(self):
 
@@ -158,7 +158,7 @@ class Report_data:
             print("\nMost ordered dish in current month:",Fore.RED,current_month_most_ordered_dish,"(X"+str(current_month_most_ordered_dish_count)+")")
         except Exception as error:
             print("Unexpected error:",error)
-            obj=domain.log(error,__name__)
+            obj=log(error,__name__)
 
     def payment_method_used(self):
 
@@ -181,7 +181,7 @@ class Report_data:
             print("UPI:  ",Fore.RED,upi_count,Style.RESET_ALL,"times")
         except Exception as error:
             print("Unexpected error:",error)
-            obj=domain.log(error,__name__)
+            obj=log(error,__name__)
 
     def current_month_payment_method_used(self):
 
@@ -205,7 +205,7 @@ class Report_data:
             print("UPI:  ",Fore.RED,monthly_upi_count,Style.RESET_ALL"times")
         except Exception as error:
             print("Unexpected error:",error)
-            obj=domain.log(error,__name__)
+            obj=log(error,__name__)
     
     def total_revenue(self):
 
@@ -217,7 +217,7 @@ class Report_data:
             print("\nTotal Earning:",Fore.RED,revenue)
         except Exception as error:
             print("Unexpected error:",error)
-            obj=domain.log(error,__name__)
+            obj=log(error,__name__)
 
     def current_month_total_revenue(self):
         
@@ -231,7 +231,7 @@ class Report_data:
             print("\nCurrent month Total earning:",Fore.RED,monthly_revenue)
         except Exception as error:
             print("Unexpected error:",error)
-            obj=domain.log(error,__name__)
+            obj=log(error,__name__)
 
 
 
