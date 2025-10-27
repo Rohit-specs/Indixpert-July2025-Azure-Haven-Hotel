@@ -1,10 +1,11 @@
 from colorama import init,Fore,Back,Style
+init(autoreset=True)
 import domain
 
 def staff_menu(name):
     while True:
         print(Fore.RED+Style.BRIGHT+"\n\t---------------STAFF_MENU---------------")
-        print(Style.RESET_ALL+"1. Show Menu")
+        print("1. Show Menu")
         print("2. Book Table")
         print("3. See All Booking")
         print("4. Take Order")
@@ -12,9 +13,9 @@ def staff_menu(name):
         print("6. Take Payment")
         print("7. Show Invoice")
         print("8. Cancel Booked Table")
-        print("9. Log Out"+Fore.YELLOW)
+        print("9. Log Out")
         try:
-            choice=int(input("Enter your choice: "))
+            choice=int(input(Fore.YELLOW,"Enter your choice: "))
         except Exception as error:
             log=domain.log(error,__name__)
             print("Invalid input. Please enter a valid option")
@@ -43,4 +44,4 @@ def staff_menu(name):
                 print(choice,"is not a valid option")
         except Exception as error:
             obj=domain.log(error,__name__)
-            print("Unable to use this option"+Style.RESET_ALL)
+            print("Unable to use this option")

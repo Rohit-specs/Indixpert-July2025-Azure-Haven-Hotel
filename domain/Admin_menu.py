@@ -1,4 +1,5 @@
 from colorama import init,Fore,Back,Style
+init(autoreset=True)
 import domain
 import os
 def admin_menu():
@@ -8,7 +9,7 @@ def admin_menu():
     obj2=domain.update_staff(path1)
     while True:
         print(Fore.RED+Style.BRIGHT+"\n\t--------------ADMIN_MENU--------------")
-        print(Style.RESET_ALL+"1.  Menu")
+        print("1.  Menu")
         print("2.  Delete Dish")
         print("3.  Add Dish")
         print("4.  Add New Category")
@@ -18,10 +19,10 @@ def admin_menu():
         print("8.  Remove Staff Member")
         print("9.  Show Staff")
         print("10. Report")
-        print("11. Log Out"+Fore.YELLOW)
+        print("11. Log Out")
         
         try:
-            choice=int(input("Enter Your Choice: "))
+            choice=int(input(Fore.YELLOW,"Enter Your Choice: "))
         except Exception as error:
             print(error)
             obj=domain.log(error,__name__)
