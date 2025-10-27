@@ -200,9 +200,9 @@ class Report_data:
                     elif monthly_payment_method.lower()=="cash":
                         monthly_cash_count+=1
             print("\nPayment method used in current month by customers:-")
-            print("Cash: ",Fore.RED,monthly_cash_count,Style.RESET_ALL"times")
-            print("Card: ",Fore.RED,monthly_card_count,Style.RESET_ALL"times")
-            print("UPI:  ",Fore.RED,monthly_upi_count,Style.RESET_ALL"times")
+            print("Cash: ",Fore.RED,monthly_cash_count,Style.RESET_ALL,"times")
+            print("Card: ",Fore.RED,monthly_card_count,Style.RESET_ALL,"times")
+            print("UPI:  ",Fore.RED,monthly_upi_count,Style.RESET_ALL,"times")
         except Exception as error:
             print("Unexpected error:",error)
             obj=log(error,__name__)
