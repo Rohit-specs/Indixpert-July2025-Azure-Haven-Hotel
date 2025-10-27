@@ -17,7 +17,7 @@ class update_menu:
     def save(self):
         try:
             with open(self.path,'w') as data:
-                self.menu=json.dumps(self.menu,indent=1)
+                self.menu=json.dumps(self.menu)
                 data.write(self.menu)
             print(Fore.GREEN+"Changes saved to file")
         except Exception as error:
@@ -74,9 +74,6 @@ class update_menu:
                         obj=domain.log(error,__name__)
                         print("invalid half price. please enter a number")
                 
-                    
-                
-                
                 self.menu[category].append(
                     {
                     "item": item,
@@ -84,10 +81,16 @@ class update_menu:
                     "full plate": str(full_price)
                     })
             elif "price" in sample_dish or not sample_dish:
-                price = input("Enter price: ")
+                while True:
+                    try:
+                        price = int(input("Enter price: "))
+                        break
+                    except Exception as error:
+                        obj=domain.log(error,__name__)
+                        print("Invalid price.Please enter a number")
                 self.menu[category].append({
                     "item": item,
-                    "price": price
+                    "price": str(price)
                     })
             else:
                 while True:
