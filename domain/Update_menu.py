@@ -1,6 +1,7 @@
 from colorama import init,Fore,Style,Back
 import domain
 import json
+init(autoreset=True)
 
 
 class update_menu:
@@ -18,16 +19,16 @@ class update_menu:
             with open(self.path,'w') as data:
                 self.menu=json.dumps(self.menu,indent=1)
                 data.write(self.menu)
-            print("Changes saved to file")
+            print(Fore.GREEN+"Changes saved to file")
         except Exception as error:
             obj=domain.log(error,__name__)
             print("Faliled to save menu to file")
 
     def delete_dish(self):
         try:
-            print(Fore.GREEN+"\n--------------DELETE DISH--------------"+Fore.YELLOW)
-            category = input("Enter the dish category: ")
-            dish_name = input("Enter the dish name to delete: ")
+            print(Fore.GREEN+"\n--------------DELETE DISH--------------")
+            category = input("Enter the dish category: ").lower()
+            dish_name = input("Enter the dish name to delete: ").title()
 
             if category in self.menu:
                 dishes = self.menu[category]
@@ -46,25 +47,41 @@ class update_menu:
 
     def add_dish(self):
         try:
-            print(Fore.GREEN+"\n--------------ADD DISH--------------"+Fore.YELLOW)
+            print(Fore.GREEN+"\n--------------ADD DISH--------------")
             category = input("Enter the category to add the dish to: ")
             if category not in self.menu:
                 print("Category not found")
                 return
-            item = input("Enter dish name: ")
+            item = input("Enter dish name: ").title()
             if len(self.menu[category]) > 0:
                 sample_dish = self.menu[category][0]
             else:
                 sample_dish = {}
             if "half plate" in sample_dish and "full plate" in sample_dish:
-                half_price = input("Enter half plate price: ")
-                full_price = input("Enter full plate price: ")
+                while True:
+                    try:
+                        half_price = int(input("Enter half plate price: "))
+                        break
+                    except Exception as error:
+                        obj=domain.log(error,__name__)
+                        print("invalid half price. please enter a number")
+                
+                while True:
+                    try:
+                        full_price = int(input("Enter full plate price: "))
+                        break
+                    except Exception as error:
+                        obj=domain.log(error,__name__)
+                        print("invalid half price. please enter a number")
+                
+                    
+                
                 
                 self.menu[category].append(
                     {
                     "item": item,
-                    "half plate": half_price,
-                    "full plate": full_price
+                    "half plate": str(half_price),
+                    "full plate": str(full_price)
                     })
             elif "price" in sample_dish or not sample_dish:
                 price = input("Enter price: ")
@@ -84,19 +101,39 @@ class update_menu:
                         domain.log(error,__name__)
                         continue
                     if choice==1:
-                        half_price = input("Enter half plate price: ")
-                        full_price = input("Enter full plate price: ")
-                        self.menu[category].append(
-                            {
-                            "item": item,
-                            "half plate": half_price,
-                            "full plate": full_price
+                        while True:
+                            try:
+                                half_price = int(input("Enter half plate price: "))
+                                break
+                            except Exception as error:
+                                obj=domain.log(error,__name__)
+                                print("invalid half price. please enter a number")
+                
+                        while True:
+                            try:
+                                full_price = int(input("Enter full plate price: "))
+                                break
+                            except Exception as error:
+                                obj=domain.log(error,__name__)
+                                print("invalid half price. please enter a number")
+                                self.menu[category].append(
+                                    {
+                                    "item": item,
+                                    "half plate": str(half_price),
+                                    "full plate": str(full_price)
                             })
                     elif choice==2:
-                        price = input("Enter price: ")
+                        while True:
+                            try:
+                                price = int(input("Enter price: "))
+                                break
+                            except Exception as error:
+                                obj=domain.log(error,__name__)
+                                print("Invalid price.Please enter a number")
+
                         self.menu[category].append({
                             "item": item,
-                            "price": price})
+                            "price": str(price)})
                     break
             print("Dish added")
             self.save()
@@ -106,7 +143,7 @@ class update_menu:
 
     def add_category(self):
         try:
-            print(Fore.GREEN+"\n--------------ADD CATEGORY--------------"+Fore.YELLOW)
+            print(Fore.GREEN+"\n--------------ADD CATEGORY--------------")
             category = input("Enter new category name: ")
             if category in self.menu:
                 print("Category already exists")
@@ -120,7 +157,7 @@ class update_menu:
 
     def del_category(self):
         try:
-            print(Fore.GREEN+"\n--------------DELETE CATEGORY--------------"+Fore.YELLOW)
+            print(Fore.GREEN+"\n--------------DELETE CATEGORY--------------")
             category=input("Enter category name:")
             if category in self.menu:
                 del self.menu[category]
@@ -135,21 +172,44 @@ class update_menu:
 
     def update_price(self):
         try:
-            print(Fore.GREEN+"\n--------------UPDATE PRICE--------------"+Fore.YELLOW)
+            print(Fore.GREEN+"\n--------------UPDATE PRICE--------------")
             category = input("Enter the category of the dish: ")
+            category=category.lower()
             dish_name = input("Enter the dish name to update: ")
+            dish_name=dish_name.title()
 
             if category in self.menu:
                 for dish in self.menu[category]:
                     if dish['item'].lower() == dish_name.lower():
                         if "half plate" in dish and "full plate" in dish:
-                            half_price = input("Enter new half plate price: ")
-                            full_price = input("Enter new full plate price: ")
-                            dish["half plate"] = half_price
-                            dish["full plate"] = full_price
+                            while True:
+                                try:
+                                    half_price = int(input("Enter new half plate price: "))
+                                    break
+                                except Exception as error:
+                                    obj=domain.log(error,__name__)
+                                    print("invalid price,please try again")
+                                    
+                            while True:
+                                try:
+                                    full_price = int(input("Enter new full plate price: "))
+                                    break
+                                except Exception as error:
+                                    obj=domain.log(error,__name__)
+                                    print("invalid price,please try again")
+                                
+                            
+                            dish["half plate"] = str(half_price)
+                            dish["full plate"] = str(full_price)
                         elif "price" in dish:
-                            price = input("Enter new price: ")
-                            dish["price"] = price
+                            while True:
+                                try:
+                                    price = int(input("Enter new price: "))
+                                    break
+                                except ValueError as error:
+                                    domain.log(error, __name__)
+                                    print("Invalid price, please try again.")
+                                dish["price"] = str(price)
                         else:
                             print("Unknown pricing structure")
                             return

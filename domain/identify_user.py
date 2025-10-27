@@ -2,7 +2,6 @@ import json
 import os
 import domain
 
-
 json_path=os.path.join("database","user_data.json")
 def findinguser(email,password):
     try:

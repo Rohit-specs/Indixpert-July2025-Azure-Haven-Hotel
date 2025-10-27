@@ -10,12 +10,12 @@ def staff_data():
             Staffs=json.loads(user_data.read())
     except Exception as error:
         obj=domain.log(error,__name__)
-        print("File Not Found In Database")
+        print(Fore.RED+"File Not Found In Database")
         return
     try:
         print(Fore.GREEN+"--------------ALL USERS--------------")
         for staff in Staffs:
-            print(Fore.RED+"User-",i,Fore.CYAN)
+            print(Fore.RED+"User-",i)
             print("Name     : ",staff.get("name"))
             print("Email    : ",staff.get("email"))
             print("Password : ","*"*len(staff.get("password")))

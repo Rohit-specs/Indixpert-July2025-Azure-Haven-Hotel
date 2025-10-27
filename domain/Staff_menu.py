@@ -4,18 +4,18 @@ import domain
 
 def staff_menu(name):
     while True:
-        print(Fore.RED+Style.BRIGHT+"\n\t---------------STAFF_MENU---------------")
-        print("1. Show Menu")
-        print("2. Book Table")
-        print("3. See All Booking")
-        print("4. Take Order")
-        print("5. See All Orders")
-        print("6. Take Payment")
-        print("7. Show Invoice")
-        print("8. Cancel Booked Table")
-        print("9. Log Out")
+        print(Fore.RED+Style.BRIGHT+"\n-------------------STAFF_MENU-------------------")
+        print(Fore.CYAN+"1.","Show Menu")
+        print(Fore.CYAN+"2.","Book Table")
+        print(Fore.CYAN+"3.","See All Booking")
+        print(Fore.CYAN+"4.","Take Order")
+        print(Fore.CYAN+"5.","See All Orders")
+        print(Fore.CYAN+"6.","Take Payment")
+        print(Fore.CYAN+"7.","Show Invoice")
+        print(Fore.CYAN+"8.","Cancel Booked Table")
+        print(Fore.CYAN+"9.","Log Out")
         try:
-            choice=int(input(Fore.YELLOW,"Enter your choice: "))
+            choice=int(input(Fore.YELLOW+"Enter your choice: "))
         except Exception as error:
             log=domain.log(error,__name__)
             print("Invalid input. Please enter a valid option")
@@ -41,7 +41,7 @@ def staff_menu(name):
                 print("Exiting Staff Menu...")
                 break
             else:
-                print(choice,"is not a valid option")
+                print(Fore.RED+choice,"is not a valid option")
         except Exception as error:
             obj=domain.log(error,__name__)
-            print("Unable to use this option")
+            print(Fore.RED+"Unable to use this option")

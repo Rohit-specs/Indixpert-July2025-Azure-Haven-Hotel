@@ -57,7 +57,7 @@ class Report_data:
         try:
 
             number_of_booking=len(self.table_booking_data)
-            print("\nTotal number of booking:",Fore.RED,number_of_booking)
+            print("\nTotal number of booking:"+Fore.RED+str(number_of_booking))
         except Exception as error:
             obj=log(error,__name__)
             print("Unexpected error:",error)

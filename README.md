@@ -50,6 +50,8 @@ hotel-management/
 │ └─ Update_staff_details.py
 ├─ log/ # Stores error logs
 │ └─ error.txt
+├─report
+|  └─Report.py
 ├─ validation/ # Input validation functions
 │ ├─ valid_date.py
 │ ├─ valid_email.py

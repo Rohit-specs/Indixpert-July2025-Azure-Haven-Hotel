@@ -8,27 +8,26 @@ def admin_menu():
     obj1=domain.update_menu(path)
     obj2=domain.update_staff(path1)
     while True:
-        print(Fore.RED+Style.BRIGHT+"\n\t--------------ADMIN_MENU--------------")
-        print("1.  Menu")
-        print("2.  Delete Dish")
-        print("3.  Add Dish")
-        print("4.  Add New Category")
-        print("5.  Delete Category")
-        print("6.  Update Dish Price")
-        print("7.  Add Staff Member")
-        print("8.  Remove Staff Member")
-        print("9.  Show Staff")
-        print("10. Report")
-        print("11. Log Out")
+        print(Fore.RED+Style.BRIGHT+"\n-------------------ADMIN_MENU-------------------")
+        print(Fore.CYAN+"1. ","Menu")
+        print(Fore.CYAN+"2. ","Delete Dish")
+        print(Fore.CYAN+"3. ","Add Dish")
+        print(Fore.CYAN+"4. ","Add New Category")
+        print(Fore.CYAN+"5. ","Delete Category")
+        print(Fore.CYAN+"6. ","Update Dish Price")
+        print(Fore.CYAN+"7. ","Add Staff Member")
+        print(Fore.CYAN+"8. ","Remove Staff Member")
+        print(Fore.CYAN+"9. ","Show Staff")
+        print(Fore.CYAN+"10.","Report")
+        print(Fore.CYAN+"11.","Log Out")
         
         try:
-            choice=int(input(Fore.YELLOW,"Enter Your Choice: "))
+            choice=int(input(Fore.YELLOW+"Enter Your Choice: "))
         except Exception as error:
             print(error)
             obj=domain.log(error,__name__)
             continue
 
-        
         try:
             if choice==1:
                 obj=domain.show_menu()
@@ -51,10 +50,10 @@ def admin_menu():
             elif choice==10:
                 domain.report_menu()
             elif choice==11:
-                print("Exiting Admin Menu...")
+                print(Fore.RED,"Exiting Admin Menu...")
                 break
             else:
-                print(choice,"is not a valid option")
+                print(Fore.RED,choice,"is not a valid option")
         except Exception as error:
             print(error)
             ob=domain.log(error,__name__)

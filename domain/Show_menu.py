@@ -10,13 +10,13 @@ class show_menu:
             data=file.read()
         data=json.loads(data)
         print(Fore.RED+"__________________________________________________________")
-        print("|              🏨 AZURE HAVEN HOTEL MENU 🏨              |")
-        print("__________________________________________________________")
+        print(Fore.RED+"|"+Fore.CYAN+Style.BRIGHT+"              🏨 AZURE HAVEN HOTEL MENU 🏨              "+Fore.RED+"|")
+        print(Fore.RED+"__________________________________________________________")
         
         for key,dishes in data.items():
             key=key.title()
             print(Fore.GREEN+"|\t"+Fore.CYAN+key+(49-len(key))*" "+Fore.GREEN+"|")
-            print("|\t"+Fore.YELLOW+len(key)*"_"+(49-len(key))*" "+Fore.GREEN+"|")
+            print(Fore.GREEN+"|\t"+Fore.YELLOW+len(key)*"_"+(49-len(key))*" "+Fore.GREEN+"|")
             flag=1
             for dish in dishes:
                 item=dish["item"]
@@ -25,18 +25,18 @@ class show_menu:
                     spaces2=" "*(12-len(dish["half plate"]))
                     spaces3=" "*(16-len(dish["full plate"]))+"|"
                     if flag==1:
-                        print("| DISHES",8*" ","HALF PLATE PRICE",2*" ","FULL PLATE PRICE",1*" ","|")
-                    print("|",Fore.YELLOW+item,spaces1,Style.RESET_ALL+dish["half plate"],spaces2,dish["full plate"],Fore.GREEN+spaces3)
+                        print(Fore.GREEN+"|"+Fore.RED+" DISHES",9*" "+Fore.RED+"HALF PLATE PRICE",3*" "+Fore.RED+"FULL PLATE PRICE",1*" ",Fore.GREEN+"|")
+                    print(Fore.GREEN+"|",Fore.YELLOW+item,spaces1,Style.RESET_ALL+dish["half plate"],spaces2,dish["full plate"],Fore.GREEN+spaces3)
                     flag=0
 
                 elif "price" in dish:
                     spaces1=" "*(22-len(item))
                     spaces2=" "*(30-len(dish["price"]))+"|"
                     if flag==1:
-                        print("| DISHES",14*" ","PRICE",26*" ","|")
-                    print("|",Fore.YELLOW+item,spaces1,Style.RESET_ALL+dish["price"],Fore.GREEN+spaces2)
+                        print(Fore.GREEN+"|"+Fore.RED+" DISHES",15*" "+Fore.RED+"PRICE",26*" ",Fore.GREEN+"|")
+                    print(Fore.GREEN+"|",Fore.YELLOW+item,spaces1,Style.RESET_ALL+dish["price"],Fore.GREEN+spaces2)
                     flag=0
-            print("__________________________________________________________"+Style.RESET_ALL)
+            print(Fore.GREEN+"__________________________________________________________"+Style.RESET_ALL)
 
                             
 

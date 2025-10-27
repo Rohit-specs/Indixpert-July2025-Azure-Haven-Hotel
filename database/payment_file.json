@@ -2,7 +2,7 @@
   {
     "order_id": "f21f18",
     "customer_name": "Nitin",
-    "payment_date":"25-10-2025",
+    "payment_date": "25-10-2025",
     "ordered_items": [
       {
         "Mix Veg Curry": "160"
@@ -13,5 +13,41 @@
     "booking duration(min)": 60,
     "no of seats": 6,
     "seats charge total": 300
+  },
+  {
+    "order_id": "121fec",
+    "customer_name": "Harshit",
+    "payment_date": "2025-10-27",
+    "ordered_items": [
+      {
+        "Paneer Tikka": "220"
+      },
+      {
+        "Plain Naan": "25"
+      },
+      {
+        "Cold Coffee": "60"
+      }
+    ],
+    "total_amount": 761.25,
+    "payment_method": "Cash",
+    "booking duration(min)": 30,
+    "no of seats": 6,
+    "seats charge total": 300
+  },
+  {
+    "order_id": "229328",
+    "customer_name": "Rohit",
+    "payment_date": "2025-10-27",
+    "ordered_items": [
+      {
+        "Paneer Butter Masala": "200"
+      }
+    ],
+    "total_amount": 546.0,
+    "payment_method": "UPI",
+    "booking duration(min)": 30,
+    "no of seats": 4,
+    "seats charge total": 200
   }
 ]

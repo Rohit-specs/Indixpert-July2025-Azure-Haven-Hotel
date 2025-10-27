@@ -6,22 +6,22 @@ def report_menu():
     try:
         obj=Report_data()
         while True:
-            print(Fore.RED,Style.BRIGHT,"\n-----------------Report_Menu-----------------")
-            print("1.  Total no. Of Booking")
-            print("2.  Current month no. of booking")
-            print("3.  Total Earning")
-            print("4.  Current Month Earning")
-            print("5.  Average Booking Duration")
-            print("6.  Current Month Average Booking Duration")
-            print("7.  Most Ordered item")
-            print("8.  Current Month Most Ordered item")
-            print("9.  Payment Method Used By Customer")
-            print("10. Payment Method Used In Current Month By Customer")
-            print("11. Back to Admin menu")
+            print(Fore.RED+Style.BRIGHT+"\n-----------------Report_Menu-----------------")
+            print(Fore.CYAN+"1. ","Total no. Of Booking")
+            print(Fore.CYAN+"2. ","Current month no. of booking")
+            print(Fore.CYAN+"3. ","Total Earning")
+            print(Fore.CYAN+"4. ","Current Month Earning")
+            print(Fore.CYAN+"5. ","Average Booking Duration")
+            print(Fore.CYAN+"6. ","Current Month Average Booking Duration")
+            print(Fore.CYAN+"7. ","Most Ordered item")
+            print(Fore.CYAN+"8. ","Current Month Most Ordered item")
+            print(Fore.CYAN+"9. ","Payment Method Used By Customer")
+            print(Fore.CYAN+"10.","Payment Method Used In Current Month By Customer")
+            print(Fore.CYAN+"11.","Back to Admin menu")
             try:
-                choice=int(input("Enter your choice: "))
+                choice=int(input(Fore.YELLOW+"Enter your choice: "))
             except Exception as error:
-                print("Invalid input. Please try again")
+                print(Fore.RED,"Invalid input. Please try again")
                 obj=domain.log(error,__name__)
                 continue
             if choice==1:
@@ -49,7 +49,7 @@ def report_menu():
                 obj.current_month_most_ordered_dish()
             
             elif choice==9:
-                obj.most_ordered_dish()
+                obj.payment_method_used()
 
             elif choice==10:
                 obj.current_month_payment_method_used()
@@ -59,8 +59,8 @@ def report_menu():
                 return
 
             else:
-                print(Fore.YELLOW,choice,"is not a valid option")
+                print(Fore.RED+choice,"is not a valid option")
     except Exception as error:
-        print("Error occurred while loading Report Menu")
+        print(Fore.RED+"Error occurred while loading Report Menu")
         obj=domain.log(error,__name__)
 

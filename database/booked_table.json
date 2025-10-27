@@ -84,5 +84,38 @@
     "customer name": "Nitin",
     "no of seats": 6,
     "booked time in min": 60
+  },
+  {
+    "id": "121fec",
+    "table no": 25,
+    "table booking date": "2025-10-27",
+    "booking start time": "14:0",
+    "booking end time": "14:30",
+    "staff who booked": "Amit",
+    "customer name": "Harshit",
+    "no of seats": 6,
+    "booked time in min": 30
+  },
+  {
+    "id": "229328",
+    "table no": 12,
+    "table booking date": "2025-10-27",
+    "booking start time": "14:10",
+    "booking end time": "14:40",
+    "staff who booked": "Amit",
+    "customer name": "Rohit",
+    "no of seats": 4,
+    "booked time in min": 30
+  },
+  {
+    "id": "f3053b",
+    "table no": 10,
+    "table booking date": "2025-10-28",
+    "booking start time": "14:0",
+    "booking end time": "14:30",
+    "staff who booked": "Amit",
+    "customer name": "Kailash",
+    "no of seats": 4,
+    "booked time in min": 30
   }
 ]

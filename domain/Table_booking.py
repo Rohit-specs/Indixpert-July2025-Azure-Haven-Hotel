@@ -5,6 +5,7 @@ import uuid
 import datetime
 import domain
 from colorama import init,Fore,Back,Style
+init(autoreset=True)
 
 class tablebooking:
     def __init__(self):
@@ -78,15 +79,15 @@ class tablebooking:
             
     def book_table(self,staff_booked_table):
         try:
-            print(Fore.GREEN+"\n-------------TABLE_BOOKING-------------"+Fore.CYAN)
+            print(Fore.GREEN+"\n----------------TABLE_BOOKING----------------")
             
             self.customer_name=validation.valid_name("customer")
             self.booked_table_date=validation.valid_date()
             self.booked_table_starttime=validation.valid_time("starting")
             self.booked_table_endtime=validation.valid_time("end")
             self.staff_booked_table=staff_booked_table
-            
             id=str(uuid.uuid4())[:6]
+            
             time=0
             list_start_time=[]
             list_end_time=[]
@@ -104,6 +105,10 @@ class tablebooking:
             booking_start_time=(list_start_time[0]*60+list_start_time[1])
             booking_end_time=(list_end_time[0]*60+list_end_time[1])
             time=(booking_end_time-booking_start_time)
+            
+            if booking_start_time>booking_end_time:
+                print("Please book table again.\n You have enter wrong time")
+                return
             
             booked_tables=[]
             for booking in self.table_booking_data:
@@ -131,14 +136,20 @@ class tablebooking:
             for i in range(1,51):
                 if i not in booked_tables:
                     avialable_table.append(i)
-            print("Aviliable table on",self.booked_table_date,"from",self.booked_table_starttime,"to",self.booked_table_endtime)
+            print(Fore.BLUE+"\nAviliable table on",self.booked_table_date,"from",self.booked_table_starttime,"to",self.booked_table_endtime)
             if len(avialable_table)>0:
-                print(Fore.CYAN,avialable_table)
+                # print(Fore.CYAN,avialable_table)
+                i=1
+                for table in avialable_table:
+                    print(table,end=" ")
+                    if i%10==0:
+                        print()
+                    i+=1
             else:
                 print(Fore.RED+"No table avialiable at this time.")
                     
             
-            
+            print()
             self.table_no=validation.valid_table()
             
             
@@ -149,7 +160,7 @@ class tablebooking:
                     if 1 <= self.no_of_seats <= 6:
                         break
                     else:
-                        print("Seats must be between 1 and 6")
+                        print(Fore.RED+"Seats must be between 1 and 6")
                 except Exception as error:
                     obj=domain.log(error,__name__)
                     print("Invalid input. Please enter a number.")
@@ -190,7 +201,7 @@ class tablebooking:
                             new_start_minutes = list_new_start_time[0]*60 + list_new_start_time[1]
                             new_end_minutes = list_new_end_time[0]*60 + list_new_end_time[1]
                             if new_start_minutes < old_end_minutes and new_end_minutes > old_start_minutes:
-                                print("This table is already booked For same time you want!")
+                                print(Fore.RED+"This table is already booked For same time you want!")
                                 return
             
             modified_data={
@@ -206,32 +217,32 @@ class tablebooking:
                 }
             self.table_booking_data.append(modified_data)
             self.booking_save()
-            print(Style.RESET_ALL)
+            
             return
         except Exception as error:
             obj=domain.log(error,__name__)
-            print("Error Occurring while booking table")
+            print(Fore.RED+"Error Occurring while booking table")
 
 
     def show_all_booking(self):
         try:
-            print(Fore.GREEN+"\n---------------ALL_BOOKINGS---------------")
+            print(Fore.GREEN+"\n-----------------ALL_BOOKINGS-----------------")
             booking_no=1
             for booking in self.table_booking_data:
-                print(Fore.RED,"\nBooking no=",booking_no,Fore.CYAN)
-                print("ID:",booking.get("id"))
+                print(Fore.RED+"\nBooking no=",booking_no)
+                print(Fore.BLUE+"ID:",booking.get("id"))
                 print("Customer name:",booking.get("customer name"))
                 print("Booked Table: ",booking.get("table no"))
                 print("Table Booking For Date: ",booking.get("table booking date"))
                 print("Start Time: ",booking.get("booking start time"))
                 print("End Time: ",booking.get("booking end time"))
-                print("Seats Booked By:",booking.get("no_of_seats"))
+                print("Seats Booked By:",booking.get("no of seats"))
                 print("Table Booked By: ",booking.get("staff who booked"))  
                 booking_no+=1
-            print(Style.RESET_ALL)
+            
         except Exception as error:
             obj=domain.log(error,__name__)
-            print("Error Occurred While loading Booking data")
+            print(Fore.RED+"Error Occurred While loading Booking data")
     
                         
     def take_order(self):
@@ -263,23 +274,24 @@ class tablebooking:
                                         "prices": food_prices
                                     }
                                     # print(self.menu.key())
-                                    print("ALL Category:-")
+                                    print(Fore.YELLOW+"ALL Category:-")
                                     for key,value in self.menu.items():
-                                        print(Style.RESET_ALL,"\t-",key)#here and in next print 
-                                    print(Fore.CYAN)
+                                        print("\t-",key)#here and in next print 
+                                    print()
                                     category = input("Enter food category: ").lower()
                                     if category not in self.menu:
                                         print("Category not found")
                                         continue
                                     else:
                                         dishes=self.menu.get(category)
-                                        print("\nDishes in "+category)
+                                        print(Fore.YELLOW+"\nDishes in "+category+":-")
                                         for dish in dishes:
                                             item_name=dish.get("item")
                                             # half_price=str(dish.get("half plate"))
                                             # full_price=str(dish.get("full plate"))
-                                            print(Style.RESET_ALL,"\t-",item_name," "*(20-len(item_name)),Fore.CYAN)#some changes
+                                            print("\t-",item_name," "*(20-len(item_name)))#some changes
                                             # print(half_price," "*(8-len(half_price)),full_price)
+                                        print()
                                             
                                     for key, value in self.menu.items():
                                         if category.lower() == key:
@@ -288,8 +300,8 @@ class tablebooking:
                                                 item = input("Enter your dish name: ").title()
                                                 for dish in value:
                                                     if dish["item"] == item:
-                                                        print("1. for full plate")
-                                                        print("2. for half plate")
+                                                        print(Fore.CYAN+"\n1. for full plate")
+                                                        print(Fore.CYAN+"2. for half plate")
                                                         choice = int(input("Enter your choice: "))
                                                         if choice == 1:
                                                             food_items.append({item: "full plate"})
@@ -298,7 +310,7 @@ class tablebooking:
                                                             food_items.append({item: "half plate"})
                                                             food_prices.append({item: dish.get("half plate")})
                                                         else:
-                                                            print("Invalid option!\nPlease try again")
+                                                            print(Fore.RED+"Invalid option!\nPlease try again")
                                                             continue
                                                         option = input("Do you wanna order more (yes/else): ")
                                                         if option.lower() != "yes":
@@ -315,11 +327,11 @@ class tablebooking:
                                                         if option.lower() != "yes":
                                                             self.order_json.append(order_data)
                                                             self.order_save()
-                                                            print(Style.RESET_ALL)
+                                                            
                                                             return
                               
         except Exception as error:
-            print("Error Occurring while taking orders")
+            print(Fore.RED+"Error Occurring while taking orders")
             obj=domain.log(error,__name__)
 
 
@@ -328,8 +340,8 @@ class tablebooking:
             print(Fore.GREEN+"\n-------------ALL_ORDERS-------------")
             order_no=1
             for order in self.order_json:
-                print(Fore.RED+"\nOrder no:",order_no,Fore.CYAN)
-                print("ID     :",order.get("id"))
+                print(Fore.RED+"\nOrder no:",order_no)
+                print(Fore.CYAN+"ID     :",order.get("id"))
                 print("Customer name :",order.get("customer name"))
                 items=order.get("ordered items")
                 print("Ordered Items:")
@@ -337,10 +349,10 @@ class tablebooking:
                     for dish,price in item.items():
                         print("\t",dish," "*(20-(len(dish))),price)
                 order_no+=1
-            print(Style.RESET_ALL)
+            
                 
         except Exception as error:
-            print("Error occurred while loading all orders")
+            print(Fore.RED+"Error occurred while loading all orders")
             obj=domain.log(error,__name__)
 
 
@@ -378,13 +390,13 @@ class tablebooking:
                     sub_total=total+time_charge+seat_total
                     total_bill=sub_total+(gst*2)
 
-                    print(Fore.GREEN+"\n--------------PAYMENT OVERVIEW--------------"+Fore.CYAN)
-                    print("ID                :",id)
-                    print("Customer Name     :",customer_name)
-                    print("Seat Charge(50ea.):",seat_total)
-                    print("Booking duration  :","(",time,"x 4"+")=",time_charge)
-                    print("Booking time Price:",time_charge)
-                    print("\t\tDishes"+" "*15,"Price")
+                    print(Fore.GREEN+"\n--------------PAYMENT OVERVIEW--------------")
+                    print(Fore.CYAN+"ID                :",id)
+                    print(Fore.CYAN+"Customer Name     :",customer_name)
+                    print(Fore.CYAN+"Seat Charge(50ea.):",seat_total)
+                    print(Fore.CYAN+"Booking duration  :","(",time,"x 4"+")=",time_charge)
+                    print(Fore.CYAN+"Booking time Price:",time_charge)
+                    print(Fore.YELLOW+"\t\tDishes"+" "*16+"Price")
                     for item in ordered_items:
                         for key,value in item.items():
                             space=" "*(21-len(key))
@@ -395,12 +407,12 @@ class tablebooking:
                     print("\t\tCGST(2.5%)           : ",gst)
                     print("\t\tCGST(2.5%)           : ",gst)
                     print("\t\tTotal GST            : ",gst+gst)
-                    print("\t\tTotal Bill           : ",round(total_bill),"(~",total_bill,")"+Fore.RED)
+                    print(Fore.GREEN+"\t\tTotal Bill           : ",round(total_bill),"(~",total_bill,")"+Fore.RED)
 
-                    confirm = input("Do you want to proceed with payment? (yes/no): ").lower()
+                    confirm = input(Fore.RED+"Do you want to proceed with payment? (yes/no): ").lower()
 
                     if confirm != "yes":
-                        print("Payment cancelled")
+                        print(Fore.RED+"Payment cancelled")
                         return
                     while True:
                         print(Fore.CYAN+"\nSelect Payment Method")
@@ -429,7 +441,7 @@ class tablebooking:
                     payment_details = {
                         "order_id": id,
                         "customer_name": customer_name,
-                        "payment_date":str(datetime.date.today())#added date in dictionary
+                        "payment_date":str(datetime.date.today()),#added date in dictionary
                         "ordered_items": ordered_items,
                         "total_amount": total_bill,
                         "payment_method": payment_method,
@@ -447,7 +459,7 @@ class tablebooking:
                     print("-------------------------------")
                     return
         except Exception as error:
-            print("Error Occurring while Paying bill")
+            print(Fore.RED+"Error Occurring while Paying bill")
             obj=domain.log(error,__name__)
 
 
@@ -457,14 +469,14 @@ class tablebooking:
                 date=payment.get("payment_date")#new changes
             id=input("Enter Order ID: ")
             print(Fore.RED+"\n\n                 AZURE HAVEN HOTEL")
-            print("                 Family Restaurant")
-            print("        Palaspa Phata,Mumbai Pune Highway")
-            print("             Near ONGC Colony,Panvel"+Fore.YELLOW)
-            print("--------------------INVOICE--------------------")
+            print(Fore.RED+"                 Family Restaurant")
+            print(Fore.RED+"        Palaspa Phata,Mumbai Pune Highway")
+            print(Fore.RED+"             Near ONGC Colony,Panvel")
+            print(Fore.YELLOW+"--------------------INVOICE--------------------")
             print("Payment date:",date)#modified date
-            print("-"*47)
-            print("ITEMS                    Qty    Rate     Amount")
-            print("-"*47)
+            print(Fore.YELLOW+"-"*47)
+            print(Fore.RED+"ITEMS                    Qty    Rate     Amount")
+            print(Fore.YELLOW+"-"*47)
             for data in self.payment_json:
                 if data.get("order_id")==id:
                     items=data.get("ordered_items")
@@ -485,38 +497,45 @@ class tablebooking:
                     time_price=time*4
                     gst=((time_price+dish_total+seat_total)*(2.5/100))
                     sub_total=dish_total+(time_price)
-                    print(" "*26,"--------------------")
-                    print(" "*26,"Seat total:  ",seat_total)
-                    print(" "*26,"Time price:  ",time_price)
-                    print(" "*26,"Dish total:  ",dish_total)
-                    print(" "*26,"Sub Total :  ",sub_total)
-                    print(" "*26,"SGST(2.5%):  ",gst)
-                    print(" "*26,"CGST(2.5%):  ",gst)
-                    print(" "*26,"--------------------")
-                    print(" "*26,"Food Total:  ",(time_price)+dish_total+seat_total+(gst*2))
-                    print("-"*47)
-                    print(Fore.RED+str(datetime.datetime.now().date())," "*13,"TOTAL:"," "*7,round(time_price+dish_total+seat_total+(gst*2)))
+                    print(Fore.YELLOW+" "*27+"--------------------")
+                    print(Fore.CYAN+" "*27+"Seat total:  ",seat_total)
+                    print(Fore.CYAN+" "*27+"Time price:  ",time_price)
+                    print(Fore.CYAN+" "*27+"Dish total:  ",dish_total)
+                    print(Fore.CYAN+" "*27+"Sub Total :  ",sub_total)
+                    print(Fore.CYAN+" "*27+"SGST(2.5%):  ",gst)
+                    print(Fore.CYAN+" "*27+"CGST(2.5%):  ",gst)
+                    print(Fore.YELLOW+" "*27+"--------------------")
+                    print(" "*26,"Food Total:  ",Fore.RED,((time_price)+dish_total+seat_total+(gst*2)))
                     print(Fore.YELLOW+"-"*47)
-                    print(Style.RESET_ALL+"time:",datetime.datetime.now().time(),end="   ")
-                    print("Thank you",end="   ")
-                    print("Visit Again")
+                    print(Fore.RED+str(datetime.datetime.now().date())," "*13,"TOTAL:"," "*7,Fore.RED,round(time_price+dish_total+seat_total+(gst*2)))
+                    print(Fore.YELLOW+"-"*47)
+                    print(Fore.RED+"time:",datetime.datetime.now().time(),end="   ")
+                    print(Fore.RED+"Thank you",end="   ")
+                    print(Fore.RED+"Visit Again")
                     return
                 
         except Exception as error:
-            print("Error occurring while generating invoice")
+            print(Fore.RED+"Error occurring while generating invoice")
             obj=domain.log(error,__name__)
 
 
     def cancel_booking(self):
         try:
-            print(Fore.GREEN+"\n--------------CANCEL BOOKING--------------"+Fore.CYAN)
+            print(Fore.GREEN+"\n--------------CANCEL BOOKING--------------")
             id=input("Enter id: ")
             for booking in self.table_booking_data:
                 if booking.get("id")==id:
+                    if self.payment_json:
+                        for payment in self.payment_json:
+                            if payment.get("order_id")==id:
+                                print("order already completed")
+                                return
+
+
                     for key,value in booking.items():
                         print(key," :",value)
-                        
-                    confirm=input("Enter yes to confirm cancellation: ")
+
+                    confirm=input(Fore.RED+"Enter yes to confirm cancellation: ")
                     if confirm.lower()!="yes":
                         print("Cancellation failed")
                         return
@@ -525,4 +544,4 @@ class tablebooking:
         
         except Exception as error:
             obj=domain.log(error,__name__)
-            print("Error Occurring While Cancelling booking")
+            print(Fore.RED+"Error Occurring While Cancelling booking")

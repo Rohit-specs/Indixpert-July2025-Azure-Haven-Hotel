@@ -2,7 +2,7 @@
   {
     "id": "f21f18",
     "customer name": "Nitin",
-    "date":"25-10-2025",
+    "date": "25-10-2025",
     "ordered items": [
       {
         "Mix Veg Curry": "full plate"
@@ -11,6 +11,48 @@
     "prices": [
       {
         "Mix Veg Curry": "160"
+      }
+    ]
+  },
+  {
+    "id": "121fec",
+    "customer name": "Harshit",
+    "date": "2025-10-27 12:08:39.865257",
+    "ordered items": [
+      {
+        "Paneer Tikka": "full plate"
+      },
+      {
+        "Plain Naan": "full plate"
+      },
+      {
+        "Cold Coffee": "full plate"
+      }
+    ],
+    "prices": [
+      {
+        "Paneer Tikka": "220"
+      },
+      {
+        "Plain Naan": "25"
+      },
+      {
+        "Cold Coffee": "60"
+      }
+    ]
+  },
+  {
+    "id": "229328",
+    "customer name": "Rohit",
+    "date": "2025-10-27 13:18:56.969331",
+    "ordered items": [
+      {
+        "Paneer Butter Masala": "full plate"
+      }
+    ],
+    "prices": [
+      {
+        "Paneer Butter Masala": "200"
       }
     ]
   }

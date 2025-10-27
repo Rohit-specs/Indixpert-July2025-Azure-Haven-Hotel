@@ -1,6 +1,7 @@
-def valid_email():
+def valid_email(option="your"):
     while True:
-        email=input("Please enter your email id: ")
+        print("Please enter",option,"email id: ",end="")
+        email=input()
         if not email.endswith("@gmail.com"):
             print("email must contain @gmail.com at last!")
         elif email[0]==" " or email[-1]==" ":

@@ -36,8 +36,8 @@ class update_staff:
             
     def remove_staff(self):
         print(Fore.GREEN+"\n-------------REMOVING STAFF-------------"+Fore.YELLOW)
-        name=valid_name()
-        email=valid_email()
+        name=valid_name("staff")
+        email=valid_email("staff")
         try:
             while True:
                 self.role=input("Enter you role: ")

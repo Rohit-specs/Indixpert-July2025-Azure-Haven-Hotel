@@ -27,18 +27,18 @@ def menu():
                     admin_flag = 1
                     break
 
-        print(Fore.RED+Style.BRIGHT+"\n-----------------AZURE HEAVEN HOTEL-----------------"+Style.RESET_ALL+Fore.GREEN)
+        print(Fore.RED+Style.BRIGHT+"\n-----------------AZURE HEAVEN HOTEL-----------------")
         if admin_flag == 0:
-            print("1. Signup")
-            print("2. Signin")
-            print("3. Exit")
+            print(Fore.GREEN+"1. Signup")
+            print(Fore.GREEN+"2. Signin")
+            print(Fore.GREEN+"3. Exit")
         else:
-            print("1. Login")
-            print("2. Exit"+Fore.YELLOW)
+            print(Fore.GREEN+"1. Login")
+            print(Fore.GREEN+"2. Exit")
         try:
-            choice = int(input("Enter your choice: "))
+            choice = int(input(Fore.YELLOW+"Enter your choice: "))
         except ValueError as error:
-            print(Fore.BLUE+"Invalid input! Please enter a number")
+            print(Fore.RED+"Invalid input! Please enter a number")
             obj=domain.log(error,__name__)
             continue
         
