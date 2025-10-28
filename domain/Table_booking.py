@@ -314,6 +314,9 @@ class tablebooking:
                                         continue
                                     else:
                                         dishes=self.menu.get(category)
+                                        if not dishes:
+                                            print(Fore.RED+"No dishes available in this category. Choose another category.")
+                                            continue
                                         print(Fore.YELLOW+"\nDishes in "+category+":-")
                                         for dish in dishes:
                                             item_name=dish.get("item")
