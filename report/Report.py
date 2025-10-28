@@ -134,7 +134,7 @@ class Report_data:
             count=Counter(all_order_list)
             most_ordered_dish = count.most_common(1)[0][0]
             most_ordered_dish_count = count.most_common(1)[0][1]
-            print("\nMost ordered dish:",Fore.RED,most_ordered_dish,"(X"+str(most_ordered_dish_count)+")")
+            print("\nMost ordered dish:",Fore.RED,most_ordered_dish,"("+str(most_ordered_dish_count)+")")
         except Exception as error:
             print("Unexpected error:",error)
             obj=log(error,__name__)
@@ -155,7 +155,7 @@ class Report_data:
             count=Counter(current_month_order_list)
             current_month_most_ordered_dish=count.most_common(1)[0][0]
             current_month_most_ordered_dish_count=count.most_common(1)[0][1]
-            print("\nMost ordered dish in current month:",Fore.RED,current_month_most_ordered_dish,"(X"+str(current_month_most_ordered_dish_count)+")")
+            print("\nMost ordered dish in current month:",Fore.RED,current_month_most_ordered_dish,"("+str(current_month_most_ordered_dish_count)+")")
         except Exception as error:
             print("Unexpected error:",error)
             obj=log(error,__name__)
