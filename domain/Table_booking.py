@@ -242,7 +242,7 @@ class tablebooking:
                 return
         
         except Exception as error:
-            obj=domain.log(error,__name__)
+            log_obj=domain.log(error,__name__)
             print(Fore.RED+"Error Occurring while booking table")
 
 
@@ -263,7 +263,7 @@ class tablebooking:
                 booking_no+=1
             
         except Exception as error:
-            obj=domain.log(error,__name__)
+            log_obj=domain.log(error,__name__)
             print(Fore.RED+"Error Occurred While loading Booking data")
     
                         
@@ -275,15 +275,22 @@ class tablebooking:
                 return
             else:
                 id=input("Enter ID: ")
+                
                 for data in self.table_booking_data:
                     if data.get("id")==id:
 
                         for customer in self.table_booking_data:
                             if customer.get("id")==id:
-                                date=customer.get("table booking date")#new lines
-                                if date!=str(datetime.date.today()):#new lines
-                                    print("Not booked for today\n")#new lines
-                                    return#new lines
+                                date=customer.get("table booking date")
+                                if date!=str(datetime.date.today()):
+                                    print("Not booked for today\n")
+                                    return
+
+                                existing_order=None
+                                for order in self.order_json:
+                                    if order.get("id")==id:
+                                        existing_order=order
+                                        break
                             
                                 food_items=[]
                                 food_prices=[]
@@ -291,7 +298,7 @@ class tablebooking:
                                     order_data={
                                         "id": customer.get("id"),
                                         "customer name": customer.get("customer name"),
-                                        "date":str(datetime.datetime.now()),#here are some changes
+                                        "date":str(datetime.datetime.now()),
                                         "ordered items": food_items,
                                         "prices": food_prices
                                     }
@@ -300,6 +307,7 @@ class tablebooking:
                                     for key,value in self.menu.items():
                                         print("\t-",key)
                                     print()
+
                                     category=input("Enter food category: ").lower()
                                     if category not in self.menu:
                                         print("Category not found")
@@ -309,7 +317,6 @@ class tablebooking:
                                         print(Fore.YELLOW+"\nDishes in "+category+":-")
                                         for dish in dishes:
                                             item_name=dish.get("item")
-                                            
                                             print("\t-",item_name," "*(20-len(item_name)))
                                         print()
                                             
@@ -334,7 +341,14 @@ class tablebooking:
                                                             continue
                                                         option=input("Do you wanna order more (yes/else): ")
                                                         if option.lower() !="yes":
-                                                            self.order_json.append(order_data)
+                                                            if existing_order:
+                                                                for item_data in food_items:
+                                                                    existing_order["ordered items"].append(item_data)
+                                                                for price_data in food_prices:
+                                                                    existing_order["prices"].append(price_data)
+                                                            else:
+                                                                self.order_json.append(order_data)
+                                                                
                                                             self.order_save()
                                                             return
                                             else:
@@ -345,14 +359,20 @@ class tablebooking:
                                                         food_prices.append({item: dish.get("price")})
                                                         option=input("Do you wanna order more (yes/else): ")
                                                         if option.lower() !="yes":
-                                                            self.order_json.append(order_data)
+                                                            if existing_order:
+                                                                for item_data in food_items:
+                                                                    existing_order["ordered items"].append(item_data)
+                                                                for price_data in food_prices:
+                                                                    existing_order["prices"].append(price_data)
+                                                            else:
+                                                                self.order_json.append(order_data)
                                                             self.order_save()
                                                             
                                                             return
                               
         except Exception as error:
             print(Fore.RED+"Error Occurring while taking orders")
-            obj=domain.log(error,__name__)
+            log_obj=domain.log(error,__name__)
 
 
     def show_all_orders(self):
@@ -373,7 +393,7 @@ class tablebooking:
                 
         except Exception as error:
             print(Fore.RED+"Error occurred while loading all orders")
-            obj=domain.log(error,__name__)
+            log_obj=domain.log(error,__name__)
 
 
                     
@@ -443,7 +463,7 @@ class tablebooking:
                             method_choice=int(input("Enter your choice : "))
                         except Exception as error:
                             print(method_choice,"is invalid")
-                            obj=domain.log(error,__name__)
+                            log_obj=domain.log(error,__name__)
                             continue
                         if method_choice==1:
                             payment_method="Cash"
@@ -480,7 +500,7 @@ class tablebooking:
                     return
         except Exception as error:
             print(Fore.RED+"Error Occurring while Paying bill")
-            obj=domain.log(error,__name__)
+            log_obj=domain.log(error,__name__)
 
 
     def get_invoice(self):
@@ -536,7 +556,7 @@ class tablebooking:
                 
         except Exception as error:
             print(Fore.RED+"Error occurring while generating invoice")
-            obj=domain.log(error,__name__)
+            log_obj=domain.log(error,__name__)
 
 
     def cancel_booking(self):
@@ -563,5 +583,5 @@ class tablebooking:
                     self.booking_save()
         
         except Exception as error:
-            obj=domain.log(error,__name__)
+            log_obj=domain.log(error,__name__)
             print(Fore.RED+"Error Occurring While Cancelling booking")
