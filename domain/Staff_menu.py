@@ -4,7 +4,7 @@ import domain
 
 def staff_menu(name):
     while True:
-        print(Fore.RED+Style.BRIGHT+"\n-------------------STAFF_MENU-------------------")
+        print(Fore.RED+"\n-------------------STAFF_MENU-------------------")
         print(Fore.CYAN+"1.","Show Menu")
         print(Fore.CYAN+"2.","Book Table")
         print(Fore.CYAN+"3.","See All Booking")
