@@ -25,7 +25,7 @@ def admin_menu():
             choice=int(input(Fore.YELLOW+"Enter Your Choice: "))
         except Exception as error:
             print(error)
-            obj=domain.log(error,__name__)
+            log_obj=domain.log(error,__name__)
             continue
 
         try:
@@ -46,7 +46,6 @@ def admin_menu():
             elif choice==8:
                 update_staff_obj.remove_staff()
             elif choice==9:
-                # domain.staff_data()
                 update_staff_obj.staff_details()
             elif choice==10:
                 domain.report_menu()
@@ -57,5 +56,5 @@ def admin_menu():
                 print(Fore.RED,choice,"is not a valid option")
         except Exception as error:
             print(error)
-            ob=domain.log(error,__name__)
+            log_obj=domain.log(error,__name__)
             continue
