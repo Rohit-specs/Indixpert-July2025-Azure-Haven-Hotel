@@ -6,7 +6,7 @@ def report_menu():
     try:
         obj=Report_data()
         while True:
-            print(Fore.RED+Style.BRIGHT+"\n-----------------Report_Menu-----------------")
+            print(Fore.RED+"\n-----------------Report_Menu-----------------")
             print(Fore.CYAN+"1. ","Total no. Of Booking")
             print(Fore.CYAN+"2. ","Current month no. of booking")
             print(Fore.CYAN+"3. ","Total Earning")

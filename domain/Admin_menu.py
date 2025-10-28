@@ -8,7 +8,7 @@ def admin_menu():
     obj1=domain.update_menu(path)
     obj2=domain.update_staff(path1)
     while True:
-        print(Fore.RED+Style.BRIGHT+"\n-------------------ADMIN_MENU-------------------")
+        print(Fore.RED+"\n-------------------ADMIN_MENU-------------------")
         print(Fore.CYAN+"1. ","Menu")
         print(Fore.CYAN+"2. ","Delete Dish")
         print(Fore.CYAN+"3. ","Add Dish")
@@ -46,7 +46,8 @@ def admin_menu():
             elif choice==8:
                 obj2.remove_staff()
             elif choice==9:
-                domain.staff_data()
+                # domain.staff_data()
+                obj2.staff_data()
             elif choice==10:
                 domain.report_menu()
             elif choice==11:

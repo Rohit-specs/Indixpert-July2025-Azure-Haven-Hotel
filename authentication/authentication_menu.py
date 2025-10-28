@@ -27,7 +27,7 @@ def menu():
                     admin_flag = 1
                     break
 
-        print(Fore.RED+Style.BRIGHT+"\n-----------------AZURE HEAVEN HOTEL-----------------")
+        print(Fore.RED+"\n-----------------AZURE HEAVEN HOTEL-----------------")
         if admin_flag == 0:
             print(Fore.GREEN+"1. Signup")
             print(Fore.GREEN+"2. Signin")
