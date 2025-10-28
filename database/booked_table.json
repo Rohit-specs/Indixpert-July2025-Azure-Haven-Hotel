@@ -53,61 +53,6 @@
     "booked time in min": 60
   },
   {
-    "id": "4c8f30",
-    "table no": 50,
-    "table booking date": "2025-10-23",
-    "booking start time": "20:0",
-    "booking end time": "20:40",
-    "staff who booked": "Amit",
-    "customer name": "Harsh",
-    "no of seats": 6,
-    "booked time in min": 40
-  },
-  {
-    "id": "6a25b4",
-    "table no": 50,
-    "table booking date": "2025-10-24",
-    "booking start time": "15:20",
-    "booking end time": "15:50",
-    "staff who booked": "Amit",
-    "customer name": "Krishna",
-    "no of seats": 6,
-    "booked time in min": 30
-  },
-  {
-    "id": "f21f18",
-    "table no": 34,
-    "table booking date": "2025-10-24",
-    "booking start time": "20:0",
-    "booking end time": "21:0",
-    "staff who booked": "Amit",
-    "customer name": "Nitin",
-    "no of seats": 6,
-    "booked time in min": 60
-  },
-  {
-    "id": "121fec",
-    "table no": 25,
-    "table booking date": "2025-10-27",
-    "booking start time": "14:0",
-    "booking end time": "14:30",
-    "staff who booked": "Amit",
-    "customer name": "Harshit",
-    "no of seats": 6,
-    "booked time in min": 30
-  },
-  {
-    "id": "229328",
-    "table no": 12,
-    "table booking date": "2025-10-27",
-    "booking start time": "14:10",
-    "booking end time": "14:40",
-    "staff who booked": "Amit",
-    "customer name": "Rohit",
-    "no of seats": 4,
-    "booked time in min": 30
-  },
-  {
     "id": "f3053b",
     "table no": 10,
     "table booking date": "2025-10-28",
@@ -117,5 +62,27 @@
     "customer name": "Kailash",
     "no of seats": 4,
     "booked time in min": 30
+  },
+  {
+    "id": "a02b07",
+    "table no": 50,
+    "table booking date": "2025-10-28",
+    "booking start time": "17:30",
+    "booking end time": "18:10",
+    "staff who booked": "Amit",
+    "customer name": "Nikhil",
+    "no of seats": 5,
+    "booked time in min": 40
+  },
+  {
+    "id": "a96d06",
+    "table no": 50,
+    "table booking date": "2025-10-28",
+    "booking start time": "16:10",
+    "booking end time": "18:30",
+    "staff who booked": "Amit",
+    "customer name": "Gaurav",
+    "no of seats": 1,
+    "booked time in min": 140
   }
 ]

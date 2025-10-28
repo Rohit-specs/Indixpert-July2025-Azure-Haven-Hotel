@@ -7942,3 +7942,15 @@ Log Time: 2025-10-27 13:20:22  | Error Type: can only concatenate str (not "floa
 Log Time: 2025-10-27 13:21:59  | Error Type: can only concatenate str (not "int") to str  | Module Name: domain.Table_booking
 Log Time: 2025-10-27 13:53:30  | Error Type: string indices must be integers, not 'str'  | Module Name: domain.Update_menu
 Log Time: 2025-10-27 14:42:26  | Error Type: invalid literal for int() with base 10: 'python -u "c:\\Users\\lenovo\\Desktop\\Python Project\\Indixpert-July2025-Azure-Haven-Hotel\\main.py"'  | Module Name: domain.Admin_menu
+Log Time: 2025-10-28 12:16:05  | Error Type: cannot access local variable 'old_start_parts' where it is not associated with a value  | Module Name: domain.Table_booking
+Log Time: 2025-10-28 12:19:08  | Error Type: cannot access local variable 'old_start_parts' where it is not associated with a value  | Module Name: domain.Table_booking
+Log Time: 2025-10-28 12:23:07  | Error Type: invalid literal for int() with base 10: ''  | Module Name: validation.Valid_date
+Log Time: 2025-10-28 12:23:19  | Error Type: cannot access local variable 'old_start_parts' where it is not associated with a value  | Module Name: domain.Table_booking
+Log Time: 2025-10-28 13:08:47  | Error Type: invalid literal for int() with base 10: 'python -u "c:\\Users\\lenovo\\Desktop\\Python Project\\Indixpert-July2025-Azure-Haven-Hotel\\main.py"'  | Module Name: validation.Valid_table
+Log Time: 2025-10-28 13:09:07  | Error Type: 'list' object is not callable  | Module Name: domain.Admin_menu
+Log Time: 2025-10-28 13:11:31  | Error Type: invalid literal for int() with base 10: 'python -u "c:\\Users\\lenovo\\Desktop\\Python Project\\Indixpert-July2025-Azure-Haven-Hotel\\main.py"'  | Module Name: domain.Admin_menu
+Log Time: 2025-10-28 13:12:03  | Error Type: 'list' object is not callable  | Module Name: domain.Admin_menu
+Log Time: 2025-10-28 13:15:03  | Error Type: invalid literal for int() with base 10: 'python -u "c:\\Users\\lenovo\\Desktop\\Python Project\\Indixpert-July2025-Azure-Haven-Hotel\\main.py"'  | Module Name: domain.Admin_menu
+Log Time: 2025-10-28 14:20:48  | Error Type: invalid literal for int() with base 10: 'python -u "c:\\Users\\lenovo\\Desktop\\Python Project\\Indixpert-July2025-Azure-Haven-Hotel\\main.py"'  | Module Name: domain.Report_menu
+Log Time: 2025-10-28 15:55:11  | Error Type: invalid literal for int() with base 10: 'python -u "c:\\Users\\lenovo\\Desktop\\Python Project\\Indixpert-July2025-Azure-Haven-Hotel\\main.py"'  | Module Name: validation.Valid_table
+Log Time: 2025-10-28 16:09:39  | Error Type: invalid literal for int() with base 10: ''  | Module Name: domain.Staff_menu

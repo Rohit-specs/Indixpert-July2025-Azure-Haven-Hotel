@@ -49,5 +49,20 @@
     "booking duration(min)": 30,
     "no of seats": 4,
     "seats charge total": 200
+  },
+  {
+    "order_id": "9e2804",
+    "customer_name": "Rahul",
+    "payment_date": "2025-10-28",
+    "ordered_items": [
+      {
+        "Paneer Tikka": "220"
+      }
+    ],
+    "total_amount": 1543.5,
+    "payment_method": "UPI",
+    "booking duration(min)": 300,
+    "no of seats": 1,
+    "seats charge total": 50
   }
 ]

@@ -55,5 +55,35 @@
         "Paneer Butter Masala": "200"
       }
     ]
+  },
+  {
+    "id": "9e2804",
+    "customer name": "Rahul",
+    "date": "2025-10-28 12:56:53.877141",
+    "ordered items": [
+      {
+        "Paneer Tikka": "full plate"
+      }
+    ],
+    "prices": [
+      {
+        "Paneer Tikka": "220"
+      }
+    ]
+  },
+  {
+    "id": "9e2804",
+    "customer name": "Rahul",
+    "date": "2025-10-28 12:58:12.950818",
+    "ordered items": [
+      {
+        "Butter Naan": "full plate"
+      }
+    ],
+    "prices": [
+      {
+        "Butter Naan": "30"
+      }
+    ]
   }
 ]

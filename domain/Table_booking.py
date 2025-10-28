@@ -10,7 +10,7 @@ init(autoreset=True)
 class tablebooking:
     def __init__(self):
         
-        self.booked_table_file = os.path.join('database','booked_table.json')
+        self.booked_table_file=os.path.join('database','booked_table.json')
         self.menu_json=os.path.join("database","menu.json")
         self.order_json_file=os.path.join("database","customer_orders.json")
         self.payment_json_file=os.path.join("database","payment_file.json")
@@ -80,209 +80,167 @@ class tablebooking:
     def book_table(self,staff_booked_table):
         try:
             print(Fore.GREEN+"\n----------------TABLE_BOOKING----------------")
-            
             self.customer_name=validation.valid_name("customer")
-            self.booked_table_date=validation.valid_date()
-            self.booked_table_starttime=validation.valid_time("starting")
-            self.booked_table_endtime=validation.valid_time("end")
-            self.staff_booked_table=staff_booked_table
-            id=str(uuid.uuid4())[:6]
-            
-            time=0
-            list_start_time=[]
-            list_end_time=[]
-            order_start=self.booked_table_starttime
-            order_start=order_start.split(":")
-            order_end=self.booked_table_endtime
-            order_end=order_end.split(":")
-            for i in order_start:
-                data=int(i)
-                list_start_time.append(data)
-            for i in order_end:
-                data=int(i)
-                list_end_time.append(data)
-                
-            booking_start_time=(list_start_time[0]*60+list_start_time[1])
-            booking_end_time=(list_end_time[0]*60+list_end_time[1])
-            time=(booking_end_time-booking_start_time)
-            
-            if booking_start_time>=booking_end_time:
-                print(Fore.RED+"Please book table again.\nEnd time must be after start time")
-                return
-            
+            print()
+            while True:
+                self.booked_table_date=validation.valid_date()
+                print()
+                self.booked_table_starttime=validation.valid_time("starting")
+                self.booked_table_endtime=validation.valid_time("end")
+                self.staff_booked_table=staff_booked_table
 
-            # booked_tables=[]
-            # for booking in self.table_booking_data:
-                
-            #     if booking.get("table booking date")==self.booked_table_date:
-            #         old_start=booking.get("booking start time")
-            #         old_end=booking.get("booking end time")
-                    
-            #         old_start_parts = old_start.split(":")
-            #         old_end_parts = old_end.split(":")
+                id=str(uuid.uuid4())[:6]    
+                time=0
 
-            #         old_start_hour = int(old_start_parts[0])
-            #         old_start_minute = int(old_start_parts[1])
-            #         old_end_hour = int(old_end_parts[0])
-            #         old_end_minute = int(old_end_parts[1])
+                list_start_time=[]
+                list_end_time=[]
+                order_start=self.booked_table_starttime
+                order_start=order_start.split(":")
+                order_end=self.booked_table_endtime
+                order_end=order_end.split(":")
+                for i in order_start:
+                    data=int(i)
+                    list_start_time.append(data)
+                for i in order_end:
+                    data=int(i)
+                    list_end_time.append(data)
 
-            #         old_start_minutes = (old_start_hour * 60) + old_start_minute
-            #         old_end_minutes = (old_end_hour * 60) + old_end_minute
-            #         if booking_start_time < old_end_minutes and booking_end_time > old_start_minutes:
-            #             booked_tables.append(booking.get("table no"))
-                        
-                        
-                        
-            # avialable_table=[]
-            # for i in range(1,51):
-            #     if i not in booked_tables:
-            #         avialable_table.append(i)
+                booking_start_time=(list_start_time[0]*60+list_start_time[1])
+                booking_end_time=(list_end_time[0]*60+list_end_time[1])
+                time=(booking_end_time-booking_start_time)
 
-            total_capacity=6
-            print(Fore.BLUE+"\nAviliable table on",self.booked_table_date,"from",self.booked_table_starttime,"to",self.booked_table_endtime)
-            # if len(avialable_table)>0:
-            #     # print(Fore.CYAN,avialable_table)
-            #     i=1
-            #     for table in avialable_table:
-            #         print(table,end=" ")
-            #         if i%10==0:
-            #             print()
-            #         i+=1
-            # else:
-            #     print(Fore.RED+"No table avialiable at this time")
-            table_no=1
-            while table_no<=50:
+                if booking_start_time>=booking_end_time:
+                    print(Fore.RED+"Please book table again.\nEnd time must be after start time")
+                    return
+
+
+
+                total_capacity=6
+                print(Fore.BLUE+"\nAviliable table on",self.booked_table_date,"from",self.booked_table_starttime,"to",self.booked_table_endtime)
+                print()
+
+                table_no=1
+                while table_no<=50:
+                    space=3
+                    remaining_seats=total_capacity
+
+                    for booking in self.table_booking_data:
+                        if booking.get("table no")==table_no and booking.get("table booking date")==self.booked_table_date:
+                            old_start_parts=booking.get("booking start time")
+                            old_end_parts=booking.get("booking end time")
+                            old_start_parts=old_start_parts.split(":")
+                            old_end_parts=old_end_parts.split(":")
+                            old_start_min=int(old_start_parts[0])*60+int(old_start_parts[1])
+                            old_end_min=int(old_end_parts[0])*60+int(old_end_parts[1])
+                            if booking_start_time<old_end_min and old_start_min<booking_end_time:
+                                remaining_seats-=booking.get("no of seats",0)
+                    if (table_no-1)%10==0:
+                        print()
+                    if (table_no-1)<10:
+                        space=4
+                    if remaining_seats>0:
+                        print("Table "+Fore.GREEN+str(table_no)+": "+str(remaining_seats),end=" "*space)
+                    else:
+                        print("Table "+Fore.RED+Fore.RED+str(table_no)+": FULL")
+                    table_no+=1           
+
+                print()
+                print(Fore.BLUE+Style.DIM+"\nIf the time is not sutiable you can:-")
+                print("1. Write date and time again")
+                print("2. Continue")
+                print("3. Back to Staff menu")
+                while True:
+                    try:
+                        choice=int(input("Enter your choice: "))
+                        if choice==1:
+                            flag=1
+                            break
+                        elif choice==2:
+                            break
+                        elif choice==3:
+                            return
+                        else:
+                            print("Invalid number")
+                    except Exception as error:
+                        log_object=domain.log(error,__name__)
+                        print("Invalid input,Please try again")
+                if flag==1:
+                    print()
+                    continue
+
+                print()
+                self.table_no=validation.valid_table()
+
                 remaining_seats=total_capacity
 
                 for booking in self.table_booking_data:
-                    if booking.get("table no")==table_no and booking.get("table booking date")==self.booked_table_date:
+                    if booking.get("table no")==self.table_no and booking.get("table booking date")==self.booked_table_date:
                         old_start=booking.get("booking start time")
-                        old_start=booking.get("booking end time")
-                        old_start_parts=old_start_parts.split(":")
-                        old_end_parts=old_end_parts.split(":")
+                        old_end=booking.get("booking end time")
+
+                        old_start_parts=old_start.split(":")
+                        old_end_parts=old_end.split(":")
+
                         old_start_min=int(old_start_parts[0])*60+int(old_start_parts[1])
                         old_end_min=int(old_end_parts[0])*60+int(old_end_parts[1])
-                        if booking_start_time<old_end_min and old_start_min<booking_end_time:
-                            remaining_seats-=booking.get("no of seats",0)
-                if remaining_seats>0:
-                    print("Table "+Fore.GREEN+str(table_no)+": "+str(remaining_seats))
+
+                        if booking_start_time< old_end_min and booking_end_time >old_start_min:
+                            remaining_seats -=booking.get("no of seats", 0)
+
+                if remaining_seats<=0:
+                    print(Fore.RED+"Sorry, this table is already full for that time")
+                    return
                 else:
-                    print("Table "Fore.RED+Fore.RED+str(table_no)+": FULL")
-                table_no+=1           
-            
-            print()
+                    print(Fore.GREEN+"Table "+str(self.table_no)+" has "+str(remaining_seats)+" seats available")
+                
+                while True:
+                    try:
+                        self.no_of_seats=int(input("Enter number of seats to book (max 6): "))
+                        if 1<=self.no_of_seats<=remaining_seats:
+                            break
+                        else:
+                            print(Fore.RED+"Only "+str(remaining_seats)+" seats available Please enter a valid number")
+                    except Exception as error:
+                        obj=domain.log(error, __name__)
+                        print("Invalid input. Please enter a number")
 
-            #Here i have to write a back option code It is also reminder for using while loop
-            
-            self.table_no=validation.valid_table()
 
-            remaining_seats = total_capacity
+                booked_seats=0
+                for booking in self.table_booking_data:
+                    if (booking.get("table no")==self.table_no and 
+                        booking.get("table booking date")==self.booked_table_date):
 
-            for booking in self.table_booking_data:
-                if booking.get("table no") == self.table_no and booking.get("table booking date") == self.booked_table_date:
-                    old_start = booking.get("booking start time")
-                    old_end = booking.get("booking end time")
+                        old_start=booking.get("booking start time")
+                        old_end=booking.get("booking end time")
+                        old_start_parts=old_start.split(":")
+                        old_end_parts=old_end.split(":")
 
-                    old_start_parts = old_start.split(":")
-                    old_end_parts = old_end.split(":")
+                        old_start_min=int(old_start_parts[0])*60+int(old_start_parts[1])
+                        old_end_min=int(old_end_parts[0])*60+int(old_end_parts[1])
 
-                    old_start_min = int(old_start_parts[0]) * 60 + int(old_start_parts[1])
-                    old_end_min = int(old_end_parts[0]) * 60 + int(old_end_parts[1])
+                        if booking_start_time< old_end_min and booking_end_time >old_start_min:
+                            booked_seats+=int(booking.get("no of seats", 0))
 
-                    if booking_start_time < old_end_min and booking_end_time > old_start_min:
-                        remaining_seats -= booking.get("no of seats", 0)
 
-            if remaining_seats <= 0:
-                print(Fore.RED +"Sorry, this table is already full for that time")
+                if remaining_seats<=0:
+                    print(Fore.RED+"Sorry, Table "+str(self.table_no)+" is fully booked for that time")
+                    return
+
+                modified_data={
+                    "id":id,
+                    "table no":self.table_no,
+                    "table booking date":self.booked_table_date,
+                    "booking start time":self.booked_table_starttime,
+                    "booking end time":self.booked_table_endtime,
+                    "staff who booked":self.staff_booked_table,
+                    "customer name":self.customer_name,
+                    "no of seats":self.no_of_seats,
+                    "booked time in min":time
+                    }
+                self.table_booking_data.append(modified_data)
+                self.booking_save()
                 return
-            else:
-                print(Fore.GREEN +"Table "+str(self.table_no)+" has "+str(remaining_seats)+" seats available")
-
-            
-            while True:
-                try:
-                    self.no_of_seats = int(input("Enter number of seats to book (max 6): "))
-                    if 1 <= self.no_of_seats <= remaining_seats:
-                        break
-                    else:
-                        print(Fore.RED + "Only "+str(remaining_seats)+" seats available Please enter a valid number")
-                except Exception as error:
-                    obj = domain.log(error, __name__)
-                    print("Invalid input. Please enter a number")
-
-
-            remaining_seats=total_capacity
-            for booking in self.table_booking_data:
-                if (booking.get("table no") == self.table_no
-                and booking.get("table booking date") == self.booked_table_date):
-
-                old_start = booking.get("booking start time")
-                old_end = booking.get("booking end time")
-
-                old_start_parts = old_start.split(":")
-                old_end_parts = old_end.split(":")
-                old_start_min = int(old_start_parts[0])*60+int(old_start_parts[1])
-                old_end_min = int(old_end_parts[0])*60+int(old_end_parts[1])
-
-                if booking_start_time < old_end_min and booking_end_time > old_start_min:
-                    remaining_seats -= booking.get("no of seats", 0)
-
-            if remaining_seats <= 0:
-                print(Fore.RED + "Sorry, Table "+str(self.table_no)+" is fully booked for that time")
-                return
-            
-            # for booking in self.table_booking_data:
-               
-            #     if booking.get("table no")==self.table_no:
-            #             if booking.get("table booking date")==self.booked_table_date:
-            #                 list_old_start_time=[]
-            #                 list_old_end_time=[]
-            #                 list_new_start_time=[]
-            #                 list_new_end_time=[]
-            #                 old_order_start=booking.get("booking start time")
-            #                 old_order_start=old_order_start.split(":")
-            #                 old_order_end=booking.get("booking end time")
-            #                 old_order_end=old_order_end.split(":")
-            #                 new_order_start=self.booked_table_starttime
-            #                 new_order_start=new_order_start.split(":")
-            #                 new_order_end=self.booked_table_endtime
-            #                 new_order_end=new_order_end.split(":")
-            #                 for i in old_order_start:
-            #                     data=int(i)
-            #                     list_old_start_time.append(data)
-            #                 for i in old_order_end:
-            #                     data=int(i)
-            #                     list_old_end_time.append(data)
-            #                 for i in new_order_start:
-            #                     data=int(i)
-            #                     list_new_start_time.append(data)
-            #                 for i in new_order_end:
-            #                     data=int(i)
-            #                     list_new_end_time.append(data)
-
-            #                 old_start_minutes = list_old_start_time[0]*60 + list_old_start_time[1]
-            #                 old_end_minutes = list_old_end_time[0]*60+ list_old_end_time[1]
-            #                 new_start_minutes = list_new_start_time[0]*60 + list_new_start_time[1]
-            #                 new_end_minutes = list_new_end_time[0]*60 + list_new_end_time[1]
-            #                 if new_start_minutes < old_end_minutes and new_end_minutes > old_start_minutes:
-            #                     print(Fore.RED+"This table is already booked For same time you want!")
-            #                     return
-            
-            modified_data={
-                "id":id,
-                "table no":self.table_no,
-                "table booking date":self.booked_table_date,
-                "booking start time":self.booked_table_starttime,
-                "booking end time":self.booked_table_endtime,
-                "staff who booked":self.staff_booked_table,
-                "customer name":self.customer_name,
-                "no of seats":self.no_of_seats,
-                "booked time in min":time
-                }
-            self.table_booking_data.append(modified_data)
-            self.booking_save()
-            
-            return
+        
         except Exception as error:
             obj=domain.log(error,__name__)
             print(Fore.RED+"Error Occurring while booking table")
@@ -312,7 +270,7 @@ class tablebooking:
     def take_order(self):
         try:
             print(Fore.GREEN+"\n---------------ORDER_FOOD---------------"+Fore.CYAN)
-            if self.table_booking_data == []:
+            if self.table_booking_data==[]:
                 print("There are no bookings left")
                 return
             else:
@@ -327,22 +285,22 @@ class tablebooking:
                                     print("Not booked for today\n")#new lines
                                     return#new lines
                             
-                                food_items = []
-                                food_prices = []
+                                food_items=[]
+                                food_prices=[]
                                 while True:
-                                    order_data = {
+                                    order_data={
                                         "id": customer.get("id"),
                                         "customer name": customer.get("customer name"),
                                         "date":str(datetime.datetime.now()),#here are some changes
                                         "ordered items": food_items,
                                         "prices": food_prices
                                     }
-                                    # print(self.menu.key())
+                                    
                                     print(Fore.YELLOW+"ALL Category:-")
                                     for key,value in self.menu.items():
-                                        print("\t-",key)#here and in next print 
+                                        print("\t-",key)
                                     print()
-                                    category = input("Enter food category: ").lower()
+                                    category=input("Enter food category: ").lower()
                                     if category not in self.menu:
                                         print("Category not found")
                                         continue
@@ -351,44 +309,42 @@ class tablebooking:
                                         print(Fore.YELLOW+"\nDishes in "+category+":-")
                                         for dish in dishes:
                                             item_name=dish.get("item")
-                                            # half_price=str(dish.get("half plate"))
-                                            # full_price=str(dish.get("full plate"))
-                                            print("\t-",item_name," "*(20-len(item_name)))#some changes
-                                            # print(half_price," "*(8-len(half_price)),full_price)
+                                            
+                                            print("\t-",item_name," "*(20-len(item_name)))
                                         print()
                                             
                                     for key, value in self.menu.items():
-                                        if category.lower() == key:
-                                            sample = value[0]
+                                        if category.lower()==key:
+                                            sample=value[0]
                                             if "half plate" in sample and "full plate" in sample:
-                                                item = input("Enter your dish name: ").title()
+                                                item=input("Enter your dish name: ").title()
                                                 for dish in value:
-                                                    if dish["item"] == item:
+                                                    if dish["item"]==item:
                                                         print(Fore.CYAN+"\n1. for full plate")
                                                         print(Fore.CYAN+"2. for half plate")
-                                                        choice = int(input("Enter your choice: "))
-                                                        if choice == 1:
+                                                        choice=int(input("Enter your choice: "))
+                                                        if choice==1:
                                                             food_items.append({item: "full plate"})
                                                             food_prices.append({item: dish.get("full plate")})
-                                                        elif choice == 2:
+                                                        elif choice==2:
                                                             food_items.append({item: "half plate"})
                                                             food_prices.append({item: dish.get("half plate")})
                                                         else:
                                                             print(Fore.RED+"Invalid option!\nPlease try again")
                                                             continue
-                                                        option = input("Do you wanna order more (yes/else): ")
-                                                        if option.lower() != "yes":
+                                                        option=input("Do you wanna order more (yes/else): ")
+                                                        if option.lower() !="yes":
                                                             self.order_json.append(order_data)
                                                             self.order_save()
                                                             return
                                             else:
-                                                item = input("Enter your dish name: ").title()
+                                                item=input("Enter your dish name: ").title()
                                                 for dish in value:
-                                                    if dish.get("item") == item:
+                                                    if dish.get("item")==item:
                                                         food_items.append({item: "full plate"})
                                                         food_prices.append({item: dish.get("price")})
-                                                        option = input("Do you wanna order more (yes/else): ")
-                                                        if option.lower() != "yes":
+                                                        option=input("Do you wanna order more (yes/else): ")
+                                                        if option.lower() !="yes":
                                                             self.order_json.append(order_data)
                                                             self.order_save()
                                                             
@@ -424,17 +380,17 @@ class tablebooking:
     def payment(self):
         try:
             print(Fore.GREEN+"\n---------------PAYMENT---------------"+Fore.CYAN)
-            id = input("Enter order id: ")
-            for payment in self.payment_json:#new lines
-                old_id=payment.get("order_id")#new lines
-                if id==old_id:#new lines
-                    print("You have already paid for meal")#new lines
-                    return#new lines
+            id=input("Enter order id: ")
+            for payment in self.payment_json:
+                old_id=payment.get("order_id")
+                if id==old_id:
+                    print("You have already paid for meal")
+                    return
             for data in self.order_json:
-                if data.get("id") == id:
-                    customer_name = data.get("customer name")
-                    ordered_items = data.get("prices")
-                    total = 0
+                if data.get("id")==id:
+                    customer_name=data.get("customer name")
+                    ordered_items=data.get("prices")
+                    total=0
                     time=0
                     no_of_seats=0
 
@@ -473,9 +429,9 @@ class tablebooking:
                     print("\t\tTotal GST            : ",gst+gst)
                     print(Fore.GREEN+"\t\tTotal Bill           : ",round(total_bill),"(~",total_bill,")"+Fore.RED)
 
-                    confirm = input(Fore.RED+"Do you want to proceed with payment? (yes/no): ").lower()
+                    confirm=input(Fore.RED+"Do you want to proceed with payment? (yes/no): ").lower()
 
-                    if confirm != "yes":
+                    if confirm !="yes":
                         print(Fore.RED+"Payment cancelled")
                         return
                     while True:
@@ -484,28 +440,28 @@ class tablebooking:
                         print("2. Card")
                         print("3. UPI")
                         try:
-                            method_choice = int(input("Enter your choice : "))
+                            method_choice=int(input("Enter your choice : "))
                         except Exception as error:
                             print(method_choice,"is invalid")
                             obj=domain.log(error,__name__)
                             continue
-                        if method_choice == 1:
-                            payment_method = "Cash"
+                        if method_choice==1:
+                            payment_method="Cash"
                             break
-                        elif method_choice == 2:
-                            payment_method = "Card"
+                        elif method_choice==2:
+                            payment_method="Card"
                             break
-                        elif method_choice == 3:
-                            payment_method = "UPI"
+                        elif method_choice==3:
+                            payment_method="UPI"
                             break
                         else:
                             print("Invalid choice!")
                             continue
 
-                    payment_details = {
+                    payment_details={
                         "order_id": id,
                         "customer_name": customer_name,
-                        "payment_date":str(datetime.date.today()),#added date in dictionary
+                        "payment_date":str(datetime.date.today()),
                         "ordered_items": ordered_items,
                         "total_amount": total_bill,
                         "payment_method": payment_method,
@@ -529,15 +485,15 @@ class tablebooking:
 
     def get_invoice(self):
         try:
-            for payment in self.payment_json:#new changes
-                date=payment.get("payment_date")#new changes
+            for payment in self.payment_json:
+                date=payment.get("payment_date")
             id=input("Enter Order ID: ")
             print(Fore.RED+"\n\n                 AZURE HAVEN HOTEL")
             print(Fore.RED+"                 Family Restaurant")
             print(Fore.RED+"        Palaspa Phata,Mumbai Pune Highway")
             print(Fore.RED+"             Near ONGC Colony,Panvel")
             print(Fore.YELLOW+"--------------------INVOICE--------------------")
-            print("Payment date:",date)#modified date
+            print("Payment date:",date)
             print(Fore.YELLOW+"-"*47)
             print(Fore.RED+"ITEMS                    Qty    Rate     Amount")
             print(Fore.YELLOW+"-"*47)

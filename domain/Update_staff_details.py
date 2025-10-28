@@ -97,26 +97,21 @@ class update_staff:
                     else:        
                         print("you have now",attempt,"attempt left.")
 
-    def staff_data():
+    def staff_details(self):
         i=1
-        # json_path=os.path.join("database","user_data.json")
-        # try:
-        #     with open(json_path,'r') as user_data:
-        #         Staffs=json.loads(user_data.read())
-        # except Exception as error:
-        #     obj=domain.log(error,__name__)
-        #     print(Fore.RED+"File Not Found In Database")
-        #     return
+       
         try:
-            print(Fore.GREEN+"--------------ALL USERS--------------")
+            print(Fore.GREEN+"\n--------------ALL USERS--------------")
             for staff in self.staff_data:
+                
+                print()
                 print(Fore.RED+"User-",i)
                 print("Name     : ",staff.get("name"))
                 print("Email    : ",staff.get("email"))
                 print("Password : ","*"*len(staff.get("password")))
                 print("Role     : ",staff.get("role"))
-                print()
                 i+=1
+                
         except Exception as error:
             obj=domain.log(error,__name__)
             print(error)

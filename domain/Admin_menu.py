@@ -47,7 +47,7 @@ def admin_menu():
                 obj2.remove_staff()
             elif choice==9:
                 # domain.staff_data()
-                obj2.staff_data()
+                obj2.staff_details()
             elif choice==10:
                 domain.report_menu()
             elif choice==11:
