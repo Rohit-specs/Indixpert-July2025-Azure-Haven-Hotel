@@ -4,7 +4,6 @@ from .Show_menu import show_menu
 from .Staff_menu import staff_menu
 from .Update_menu import update_menu
 from .Update_staff_details import update_staff
-# from .Show_staff import staff_data
 from .Loging import log
 from .Table_booking import tablebooking
 from .Report_menu import report_menu
