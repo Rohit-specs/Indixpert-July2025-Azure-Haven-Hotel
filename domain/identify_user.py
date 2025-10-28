@@ -10,7 +10,7 @@ def findinguser(email,password):
             users=json.loads(users)
     except Exception as error:
         log_obj=domain.log(error,__name__)
-        print("Error While Loading User Wata")
+        print("Error While Loading User data")
         return
     
     try:
