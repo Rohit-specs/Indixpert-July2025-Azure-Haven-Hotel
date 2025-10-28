@@ -19,7 +19,7 @@ def menu():
                 data = json.loads(file.read())
             except json.JSONDecodeError as error:
                 data = []
-                obj=domain.log(error,__name__)
+                log_obj=domain.log(error,__name__)
 
         if data != []:
             for staff in data:
@@ -39,7 +39,7 @@ def menu():
             choice = int(input(Fore.YELLOW+"Enter your choice: "))
         except ValueError as error:
             print(Fore.RED+"Invalid input! Please enter a number")
-            obj=domain.log(error,__name__)
+            log_obj=domain.log(error,__name__)
             continue
         
         

@@ -11,7 +11,7 @@ class update_menu:
             with open(path,'r') as data:
                 self.menu = json.loads(data.read())
         except Exception as error:
-            obj=domain.log(error,__name__)
+            log_obj=domain.log(error,__name__)
             print(error)
 
     def save(self):
@@ -21,7 +21,7 @@ class update_menu:
                 data.write(self.menu)
             print(Fore.GREEN+"Changes saved to file")
         except Exception as error:
-            obj=domain.log(error,__name__)
+            log_obj=domain.log(error,__name__)
             print("Faliled to save menu to file")
 
     def delete_dish(self):
@@ -63,7 +63,7 @@ class update_menu:
                         half_price = int(input("Enter half plate price: "))
                         break
                     except Exception as error:
-                        obj=domain.log(error,__name__)
+                        log_obj=domain.log(error,__name__)
                         print("invalid half price. please enter a number")
                 
                 while True:
@@ -71,7 +71,7 @@ class update_menu:
                         full_price = int(input("Enter full plate price: "))
                         break
                     except Exception as error:
-                        obj=domain.log(error,__name__)
+                        log_obj=domain.log(error,__name__)
                         print("invalid half price. please enter a number")
                 
                 self.menu[category].append(
@@ -86,7 +86,7 @@ class update_menu:
                         price = int(input("Enter price: "))
                         break
                     except Exception as error:
-                        obj=domain.log(error,__name__)
+                        log_obj=domain.log(error,__name__)
                         print("Invalid price.Please enter a number")
                 self.menu[category].append({
                     "item": item,
@@ -109,7 +109,7 @@ class update_menu:
                                 half_price = int(input("Enter half plate price: "))
                                 break
                             except Exception as error:
-                                obj=domain.log(error,__name__)
+                                log_obj=domain.log(error,__name__)
                                 print("invalid half price. please enter a number")
                 
                         while True:
@@ -117,7 +117,7 @@ class update_menu:
                                 full_price = int(input("Enter full plate price: "))
                                 break
                             except Exception as error:
-                                obj=domain.log(error,__name__)
+                                log_obj=domain.log(error,__name__)
                                 print("invalid half price. please enter a number")
                                 self.menu[category].append(
                                     {
@@ -131,7 +131,7 @@ class update_menu:
                                 price = int(input("Enter price: "))
                                 break
                             except Exception as error:
-                                obj=domain.log(error,__name__)
+                                log_obj=domain.log(error,__name__)
                                 print("Invalid price.Please enter a number")
 
                         self.menu[category].append({
@@ -169,7 +169,7 @@ class update_menu:
             else:
                 print("Category not found")
         except Exception as error:
-            obj=domain.log(error,__name__)
+            log_obj=domain.log(error,__name__)
             print("Error occurred while deleting the category")
                     
 
@@ -190,7 +190,7 @@ class update_menu:
                                     half_price = int(input("Enter new half plate price: "))
                                     break
                                 except Exception as error:
-                                    obj=domain.log(error,__name__)
+                                    log_obj=domain.log(error,__name__)
                                     print("invalid price,please try again")
                                     
                             while True:
@@ -198,7 +198,7 @@ class update_menu:
                                     full_price = int(input("Enter new full plate price: "))
                                     break
                                 except Exception as error:
-                                    obj=domain.log(error,__name__)
+                                    log_obj=domain.log(error,__name__)
                                     print("invalid price,please try again")
                                 
                             
@@ -223,7 +223,7 @@ class update_menu:
             else:
                 print("Category not found")
         except Exception as error:
-            obj=domain.log(error,__name__)
+            log_obj=domain.log(error,__name__)
             print("An error occurred while updating the price")
             
             

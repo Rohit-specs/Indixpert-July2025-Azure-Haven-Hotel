@@ -4,7 +4,7 @@ init(autoreset=True)
 import domain
 def report_menu():
     try:
-        obj=Report_data()
+        report_obj=Report_data()
         while True:
             print(Fore.RED+"\n-----------------Report_Menu-----------------")
             print(Fore.CYAN+"1. ","Total no. Of Booking")
@@ -22,37 +22,37 @@ def report_menu():
                 choice=int(input(Fore.YELLOW+"Enter your choice: "))
             except Exception as error:
                 print(Fore.RED,"Invalid input. Please try again")
-                obj=domain.log(error,__name__)
+                log_obj=domain.log(error,__name__)
                 continue
             if choice==1:
-                obj.no_of_booking()
+                report_obj.no_of_booking()
             
             elif choice==2:
-                obj.current_number_of_booking()
+                report_obj.current_number_of_booking()
             
             elif choice==3:
-                obj.total_revenue()
+                report_obj.total_revenue()
 
             elif choice==4:
-                obj.current_month_total_revenue()
+                report_obj.current_month_total_revenue()
 
             elif choice==5:
-                obj.average_booking_duration()
+                report_obj.average_booking_duration()
 
             elif choice==6:
-                obj.current_month_average_booking_duration()
+                report_obj.current_month_average_booking_duration()
 
             elif choice==7:
-                obj.most_ordered_dish()
+                report_obj.most_ordered_dish()
 
             elif choice==8:
-                obj.current_month_most_ordered_dish()
+                report_obj.current_month_most_ordered_dish()
             
             elif choice==9:
-                obj.payment_method_used()
+                report_obj.payment_method_used()
 
             elif choice==10:
-                obj.current_month_payment_method_used()
+                report_obj.current_month_payment_method_used()
 
             elif choice==11:
                 print(Fore.YELLOW+"Returning to Admin menu.")
@@ -62,5 +62,5 @@ def report_menu():
                 print(Fore.RED+choice,"is not a valid option")
     except Exception as error:
         print(Fore.RED+"Error occurred while loading Report Menu")
-        obj=domain.log(error,__name__)
+        log_obj=domain.log(error,__name__)
 

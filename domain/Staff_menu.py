@@ -17,31 +17,31 @@ def staff_menu(name):
         try:
             choice=int(input(Fore.YELLOW+"Enter your choice: "))
         except Exception as error:
-            log=domain.log(error,__name__)
+            log_obj=domain.log(error,__name__)
             print("Invalid input. Please enter a valid option")
             continue
         try:
             if choice==1:
                 menu=domain.show_menu()
             elif choice==2:
-                obj=domain.tablebooking().book_table(name)
+                table_booking_object=domain.tablebooking().book_table(name)
             elif choice==3:
-                obj=domain.tablebooking().show_all_booking()
+                table_booking_object=domain.tablebooking().show_all_booking()
             elif choice==4:
-                obj=domain.tablebooking().take_order()
+                table_booking_object=domain.tablebooking().take_order()
             elif choice==5:
-                obj=domain.tablebooking().show_all_orders()
+                table_booking_object=domain.tablebooking().show_all_orders()
             elif choice==6:
-                obj=domain.tablebooking().payment()
+                table_booking_object=domain.tablebooking().payment()
             elif choice==7:
-                obj=domain.tablebooking().get_invoice()
+                table_booking_object=domain.tablebooking().get_invoice()
             elif choice==8:
-                obj=domain.tablebooking().cancel_booking()
+                table_booking_object=domain.tablebooking().cancel_booking()
             elif choice==9:
                 print("Exiting Staff Menu...")
                 break
             else:
                 print(Fore.RED+choice,"is not a valid option")
         except Exception as error:
-            obj=domain.log(error,__name__)
+            log_obj=domain.log(error,__name__)
             print(Fore.RED+"Unable to use this option")

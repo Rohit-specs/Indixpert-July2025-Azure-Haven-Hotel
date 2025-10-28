@@ -16,13 +16,13 @@ class update_staff:
                     json.dumps(data)
                     file.write(data)
             except Exception as error:
-                obj=domain.log(error,__name__)
+                log_obj=domain.log(error,__name__)
                 print("Error while opening the file")
         try:        
             with open(self.path,'r') as data:
                 self.staff_data=json.loads(data.read())
         except Exception as error:
-            obj=domain.log(error,__name__)
+            log_obj=domain.log(error,__name__)
             print("Error while loading the file") 
 
     def save(self):
@@ -31,7 +31,7 @@ class update_staff:
                 modified_data=json.dumps(self.staff_data,indent=3)
                 data.write(modified_data)      
         except Exception as error:
-            obj=domain.log(error,__name__)
+            log_obj=domain.log(error,__name__)
             print("Error occurring while Updating staff data")
             
             
@@ -41,7 +41,7 @@ class update_staff:
         email=valid_email("staff")
         try:
             while True:
-                self.role=input("Enter you role: ")
+                self.role=input("Enter you role: ").lower()
                 if self.role!="staff" and self.role!="admin":
                     print("You have entered wrong role\nchoose between (staff/admin)")
                     continue
@@ -59,19 +59,19 @@ class update_staff:
                         print("email not found in Record")
         except Exception as error:
             print("Error occurring while removing a staff")
-            obj=domain.log(error,__name__)
+            log_obj=domain.log(error,__name__)
             
                 
     def add_staff(self):
         print(Fore.GREEN+"\n--------------ADDING STAFF--------------"+Fore.YELLOW)
         name=valid_name("staff")
-        email=valid_email()
+        email=valid_email("staff")
         while True:
             password=valid_password()
             while True:
                 confirm_password=getpass.getpass("Please confirm your password: ")
                 while True:
-                    self.role=input("Enter you role: ")
+                    self.role=input("Enter you role: ").lower()
                     if self.role!="staff" and self.role!="admin":
                         print("You have entered wrong role\nchoose between (staff/admin)")
                         continue
@@ -113,7 +113,7 @@ class update_staff:
                 i+=1
                 
         except Exception as error:
-            obj=domain.log(error,__name__)
+            log_obj=domain.log(error,__name__)
             print(error)
             return
 

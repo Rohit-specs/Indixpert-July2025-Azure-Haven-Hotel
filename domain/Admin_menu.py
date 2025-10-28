@@ -3,10 +3,10 @@ init(autoreset=True)
 import domain
 import os
 def admin_menu():
-    path=os.path.join("database","menu.json")
-    path1=os.path.join("database","user_data.json")
-    obj1=domain.update_menu(path)
-    obj2=domain.update_staff(path1)
+    menu_file_path=os.path.join("database","menu.json")
+    user_file_path=os.path.join("database","user_data.json")
+    update_menu_obj=domain.update_menu(menu_file_path)
+    update_staff_obj=domain.update_staff(user_file_path)
     while True:
         print(Fore.RED+"\n-------------------ADMIN_MENU-------------------")
         print(Fore.CYAN+"1. ","Menu")
@@ -30,24 +30,24 @@ def admin_menu():
 
         try:
             if choice==1:
-                obj=domain.show_menu()
+                menu_obj=domain.show_menu()
             elif choice==2:
-                obj1.delete_dish()
+                update_menu_obj.delete_dish()
             elif choice==3:
-                obj1.add_dish()
+                update_menu_obj.add_dish()
             elif choice==4:
-                obj1.add_category()
+                update_menu_obj.add_category()
             elif choice==5:
-                obj1.del_category()
+                update_menu_obj.del_category()
             elif choice==6:
-                obj1.update_price()
+                update_menu_obj.update_price()
             elif choice==7:
-                obj2.add_staff()
+                update_staff_obj.add_staff()
             elif choice==8:
-                obj2.remove_staff()
+                update_staff_obj.remove_staff()
             elif choice==9:
                 # domain.staff_data()
-                obj2.staff_details()
+                update_staff_obj.staff_details()
             elif choice==10:
                 domain.report_menu()
             elif choice==11:
