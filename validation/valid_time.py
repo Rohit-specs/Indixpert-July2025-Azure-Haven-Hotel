@@ -7,7 +7,7 @@ def valid_time(option="starting"):
         try:
             print("Enter",option,"hour: ",end="")
             hour=int(input())
-            if hour>22:
+            if hour>=22:
                 print("22:00 is closing time of our Resturant\nYou can book till 21:59")
                 continue
             if hour<7:
