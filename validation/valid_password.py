@@ -10,7 +10,7 @@ def valid_password():
         elif not re.search(r'[a-z]',password):
             print("Password must contain a lowercase")
         elif not re.search(r'[@$%!*?&]',password):
-            print("Password must contain a special character")
+            print("Password must contain a special character ex(@$%!*?&)")
         elif not re.search(r'[0-9]',password):
             print("Password must contain numbers")
         else:
