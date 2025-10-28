@@ -23,7 +23,8 @@ class update_staff:
                 self.staff_data=json.loads(data.read())
         except Exception as error:
             obj=domain.log(error,__name__)
-            print("Error while loading the file")        
+            print("Error while loading the file") 
+
     def save(self):
         try:
             with open(self.path,'w') as data:
@@ -95,6 +96,31 @@ class update_staff:
                             print(choice,"is not a valid option")                            
                     else:        
                         print("you have now",attempt,"attempt left.")
+
+    def staff_data():
+        i=1
+        # json_path=os.path.join("database","user_data.json")
+        # try:
+        #     with open(json_path,'r') as user_data:
+        #         Staffs=json.loads(user_data.read())
+        # except Exception as error:
+        #     obj=domain.log(error,__name__)
+        #     print(Fore.RED+"File Not Found In Database")
+        #     return
+        try:
+            print(Fore.GREEN+"--------------ALL USERS--------------")
+            for staff in self.staff_data:
+                print(Fore.RED+"User-",i)
+                print("Name     : ",staff.get("name"))
+                print("Email    : ",staff.get("email"))
+                print("Password : ","*"*len(staff.get("password")))
+                print("Role     : ",staff.get("role"))
+                print()
+                i+=1
+        except Exception as error:
+            obj=domain.log(error,__name__)
+            print(error)
+            return
 
 
                         
