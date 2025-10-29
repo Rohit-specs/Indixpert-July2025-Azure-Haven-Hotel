@@ -9,21 +9,22 @@ class update_staff:
     def __init__(self,path):
         self.path=path
         
-        if not os.path.exists(self.path):
-            try:
-                with open(self.path,'w') as file:
-                    data=[] 
-                    json.dumps(data)
-                    file.write(data)
-            except Exception as error:
-                log_obj=domain.log(error,__name__)
-                print("Error while opening the file")
-        try:        
-            with open(self.path,'r') as data:
-                self.staff_data=json.loads(data.read())
-        except Exception as error:
-            log_obj=domain.log(error,__name__)
-            print("Error while loading the file") 
+        # if not os.path.exists(self.path):
+        #     try:
+        #         with open(self.path,'w') as file:
+        #             data=[] 
+        #             json.dumps(data)
+        #             file.write(data)
+        #     except Exception as error:
+        #         log_obj=domain.log(error,__name__)
+        #         print("Error while opening the file")
+        # try:        
+        #     with open(self.path,'r') as data:
+        #         self.staff_data=json.loads(data.read())
+        # except Exception as error:
+        #     log_obj=domain.log(error,__name__)
+        #     print("Error while loading the file") 
+        self.staff_data=domain.file_reader(self.path,__name__)
 
     def save(self):
         try:
@@ -36,7 +37,7 @@ class update_staff:
             
             
     def remove_staff(self):
-        print(Fore.GREEN+"\n-------------REMOVING STAFF-------------"+Fore.YELLOW)
+        print(Fore.GREEN+"\n-------------REMOVING STAFF-------------")
         name=valid_name("staff")
         email=valid_email("staff")
         try:
@@ -63,7 +64,7 @@ class update_staff:
             
                 
     def add_staff(self):
-        print(Fore.GREEN+"\n--------------ADDING STAFF--------------"+Fore.YELLOW)
+        print(Fore.GREEN+"\n--------------ADDING STAFF--------------")
         name=valid_name("staff")
         email=valid_email("staff")
         while True:

@@ -7,12 +7,13 @@ init(autoreset=True)
 class update_menu:
     def __init__(self, path):
         self.path = path
-        try:
-            with open(path,'r') as data:
-                self.menu = json.loads(data.read())
-        except Exception as error:
-            log_obj=domain.log(error,__name__)
-            print(error)
+        # try:
+        #     with open(path,'r') as data:
+        #         self.menu = json.loads(data.read())
+        # except Exception as error:
+        #     log_obj=domain.log(error,__name__)
+        #     print(error)
+        self.menu=domain.file_reader(self.path,__name__)
 
     def save(self):
         try:
