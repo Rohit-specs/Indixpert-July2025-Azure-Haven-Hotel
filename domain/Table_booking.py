@@ -145,15 +145,16 @@ class tablebooking:
                     table_no+=1           
 
                 print()
-                print(Fore.BLUE+Style.DIM+"\nIf the time is not sutiable you can:-")
+                print(Fore.BLUE+"\nIf the time is not sutiable you can:-")
                 print("1. Write date and time again")
-                print("2. Continue")
+                print("2. Continue to book")
                 print("3. Back to Staff menu")
+                flag=False
                 while True:
                     try:
                         choice=int(input("Enter your choice: "))
                         if choice==1:
-                            flag=1
+                            flag=True
                             break
                         elif choice==2:
                             break
@@ -164,7 +165,7 @@ class tablebooking:
                     except Exception as error:
                         log_object=domain.log(error,__name__)
                         print("Invalid input,Please try again")
-                if flag==1:
+                if flag:
                     print()
                     continue
 
@@ -380,7 +381,7 @@ class tablebooking:
 
     def show_all_orders(self):
         try:
-            print(Fore.GREEN+"\n-------------ALL_ORDERS-------------")
+            print(Fore.GREEN+Style.BRIGHT+"\n-------------ALL_ORDERS-------------")
             order_no=1
             for order in self.order_json:
                 print(Fore.RED+"\nOrder no:",order_no)

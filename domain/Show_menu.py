@@ -1,16 +1,15 @@
 from colorama import init,Fore,Back,Style
 import os
 import json
-from domain import file_reader
 
 
 class show_menu:
     def __init__(self):
         file_path=os.path.join("database","menu.json")
-        # with open(file_path,'r') as file:
-        #     data=file.read()
-        # data=json.loads(data)
-        data=file_reader(file_path,__name__)
+        with open(file_path,'r') as file:
+            data=file.read()
+        data=json.loads(data)
+        # data=domain.file_reader(file_path,__name__)
 
         print(Fore.RED+"__________________________________________________________")
         print(Fore.RED+"|"+Fore.CYAN+Style.BRIGHT+"              🏨 AZURE HAVEN HOTEL MENU 🏨              "+Fore.RED+"|")

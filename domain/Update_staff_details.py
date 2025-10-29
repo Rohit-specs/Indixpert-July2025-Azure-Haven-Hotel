@@ -9,22 +9,22 @@ class update_staff:
     def __init__(self,path):
         self.path=path
         
-        # if not os.path.exists(self.path):
-        #     try:
-        #         with open(self.path,'w') as file:
-        #             data=[] 
-        #             json.dumps(data)
-        #             file.write(data)
-        #     except Exception as error:
-        #         log_obj=domain.log(error,__name__)
-        #         print("Error while opening the file")
-        # try:        
-        #     with open(self.path,'r') as data:
-        #         self.staff_data=json.loads(data.read())
-        # except Exception as error:
-        #     log_obj=domain.log(error,__name__)
-        #     print("Error while loading the file") 
-        self.staff_data=domain.file_reader(self.path,__name__)
+        if not os.path.exists(self.path):
+            try:
+                with open(self.path,'w') as file:
+                    data=[] 
+                    json.dumps(data)
+                    file.write(data)
+            except Exception as error:
+                log_obj=domain.log(error,__name__)
+                print("Error while opening the file")
+        try:        
+            with open(self.path,'r') as data:
+                self.staff_data=json.loads(data.read())
+        except Exception as error:
+            log_obj=domain.log(error,__name__)
+            print("Error while loading the file") 
+        # self.staff_data=domain.file_reader(self.path,__name__)
 
     def save(self):
         try:

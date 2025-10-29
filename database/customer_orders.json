@@ -85,5 +85,26 @@
         "Butter Naan": "30"
       }
     ]
+  },
+  {
+    "id": "2bcb86",
+    "customer name": "Jay",
+    "date": "2025-10-29 12:11:33.780456",
+    "ordered items": [
+      {
+        "Kadhai Paneer": "full plate"
+      },
+      {
+        "Butter Naan": "full plate"
+      }
+    ],
+    "prices": [
+      {
+        "Kadhai Paneer": "200"
+      },
+      {
+        "Butter Naan": "30"
+      }
+    ]
   }
 ]

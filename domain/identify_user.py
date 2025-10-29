@@ -4,15 +4,14 @@ import domain
 
 def findinguser(email,password):
     json_path=os.path.join("database","user_data.json")
-    # try:
-    #     with open(json_path,'r') as file:
-    #         users=file.read()
-    #         users=json.loads(users)
-    # except Exception as error:
-    #     log_obj=domain.log(error,__name__)
-    #     print("Error While Loading User data")
-    #     return
-    users=file_reader(json_path,__name__)
+    try:
+        with open(json_path,'r') as file:
+            users=file.read()
+            users=json.loads(users)
+    except Exception as error:
+        log_obj=domain.log(error,__name__)
+        print("Error While Loading User data")
+        return
     try:
         for user in users:
             name=str(user["name"])

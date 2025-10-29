@@ -2,7 +2,7 @@ import json
 import os
 from collections import Counter
 from colorama import init,Fore,Style
-from domain import log,file_reader
+from domain import log
 init(autoreset=True)
 import datetime
 
@@ -11,47 +11,47 @@ class Report_data:
         booked_table_file=os.path.join("database","booked_table.json")
         customer_order_file=os.path.join("database","customer_orders.json")
         payment_file=os.path.join("database","payment_file.json")
-        # with open(booked_table_file,'r') as data:
-        #     try:
-        #         self.table_booking_data=data.read()
-        #     except Exception as error:
-        #         log_obj=log(error,__name__)
-        #         print("Error occurring while loading booked table json file.")
+        with open(booked_table_file,'r') as data:
+            try:
+                self.table_booking_data=data.read()
+            except Exception as error:
+                log_obj=log(error,__name__)
+                print("Error occurring while loading booked table json file.")
             
-        #     try:
-        #         self.table_booking_data=json.loads(self.table_booking_data)
-        #     except Exception as error:
-        #         log_obj=log(error,__name__)
-        #         print("Please check if booked table is a valid json")
-        self.table_booking_data=file_reader(booked_table_file,__name__)
+            try:
+                self.table_booking_data=json.loads(self.table_booking_data)
+            except Exception as error:
+                log_obj=log(error,__name__)
+                print("Please check if booked table is a valid json")
+        # self.table_booking_data=file_reader(booked_table_file,__name__)
 
 
-        # with open(customer_order_file,'r') as data:
-        #     try:
-        #         self.customer_order_data=data.read()
-        #     except Exception as error:
-        #         log_obj=log(error,__name__)
-        #         print("Error occurring while loading booked table json file.")
-        #     try:
-        #         self.customer_order_data=json.loads(self.customer_order_data)
-        #     except Exception as error:
-        #         log_obj=log(error,__name__)
-        #         print("Please check if booked table is a valid json")
-        self.customer_order_data=file_reader(customer_order_file,__name__)
+        with open(customer_order_file,'r') as data:
+            try:
+                self.customer_order_data=data.read()
+            except Exception as error:
+                log_obj=log(error,__name__)
+                print("Error occurring while loading booked table json file.")
+            try:
+                self.customer_order_data=json.loads(self.customer_order_data)
+            except Exception as error:
+                log_obj=log(error,__name__)
+                print("Please check if booked table is a valid json")
+        # self.customer_order_data=file_reader(customer_order_file,__name__)
 
 
-        # with open(payment_file,'r') as data:
-        #     try:
-        #         self.payment_data=data.read()
-        #     except Exception as error:
-        #         log_obj=log(error,__name__)
-        #         print("Error occurring while loading booked table json file.")
-        #     try:
-        #         self.payment_data=json.loads(self.payment_data)
-        #     except Exception as error:
-        #         log_obj=log(error,__name__)
-        #         print("Please check if booked table is a valid json")
-        self.payment_data=file_reader(payment_file,__name__)
+        with open(payment_file,'r') as data:
+            try:
+                self.payment_data=data.read()
+            except Exception as error:
+                log_obj=log(error,__name__)
+                print("Error occurring while loading booked table json file.")
+            try:
+                self.payment_data=json.loads(self.payment_data)
+            except Exception as error:
+                log_obj=log(error,__name__)
+                print("Please check if booked table is a valid json")
+        # self.payment_data=file_reader(payment_file,__name__)
 
         current_month=str(datetime.datetime.now().month)
         self.modified_current_month="-"+current_month+"-"

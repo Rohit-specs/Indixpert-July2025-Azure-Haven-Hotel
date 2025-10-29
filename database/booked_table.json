@@ -84,5 +84,27 @@
     "customer name": "Gaurav",
     "no of seats": 1,
     "booked time in min": 140
+  },
+  {
+    "id": "401bcc",
+    "table no": 2,
+    "table booking date": "2025-10-29",
+    "booking start time": "13:30",
+    "booking end time": "14:0",
+    "staff who booked": "Amit",
+    "customer name": "Viru",
+    "no of seats": 4,
+    "booked time in min": 30
+  },
+  {
+    "id": "2bcb86",
+    "table no": 2,
+    "table booking date": "2025-10-29",
+    "booking start time": "13:0",
+    "booking end time": "14:0",
+    "staff who booked": "Amit",
+    "customer name": "Jay",
+    "no of seats": 1,
+    "booked time in min": 60
   }
 ]

@@ -7,4 +7,3 @@ from .Update_staff_details import update_staff
 from .Loging import log
 from .Table_booking import tablebooking
 from .Report_menu import report_menu
-from .File_reader import file_reader

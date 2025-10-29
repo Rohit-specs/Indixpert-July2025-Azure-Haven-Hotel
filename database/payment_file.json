@@ -64,5 +64,23 @@
     "booking duration(min)": 300,
     "no of seats": 1,
     "seats charge total": 50
+  },
+  {
+    "order_id": "2bcb86",
+    "customer_name": "Jay",
+    "payment_date": "2025-10-29",
+    "ordered_items": [
+      {
+        "Kadhai Paneer": "200"
+      },
+      {
+        "Butter Naan": "30"
+      }
+    ],
+    "total_amount": 546.0,
+    "payment_method": "Card",
+    "booking duration(min)": 60,
+    "no of seats": 1,
+    "seats charge total": 50
   }
 ]
