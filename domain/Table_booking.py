@@ -14,6 +14,7 @@ class tablebooking:
         self.menu_json=os.path.join("database","menu.json")
         self.order_json_file=os.path.join("database","customer_orders.json")
         self.payment_json_file=os.path.join("database","payment_file.json")
+        self.total_capacity=6
 
         if not os.path.exists(self.booked_table_file):
             with open(self.booked_table_file, 'w') as f:
@@ -76,6 +77,7 @@ class tablebooking:
             self.payment_json=json.dumps(self.payment_json,indent=2)
             file.write(self.payment_json)
             print("Payment data save")
+    
             
     def book_table(self,staff_booked_table):
         try:
@@ -114,8 +116,7 @@ class tablebooking:
                     return
 
 
-
-                total_capacity=6
+                total_capacity=self.total_capacity
                 print(Fore.BLUE+"\nAviliable table on",self.booked_table_date,"from",self.booked_table_starttime,"to",self.booked_table_endtime)
                 print()
 
@@ -247,6 +248,7 @@ class tablebooking:
             print(Fore.RED+"Error Occurring while booking table")
 
 
+
     def show_all_booking(self):
         try:
             print(Fore.GREEN+"\n-----------------ALL_BOOKINGS-----------------")
@@ -262,15 +264,65 @@ class tablebooking:
                 print("Seats Booked By:",booking.get("no of seats"))
                 print("Table Booked By: ",booking.get("staff who booked"))  
                 booking_no+=1
+            if booking_no=1:
+                print("No one booked yet")
             
         except Exception as error:
             log_obj=domain.log(error,__name__)
             print(Fore.RED+"Error Occurred While loading Booking data")
-    
+
+    def show_todays_booking(self):
+        try:
+            print(Fore.GREEN+"\n---------------TODAY_BOOKINGS---------------")
+            today_booking_count=1
+            for booking in self.table_booking_data:
+                if str(datetime.datetime.now().date)==booking.get("table booking date"):
+                    print(Fore.RED+"\nBooking no=",today_booking_count)
+                    print(Fore.BLUE+"ID:",booking.get("id"))
+                    print("Customer name:",booking.get("customer name"))
+                    print("Booked Table: ",booking.get("table no"))
+                    print("Table Booking For Date: ",booking.get("table booking date"))
+                    print("Start Time: ",booking.get("booking start time"))
+                    print("End Time: ",booking.get("booking end time"))
+                    print("Seats Booked By:",booking.get("no of seats"))
+                    print("Table Booked By: ",booking.get("staff who booked"))
+                    today_booking_count+=1
+            if today_booking_count=1:
+                print(Fore.RED,"No one booked yet")
+
+        except Exception as error:
+            log_obj=domain.log(error,__name__)
+            print(Fore.RED+"Error Occurred While loading Todays Booking data")
+
+
+    def show_today_booking_on_table:
+        try:
+            table_no=validation.valid_table("table no")
+            print(Fore.GREEN+"\n---------------TODAY_BOOKING_ON_THIS_TABLE---------------")
+            today_booking_count=1
+            for booking in self.table_booking_data:
+                if (str(datetime.datetime.now().date)==booking.get("table booking date")) and
+                (booking.get("table no")==table_no):
+                    print(Fore.RED+"\nBooking no=",today_booking_count)
+                    print(Fore.BLUE+"ID:",booking.get("id"))
+                    print("Customer name:",booking.get("customer name"))
+                    print("Booked Table: ",booking.get("table no"))
+                    print("Table Booking For Date: ",booking.get("table booking date"))
+                    print("Start Time: ",booking.get("booking start time"))
+                    print("End Time: ",booking.get("booking end time"))
+                    print("Seats Booked By:",booking.get("no of seats"))
+                    print("Table Booked By: ",booking.get("staff who booked"))
+                    today_booking_count+=1
+            if today_booking_count=1:
+                print(Fore.RED+"There is no booking for today")
+        except Exception as error:
+            log_obj=domain.log(error,__name__)
+            print(Fore.RED+"Error Occurred While loading Booking data")
+
                         
     def take_order(self):
         try:
-            print(Fore.GREEN+"\n---------------ORDER_FOOD---------------"+Fore.CYAN)
+            print(Fore.GREEN+"\n---------------ORDER_FOOD---------------")
             if self.table_booking_data==[]:
                 print("There are no bookings left")
                 return
@@ -283,6 +335,7 @@ class tablebooking:
                         for customer in self.table_booking_data:
                             if customer.get("id")==id:
                                 date=customer.get("table booking date")
+                                table_no=customer.get("table no")
                                 if date!=str(datetime.date.today()):
                                     print("Not booked for today\n")
                                     return
@@ -299,6 +352,7 @@ class tablebooking:
                                     order_data={
                                         "id": customer.get("id"),
                                         "customer name": customer.get("customer name"),
+                                        "table no": table_no,
                                         "date":str(datetime.datetime.now()),
                                         "ordered items": food_items,
                                         "prices": food_prices
@@ -381,7 +435,7 @@ class tablebooking:
 
     def show_all_orders(self):
         try:
-            print(Fore.GREEN+Style.BRIGHT+"\n-------------ALL_ORDERS-------------")
+            print(Fore.GREEN+"\n-------------ALL_ORDERS-------------")
             order_no=1
             for order in self.order_json:
                 print(Fore.RED+"\nOrder no:",order_no)
@@ -393,11 +447,59 @@ class tablebooking:
                     for dish,price in item.items():
                         print("\t",dish," "*(20-(len(dish))),price)
                 order_no+=1
+            if order_no=1:
+                print(Fore.RED+"Nobody ordered yet")
             
                 
         except Exception as error:
             print(Fore.RED+"Error occurred while loading all orders")
             log_obj=domain.log(error,__name__)
+
+    def show_todays_order(self):
+        try:
+            print(Fore.GREEN+"\n--------------TODAY_ORDERS--------------")
+            today_order_count=1
+            for order in self.order_json:
+                if str(datetime.datetime.now().date)==order.get("date"):
+                    print(Fore.RED+"\nOrder no:",today_order_count)
+                    print(Fore.CYAN+"ID     :",order.get("id"))
+                    print("Customer name :",order.get("customer name"))
+                    items=order.get("ordered items")
+                    print("Ordered Items:")
+                    for item in items:
+                        for dish,price in item.items():
+                            print("\t",dish," "*(20-(len(dish))),price)
+                    today_order_count+=1
+            if today_order_count=1:
+                print(Fore.RED+"Nobody order yet")
+
+        except Exception as error:
+            print(Fore.RED+"Error occurred while loading todays orders")
+            log_obj=domain.log(error,__name__)
+
+    def show_order_on_table(self):
+        try:
+            table_no=validation.valid_table()
+            print(Fore.GREEN+"\n--------------ALL_ORDER_IN_THIS_TABLE--------------")
+            today_order_count=1
+            for order in self.order_json:
+                if (str(datetime.datetime.now().date)==order.get("date")) and (order.get("table no")==table_no):
+                    print(Fore.RED+"\nOrder no:",today_order_count)
+                    print(Fore.CYAN+"ID     :",order.get("id"))
+                    print("Customer name :",order.get("customer name"))
+                    items=order.get("ordered items")
+                    print("Ordered Items:")
+                    for item in items:
+                        for dish,price in item.items():
+                            print("\t",dish," "*(20-(len(dish))),price)
+                    today_order_count+=1
+            if today_order_count=1:
+                print(Fore.RED+"There are no orders today on this table")
+
+        except Exception as error:
+            print(Fore.RED+"Error occurred while loading todays orders")
+            log_obj=domain.log(error,__name__)
+
 
 
                     
@@ -557,7 +659,8 @@ class tablebooking:
                     print(Fore.RED+"Thank you",end="   ")
                     print(Fore.RED+"Visit Again")
                     return
-                
+                print("Id mismatched.\nPlease try again and check id")
+
         except Exception as error:
             print(Fore.RED+"Error occurring while generating invoice")
             log_obj=domain.log(error,__name__)
