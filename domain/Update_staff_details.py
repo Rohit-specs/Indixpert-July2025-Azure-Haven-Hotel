@@ -100,19 +100,19 @@ class update_staff:
                         print(Fore.YELLOW+Style.DIM+"you have now"+str(attempt)+"attempt left.")
 
     def staff_details(self):
-        i=1
+        staff_count=1
        
         try:
             print(Fore.GREEN+"\n--------------ALL USERS--------------")
             for staff in self.staff_data:
                 
                 print()
-                print(Fore.RED+"User-",i)
+                print(Fore.RED+"User-",staff_count)
                 print("Name     : ",staff.get("name"))
                 print("Email    : ",staff.get("email"))
                 print("Password : ","*"*len(staff.get("password")))
                 print("Role     : ",staff.get("role"))
-                i+=1
+                staff_count+=1
                 
         except Exception as error:
             log_obj=domain.log(error,__name__)
