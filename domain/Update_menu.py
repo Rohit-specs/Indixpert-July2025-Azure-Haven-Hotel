@@ -8,7 +8,7 @@ class update_menu:
     def __init__(self, path):
         self.path=path
         try:
-            with open(path,'r') as data:
+            with open(self.path,'r') as data:
                 self.menu=json.loads(data.read())
         except Exception as error:
             log_obj=domain.log(error,__name__)
