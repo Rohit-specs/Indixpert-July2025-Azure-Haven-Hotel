@@ -14,7 +14,7 @@ class tablebooking:
         self.menu_json=os.path.join("database","menu.json")
         self.order_json_file=os.path.join("database","customer_orders.json")
         self.payment_json_file=os.path.join("database","payment_file.json")
-        self.total_capacity=6
+        self.discount_json_file=os.path.join("database","price_update.json")
 
         if not os.path.exists(self.booked_table_file):
             with open(self.booked_table_file, 'w') as f:
@@ -58,6 +58,16 @@ class tablebooking:
                 self.payment_json=json.loads(data)
             else:
                 self.payment_json=[]
+        
+        with open(self.discount_json_file,'r') as file:
+            self.discount_data=json.loads(file.read())
+        
+        self.per_seat_cost=self.discount_data.get("seat cost")
+        self.time_cost=self.discount_data.get("time cost")
+        self.discount=self.discount_data.get("discount")
+        self.discount_comment=self.discount_data.get("discount comment")
+        self.total_no_of_seats=self.discount_data.get("no of seats")
+        self.total_no_of_tables=self.discount_data.get("no of tables")
 
 
     def booking_save(self):
@@ -80,6 +90,7 @@ class tablebooking:
     
             
     def book_table(self,staff_booked_table):
+        total_tables=self.total_no_of_tables
         try:
             print(Fore.GREEN+"\n----------------TABLE_BOOKING----------------")
             self.customer_name=validation.valid_name("customer")
@@ -116,12 +127,12 @@ class tablebooking:
                     return
 
 
-                total_capacity=self.total_capacity
+                total_capacity=self.total_no_of_seats
                 print(Fore.BLUE+"\nAviliable table on",self.booked_table_date,"from",self.booked_table_starttime,"to",self.booked_table_endtime)
                 print()
 
                 table_no=1
-                while table_no<=50:
+                while table_no<=total_tables:
                     space=3
                     remaining_seats=total_capacity
 
@@ -197,7 +208,7 @@ class tablebooking:
                 
                 while True:
                     try:
-                        self.no_of_seats=int(input("Enter number of seats to book (max 6): "))
+                        self.no_of_seats=int(input("Enter number of seats to book (max "+str(self.total_no_of_seats)+"): "))
                         if 1<=self.no_of_seats<=remaining_seats:
                             break
                         else:
@@ -295,7 +306,7 @@ class tablebooking:
             print(Fore.RED+"Error Occurred While loading Todays Booking data")
 
 
-    def show_today_booking_on_table:
+    def show_today_booking_on_table(self):
         try:
             table_no=validation.valid_table("table no")
             print(Fore.GREEN+"\n---------------TODAY_BOOKING_ON_THIS_TABLE---------------")
@@ -337,7 +348,7 @@ class tablebooking:
                                 date=customer.get("table booking date")
                                 table_no=customer.get("table no")
                                 if date!=str(datetime.date.today()):
-                                    print("Not booked for today\n")
+                                    print(Fore.RED+"No booking for today\n")
                                     return
 
                                 existing_order=None
@@ -510,7 +521,7 @@ class tablebooking:
             for payment in self.payment_json:
                 old_id=payment.get("order_id")
                 if id==old_id:
-                    print("You have already paid for meal")
+                    print(Fore.RED+"You have already paid for meal")
                     return
             for data in self.order_json:
                 if data.get("id")==id:
@@ -528,10 +539,11 @@ class tablebooking:
                         if data.get("id")==id:
                             time=data.get("booked time in min")
                             no_of_seats=data.get("no of seats")
-
-                    seat_charge_per_person=50
+                    discount=self.discount
+                    discount_comment=self.discount_comment
+                    seat_charge_per_person=self.per_seat_cost
                     seat_total=no_of_seats*seat_charge_per_person
-                    time_charge=time*4
+                    time_charge=time*self.time_cost
                     gst=((seat_total+time_charge+total))*(2.5/100)
                     sub_total=total+time_charge+seat_total
                     total_bill=sub_total+(gst*2)
@@ -539,8 +551,8 @@ class tablebooking:
                     print(Fore.GREEN+"\n--------------PAYMENT OVERVIEW--------------")
                     print(Fore.CYAN+"ID                :",id)
                     print(Fore.CYAN+"Customer Name     :",customer_name)
-                    print(Fore.CYAN+"Seat Charge(50ea.):",seat_total)
-                    print(Fore.CYAN+"Booking duration  :","(",time,"x 4"+")=",time_charge)
+                    print(Fore.CYAN+"Seat Charge("+str(seat_charge_per_person)+"ea.):",seat_total)
+                    print(Fore.CYAN+"Booking duration  :","(",time,"x"+str(self.time_cost)+"+")=",time_charge)
                     print(Fore.CYAN+"Booking time Price:",time_charge)
                     print(Fore.YELLOW+"\t\tDishes"+" "*16+"Price")
                     for item in ordered_items:
@@ -553,7 +565,13 @@ class tablebooking:
                     print("\t\tCGST(2.5%)           : ",gst)
                     print("\t\tCGST(2.5%)           : ",gst)
                     print("\t\tTotal GST            : ",gst+gst)
-                    print(Fore.GREEN+"\t\tTotal Bill           : ",round(total_bill),"(~",total_bill,")"+Fore.RED)
+                    if discount!=0:
+                        total_discount=total_bill*(discount/100)
+                        print("\t\tDiscount "+str(discount)+"%          : ",total_discount)
+                        if discount_comment!=None:
+                            print("\t\tDiscount Reason      : ",discount_comment)
+
+                    print(Fore.GREEN+"\t\tTotal Bill           : ",round(total_bill-total_discount),"(~",total_bill-total_discount,")"+Fore.RED)
 
                     confirm=input(Fore.RED+"Do you want to proceed with payment? (yes/no): ").lower()
 
@@ -581,7 +599,7 @@ class tablebooking:
                             payment_method="UPI"
                             break
                         else:
-                            print("Invalid choice!")
+                            print(Fore.RED+"Invalid choice!")
                             continue
 
                     payment_details={
@@ -589,7 +607,9 @@ class tablebooking:
                         "customer_name": customer_name,
                         "payment_date":str(datetime.date.today()),
                         "ordered_items": ordered_items,
-                        "total_amount": total_bill,
+                        "discount": total_discount,
+                        "amount without discount":total_bill,
+                        "total_amount": total_bill-total_discount,
                         "payment_method": payment_method,
                         "booking duration(min)":time,
                         "no of seats":no_of_seats,
@@ -601,7 +621,7 @@ class tablebooking:
 
                     print("\nPayment successful!")
                     print("Payment Method :",payment_method)
-                    print(Fore.RED+"Total Paid     :",total_bill)
+                    print(Fore.RED+"Total Paid     :",round(total_bill-total_discount))
                     print("-------------------------------")
                     return
         except Exception as error:
@@ -629,6 +649,10 @@ class tablebooking:
                     time=data.get("booking duration(min)")
                     seats=data.get("no of seats")
                     seat_total=data.get("seats charge total")
+                    discount=data.get("discount")
+                    amount_without_discount=data.get("amount without discount")
+                    total_amount=data.get("total_amount")
+
                     dish_total=0
                     for item in items:
                         for key,value in item.items():
@@ -640,9 +664,11 @@ class tablebooking:
                             print(key,space1,"1",space2,value,space3,value)
                             dish_total+=float(value)
                             
-                    time_price=time*4
+                    time_price=time*self.time_cost
                     gst=((time_price+dish_total+seat_total)*(2.5/100))
                     sub_total=dish_total+(time_price)
+                    # price_without_discount=Fore.RED,((time_price)+dish_total+seat_total+(gst*2))
+                    
                     print(Fore.YELLOW+" "*27+"--------------------")
                     print(Fore.CYAN+" "*27+"Seat total:  ",seat_total)
                     print(Fore.CYAN+" "*27+"Time price:  ",time_price)
@@ -650,16 +676,20 @@ class tablebooking:
                     print(Fore.CYAN+" "*27+"Sub Total :  ",sub_total)
                     print(Fore.CYAN+" "*27+"SGST(2.5%):  ",gst)
                     print(Fore.CYAN+" "*27+"CGST(2.5%):  ",gst)
+                    if discount!=None:
+                        print(Fore.CYAN+" "*27+"discount Rs:  ",discount)
                     print(Fore.YELLOW+" "*27+"--------------------")
-                    print(" "*26,"Food Total:  ",Fore.RED,((time_price)+dish_total+seat_total+(gst*2)))
+                    print(Fore.CYAN+" "*26,"Food Total:  ",amount_without_discount)
+                    if discount!=None:
+                        print(Fore.CYAN+" "*27+"After dis.:  ",total_amount)
                     print(Fore.YELLOW+"-"*47)
-                    print(Fore.RED+str(datetime.datetime.now().date())," "*13,"TOTAL:"," "*7,Fore.RED,round(time_price+dish_total+seat_total+(gst*2)))
+                    print(Fore.RED+str(datetime.datetime.now().date())," "*13,"TOTAL:"," "*7,Fore.RED,round(amount_without_discount))
                     print(Fore.YELLOW+"-"*47)
                     print(Fore.RED+"time:",datetime.datetime.now().time(),end="   ")
                     print(Fore.RED+"Thank you",end="   ")
                     print(Fore.RED+"Visit Again")
                     return
-                print("Id mismatched.\nPlease try again and check id")
+            print(Fore.RED+"Id mismatched.\nPlease try again and check id")
 
         except Exception as error:
             print(Fore.RED+"Error occurring while generating invoice")
@@ -675,16 +705,20 @@ class tablebooking:
                     if self.payment_json:
                         for payment in self.payment_json:
                             if payment.get("order_id")==id:
-                                print("order already completed")
+                                print(Fore.GREEN+"order already completed")
                                 return
-
+                    
+                    for order in self.order_json:
+                        if order.get("id")==id:
+                            print(Fore.RED+"Can't able to cancel booking after ordering food")
+                            return
 
                     for key,value in booking.items():
                         print(key," :",value)
 
                     confirm=input(Fore.RED+"Enter yes to confirm cancellation: ")
                     if confirm.lower()!="yes":
-                        print("Cancellation failed")
+                        print(Fore.RED+"Cancellation failed")
                         return
                     self.table_booking_data.remove(booking)
                     self.booking_save()

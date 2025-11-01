@@ -1,12 +1,13 @@
 from colorama import init,Fore,Back,Style
 init(autoreset=True)
-import domain
+from domain import log,update_menu,update_staff,show_menu,update_pricing_structure
 import os
 def admin_menu():
     menu_file_path=os.path.join("database","menu.json")
     user_file_path=os.path.join("database","user_data.json")
-    update_menu_obj=domain.update_menu(menu_file_path)
-    update_staff_obj=domain.update_staff(user_file_path)
+    update_menu_obj=update_menu(menu_file_path)
+    update_staff_obj=update_staff(user_file_path)
+    price_and_discount_management_obj=update_pricing_structure()
     while True:
         print(Fore.RED+"\n-------------------ADMIN_MENU-------------------")
         print(Fore.CYAN+"1. ","Menu")
@@ -18,8 +19,9 @@ def admin_menu():
         print(Fore.CYAN+"7. ","Add Staff Member")
         print(Fore.CYAN+"8. ","Remove Staff Member")
         print(Fore.CYAN+"9. ","Show Staff")
-        print(Fore.CYAN+"10.","Report")
-        print(Fore.CYAN+"11.","Log Out")
+        print(Fore.CYAN+"10.","Price and Discount Management")
+        print(Fore.CYAN+"11.","Report")
+        print(Fore.CYAN+"12.","Log Out")
         
         try:
             choice=int(input(Fore.YELLOW+"Enter Your Choice: "))
@@ -30,7 +32,7 @@ def admin_menu():
 
         try:
             if choice==1:
-                menu_obj=domain.show_menu()
+                menu_obj=show_menu()
             elif choice==2:
                 update_menu_obj.delete_dish()
             elif choice==3:
@@ -48,8 +50,10 @@ def admin_menu():
             elif choice==9:
                 update_staff_obj.staff_details()
             elif choice==10:
-                domain.report_menu()
+                price_and_discount_management_obj.update_price_menu()
             elif choice==11:
+                domain.report_menu()
+            elif choice==12:
                 print(Fore.RED,"Exiting Admin Menu...")
                 break
             else:

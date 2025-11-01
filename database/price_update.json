@@ -1,1 +1,8 @@
-[]
+{
+    "seat cost":50,
+    "time cost":4,
+    "discount":0,
+    "discount comment":"discount on the occation of diwali",
+    "no of seats":6,
+    "no of tables":50
+}
