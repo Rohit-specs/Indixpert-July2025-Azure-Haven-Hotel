@@ -9,7 +9,7 @@ def staff_menu(name):
         print(Fore.CYAN+"2.","Book Table")
         print(Fore.CYAN+"3.","View Booking")
         print(Fore.CYAN+"4.","Take Order")
-        print(Fore.CYAN+"5.","See All Orders")
+        print(Fore.CYAN+"5.","View Orders")
         print(Fore.CYAN+"6.","Take Payment")
         print(Fore.CYAN+"7.","Show Invoice")
         print(Fore.CYAN+"8.","Cancel Booked Table")
