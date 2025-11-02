@@ -259,7 +259,30 @@ class tablebooking:
             print(Fore.RED+"Error Occurring while booking table")
 
 
+    def show_booking_menu(self):
 
+        while True:
+            print(Fore.CYAN+"\n1.","View All Bookings")
+            print(Fore.CYAN+"2.","View Todays Bookings")
+            print(Fore.CYAN+"3.","Search Today Booking By Table Number")
+            print(Fore.CYAN+"4.","Back To Staff Menu")
+            try:
+                choice=int(input("Enter a choice: "))
+            except Exception as error:
+                print("Invalid input.Please try again")
+                log_obj=domain.log(error,__name__)
+                continue
+            if choice==1:
+                self.show_all_booking()
+            elif choice==2:
+                self.show_todays_booking()
+            elif choice==3:
+                self.show_today_booking_on_table()
+            elif choice==4:
+                return
+            else:
+                print(str(choice)+" is not a valid choice")
+            
     def show_all_booking(self):
         try:
             print(Fore.GREEN+"\n-----------------ALL_BOOKINGS-----------------")
@@ -442,6 +465,30 @@ class tablebooking:
         except Exception as error:
             print(Fore.RED+"Error Occurring while taking orders")
             log_obj=domain.log(error,__name__)
+    
+    def show_order_menu(self):
+
+        while True:
+            print(Fore.CYAN+"\n1.","View All Orders")
+            print(Fore.CYAN+"2.","View Todays Orders")
+            print(Fore.CYAN+"3.","Search Today Orders By Table Number")
+            print(Fore.CYAN+"4.","Back To Staff Menu")
+            try:
+                choice=int(input("Enter a choice: "))
+            except Exception as error:
+                print("Invalid input.Please try again")
+                log_obj=domain.log(error,__name__)
+                continue
+            if choice==1:
+                self.show_all_orders()
+            elif choice==2:
+                self.show_todays_order()
+            elif choice==3:
+                self.show_order_on_table()
+            elif choice==4:
+                return
+            else:
+                print(str(choice)+" is not a valid choice")
 
 
     def show_all_orders(self):

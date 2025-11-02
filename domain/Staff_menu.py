@@ -7,7 +7,7 @@ def staff_menu(name):
         print(Fore.RED+"\n-------------------STAFF_MENU-------------------")
         print(Fore.CYAN+"1.","Show Menu")
         print(Fore.CYAN+"2.","Book Table")
-        print(Fore.CYAN+"3.","See All Booking")
+        print(Fore.CYAN+"3.","View Booking")
         print(Fore.CYAN+"4.","Take Order")
         print(Fore.CYAN+"5.","See All Orders")
         print(Fore.CYAN+"6.","Take Payment")
@@ -26,11 +26,11 @@ def staff_menu(name):
             elif choice==2:
                 table_booking_object=domain.tablebooking().book_table(name)
             elif choice==3:
-                table_booking_object=domain.tablebooking().show_all_booking()
+                table_booking_object=domain.tablebooking().show_booking_menu()
             elif choice==4:
                 table_booking_object=domain.tablebooking().take_order()
             elif choice==5:
-                table_booking_object=domain.tablebooking().show_all_orders()
+                table_booking_object=domain.tablebooking().show_order_menu()
             elif choice==6:
                 table_booking_object=domain.tablebooking().payment()
             elif choice==7:
