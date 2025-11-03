@@ -106,5 +106,16 @@
     "customer name": "Jay",
     "no of seats": 1,
     "booked time in min": 60
+  },
+  {
+    "id": "00698a",
+    "table no": 1,
+    "table booking date": "2025-11-03",
+    "booking start time": "18:0",
+    "booking end time": "19:0",
+    "staff who booked": "Amit",
+    "customer name": "Ankit",
+    "no of seats": 5,
+    "booked time in min": 60
   }
 ]

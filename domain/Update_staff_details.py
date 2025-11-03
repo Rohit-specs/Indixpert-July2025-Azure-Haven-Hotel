@@ -45,7 +45,7 @@ class update_staff:
             while True:
                 self.role=input("Enter you role: ").lower()
                 if self.role!="staff" and self.role!="admin":
-                    print(Fore.RED"You have entered wrong role\nchoose between (staff/admin)")
+                    print(Fore.RED+"You have entered wrong role\nchoose between (staff/admin)")
                     continue
                 break        
             for user in self.staff_data:

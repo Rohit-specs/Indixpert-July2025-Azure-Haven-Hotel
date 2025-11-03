@@ -1,13 +1,13 @@
 from colorama import init,Fore,Back,Style
 init(autoreset=True)
-from domain import log,update_menu,update_staff,show_menu,update_pricing_structure
+import domain
 import os
 def admin_menu():
     menu_file_path=os.path.join("database","menu.json")
     user_file_path=os.path.join("database","user_data.json")
-    update_menu_obj=update_menu(menu_file_path)
-    update_staff_obj=update_staff(user_file_path)
-    price_and_discount_management_obj=update_pricing_structure()
+    update_menu_obj=domain.update_menu(menu_file_path)
+    update_staff_obj=domain.update_staff(user_file_path)
+    price_and_discount_management_obj=domain.update_pricing_structure()
     while True:
         print(Fore.RED+"\n-------------------ADMIN_MENU-------------------")
         print(Fore.CYAN+"1. ","Menu")
@@ -32,7 +32,7 @@ def admin_menu():
 
         try:
             if choice==1:
-                menu_obj=show_menu()
+                menu_obj=domain.show_menu()
             elif choice==2:
                 update_menu_obj.delete_dish()
             elif choice==3:

@@ -1,5 +1,6 @@
 import json
-from colorama init,Fore,Style
+import os
+from colorama import init,Fore,Style
 init(autoreset=True)
 from domain import log
 
@@ -31,7 +32,7 @@ class update_pricing_structure():
                     break
                 except Exception as error:
                     print("Invalid input. Please try again")
-                    log_obj=log.(error,__name__)
+                    log_obj=log(error,__name__)
             if choice==1:
                 self.update_per_seat_cost()
             elif choice==2:
@@ -60,11 +61,11 @@ class update_pricing_structure():
                 break
             except Exception as error:
                     print(Fore.RED+"Invalid input. Please try again with numbers")
-                    log_obj=log.(error,__name__)
+                    log_obj=log(error,__name__)
         print(Fore.RED+"Please confirm you want to change the price ",end="")
         print(seat_price+Fore.YELLOW+Style.DIM+" -->",new_seat_price)
         confirm=input("(yes/no):")
-        if confirm!=yes:
+        if confirm!="yes":
             print(Fore.RED+"Update canceled")
             return
         self.price_update_file["seat cost"]=new_seat_price
@@ -82,7 +83,7 @@ class update_pricing_structure():
                 break
             except Exception as error:
                     print(Fore.RED+"Invalid input. Please try again with numbers\n")
-                    log_obj=log.(error,__name__)
+                    log_obj=log(error,__name__)
         print(Fore.RED+"Please confirm you want to change the price ",end="")
         print(current_time_cost+Fore.YELLOW+Style.DIM+" -->",new_time_cost)
         confirm=input("(yes/no):").lower()
@@ -104,7 +105,7 @@ class update_pricing_structure():
                     continue
             except Exception as error:
                     print(Fore.RED+"Invalid input. Please try again with numbers\n")
-                    log_obj=log.(error,__name__)
+                    log_obj=log(error,__name__)
             if discount==100:
                 print(Fore.RED+"You entered 100%\nAll orders will be free")
                 confirm=input(Fore.RED+"Are you sure about discount percentage(yes/no)").lower()
@@ -120,7 +121,7 @@ class update_pricing_structure():
                 break
             except Exception as error:
                 print(Fore.RED+"Invalid input. Please try again")
-                log_obj=log.(error,__name__)
+                log_obj=log(error,__name__)
         if choice==1:
             while True:
                 comment=input("Enter on which occation you are giving discount: ").strip()
@@ -134,7 +135,7 @@ class update_pricing_structure():
 
         self.price_update_file["discount"]==discount
         if choice==1:
-            self.price_update_file["discount comment"]==discount_comment
+            self.price_update_file["discount comment"]==comment
         else :
             self.price_update_file["discount comment"]==None
         self.price_save()
@@ -155,7 +156,7 @@ class update_pricing_structure():
                 break
             except Exception as error:
                     print(Fore.RED+"Invalid input. Please try again with numbers\n")
-                    log_obj=log.(error,__name__)
+                    log_obj=log(error,__name__)
         print(Fore.RED+"Please confirm you want to change the no of seats ",end="")
         print(current_no_of_seats+Fore.YELLOW+Style.DIM+" -->",new_no_of_seats)
         confirm=input("(yes/no):").lower()
@@ -181,7 +182,7 @@ class update_pricing_structure():
                 break
             except Exception as error:
                     print(Fore.RED+"Invalid input. Please try again with numbers\n")
-                    log_obj=log.(error,__name__)
+                    log_obj=log(error,__name__)
         print(Fore.RED+"Please confirm you want to change the no of tables ",end="")
         print(current_no_of_tables+Fore.YELLOW+Style.DIM+" -->",new_no_of_tables)
         confirm=input("(yes/no):").lower()

@@ -298,7 +298,7 @@ class tablebooking:
                 print("Seats Booked By:",booking.get("no of seats"))
                 print("Table Booked By: ",booking.get("staff who booked"))  
                 booking_no+=1
-            if booking_no=1:
+            if booking_no==1:
                 print("No one booked yet")
             
         except Exception as error:
@@ -310,7 +310,7 @@ class tablebooking:
             print(Fore.GREEN+"\n---------------TODAY_BOOKINGS---------------")
             today_booking_count=1
             for booking in self.table_booking_data:
-                if str(datetime.datetime.now().date)==booking.get("table booking date"):
+                if str(datetime.date.today())==booking.get("table booking date"):
                     print(Fore.RED+"\nBooking no=",today_booking_count)
                     print(Fore.BLUE+"ID:",booking.get("id"))
                     print("Customer name:",booking.get("customer name"))
@@ -321,7 +321,7 @@ class tablebooking:
                     print("Seats Booked By:",booking.get("no of seats"))
                     print("Table Booked By: ",booking.get("staff who booked"))
                     today_booking_count+=1
-            if today_booking_count=1:
+            if today_booking_count==1:
                 print(Fore.RED,"No one booked yet")
 
         except Exception as error:
@@ -335,8 +335,7 @@ class tablebooking:
             print(Fore.GREEN+"\n---------------TODAY_BOOKING_ON_THIS_TABLE---------------")
             today_booking_count=1
             for booking in self.table_booking_data:
-                if (str(datetime.datetime.now().date)==booking.get("table booking date")) and
-                (booking.get("table no")==table_no):
+                if (str(datetime.date.today())==booking.get("table booking date")) and (booking.get("table no")==table_no):
                     print(Fore.RED+"\nBooking no=",today_booking_count)
                     print(Fore.BLUE+"ID:",booking.get("id"))
                     print("Customer name:",booking.get("customer name"))
@@ -347,7 +346,7 @@ class tablebooking:
                     print("Seats Booked By:",booking.get("no of seats"))
                     print("Table Booked By: ",booking.get("staff who booked"))
                     today_booking_count+=1
-            if today_booking_count=1:
+            if today_booking_count==1:
                 print(Fore.RED+"There is no booking for today")
         except Exception as error:
             log_obj=domain.log(error,__name__)
@@ -387,7 +386,7 @@ class tablebooking:
                                         "id": customer.get("id"),
                                         "customer name": customer.get("customer name"),
                                         "table no": table_no,
-                                        "date":str(datetime.datetime.now()),
+                                        "date":str(datetime.date.today()),
                                         "ordered items": food_items,
                                         "prices": food_prices
                                     }
@@ -505,7 +504,7 @@ class tablebooking:
                     for dish,price in item.items():
                         print("\t",dish," "*(20-(len(dish))),price)
                 order_no+=1
-            if order_no=1:
+            if order_no==1:
                 print(Fore.RED+"Nobody ordered yet")
             
                 
@@ -518,7 +517,7 @@ class tablebooking:
             print(Fore.GREEN+"\n--------------TODAY_ORDERS--------------")
             today_order_count=1
             for order in self.order_json:
-                if str(datetime.datetime.now().date)==order.get("date"):
+                if str(datetime.date.today())==order.get("date"):
                     print(Fore.RED+"\nOrder no:",today_order_count)
                     print(Fore.CYAN+"ID     :",order.get("id"))
                     print("Customer name :",order.get("customer name"))
@@ -528,7 +527,7 @@ class tablebooking:
                         for dish,price in item.items():
                             print("\t",dish," "*(20-(len(dish))),price)
                     today_order_count+=1
-            if today_order_count=1:
+            if today_order_count==1:
                 print(Fore.RED+"Nobody order yet")
 
         except Exception as error:
@@ -541,7 +540,7 @@ class tablebooking:
             print(Fore.GREEN+"\n--------------ALL_ORDER_IN_THIS_TABLE--------------")
             today_order_count=1
             for order in self.order_json:
-                if (str(datetime.datetime.now().date)==order.get("date")) and (order.get("table no")==table_no):
+                if (str(datetime.date.today())==order.get("date")) and (order.get("table no")==table_no):
                     print(Fore.RED+"\nOrder no:",today_order_count)
                     print(Fore.CYAN+"ID     :",order.get("id"))
                     print("Customer name :",order.get("customer name"))
@@ -551,7 +550,7 @@ class tablebooking:
                         for dish,price in item.items():
                             print("\t",dish," "*(20-(len(dish))),price)
                     today_order_count+=1
-            if today_order_count=1:
+            if today_order_count==1:
                 print(Fore.RED+"There are no orders today on this table")
 
         except Exception as error:
@@ -599,7 +598,7 @@ class tablebooking:
                     print(Fore.CYAN+"ID                :",id)
                     print(Fore.CYAN+"Customer Name     :",customer_name)
                     print(Fore.CYAN+"Seat Charge("+str(seat_charge_per_person)+"ea.):",seat_total)
-                    print(Fore.CYAN+"Booking duration  :","(",time,"x"+str(self.time_cost)+"+")=",time_charge)
+                    print(Fore.CYAN+"Booking duration  :","(",time,"x"+str(self.time_cost)+") =",time_charge)
                     print(Fore.CYAN+"Booking time Price:",time_charge)
                     print(Fore.YELLOW+"\t\tDishes"+" "*16+"Price")
                     for item in ordered_items:

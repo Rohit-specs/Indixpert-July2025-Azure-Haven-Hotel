@@ -1,4 +1,4 @@
-from domain import log
+import domain
 import datetime
 from colorama import init,Fore
 init(autoreset=True)
@@ -15,11 +15,11 @@ def valid_date():
             choice=int(input("Enter your choice: "))
         except Exception as error:
             print(Fore.RED+"Please enter a number\n")
-            log_obj=log(error,__name__)
+            log_obj=domain.log(error,__name__)
             continue
         break
     if choice==1:
-        date=str(current_year)+"-"+str(current_month)+"-"+str(current_day)
+        date=str(datetime.date.today())
         return date
     elif choice==2:
         while True:
@@ -27,7 +27,7 @@ def valid_date():
                 year=int(input("Enter year: "))
             except Exception as error:
                 print(Fore.RED+"Please enter a valid year\n")
-                log_obj=log(error,__name__)
+                log_obj=domain.log(error,__name__)
                 continue
             if year<current_year or len(str(year))!=4:
                 print(Fore.RED+"Please enter a valid year. you have entered"+str(year)+"\n")
@@ -40,7 +40,7 @@ def valid_date():
                 month=int(input("Enter month: "))
             except Exception as error:
                 print(Fore.RED+"Please enter a month in numbers\n")
-                log_obj=log(error,__name__)
+                log_obj=domain.log(error,__name__)
                 continue
             if month>12 or month<current_month:
                 print(Fore.RED+"You have entered"+str(month)+"\nPlease enter a valid month\n")
@@ -53,8 +53,10 @@ def valid_date():
                 day=int(input("Enter day: "))
             except Exception as error:
                 print(Fore.RED+"Please enter day in number\n")
-                log_obj=log(error,__name__)
+                log_obj=domain.log(error,__name__)
                 continue
+            if day<10:
+                day="0"+str(day)
             if day>31 or day<current_day:
                 print(Fore.RED+"you have entered"+str(day)+"Please enter a valid day\n")
                 continue
