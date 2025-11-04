@@ -117,5 +117,27 @@
     "customer name": "Ankit",
     "no of seats": 5,
     "booked time in min": 60
+  },
+  {
+    "id": "e97e41",
+    "table no": 8,
+    "table booking date": "2025-11-04",
+    "booking start time": "15:0",
+    "booking end time": "16:0",
+    "staff who booked": "Amit",
+    "customer name": "Name",
+    "no of seats": 8,
+    "booked time in min": 60
+  },
+  {
+    "id": "43bdfd",
+    "table no": 1,
+    "table booking date": "2025-11-04",
+    "booking start time": "20:0",
+    "booking end time": "21:30",
+    "staff who booked": "Amit",
+    "customer name": "Tara",
+    "no of seats": 7,
+    "booked time in min": 90
   }
 ]

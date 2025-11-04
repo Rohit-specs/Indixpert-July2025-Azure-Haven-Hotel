@@ -1161,3 +1161,15 @@ Log Time: 2025-11-03 16:41:06  | Error Type: invalid literal for int() with base
 Log Time: 2025-11-03 16:41:10  | Error Type: invalid literal for int() with base 10: 'python -u "c:\\Users\\lenovo\\Desktop\\Python Project\\Indixpert-July2025-Azure-Haven-Hotel\\main.py"'  | Module Name: domain.Staff_menu
 Log Time: 2025-11-03 16:59:44  | Error Type: invalid literal for int() with base 10: 'python -u "c:\\Users\\lenovo\\Desktop\\Python Project\\Indixpert-July2025-Azure-Haven-Hotel\\main.py"'  | Module Name: authentication.authentication_menu
 Log Time: 2025-11-03 17:04:32  | Error Type: invalid literal for int() with base 10: 'python -u "c:\\Users\\lenovo\\Desktop\\Python Project\\Indixpert-July2025-Azure-Haven-Hotel\\main.py"'  | Module Name: authentication.authentication_menu
+Log Time: 2025-11-04 11:44:28  | Error Type: invalid literal for int() with base 10: 'python -u "c:\\Users\\lenovo\\Desktop\\Python Project\\Indixpert-July2025-Azure-Haven-Hotel\\main.py"'  | Module Name: authentication.authentication_menu
+Log Time: 2025-11-04 11:45:30  | Error Type: not writable  | Module Name: domain.Admin_menu
+Log Time: 2025-11-04 11:49:13  | Error Type: unsupported operand type(s) for +: 'int' and 'str'  | Module Name: domain.Admin_menu
+Log Time: 2025-11-04 11:50:40  | Error Type: unsupported operand type(s) for +: 'int' and 'str'  | Module Name: domain.Admin_menu
+Log Time: 2025-11-04 11:54:17  | Error Type: unsupported operand type(s) for +: 'int' and 'str'  | Module Name: domain.Admin_menu
+Log Time: 2025-11-04 12:41:02  | Error Type: can only concatenate str (not "int") to str  | Module Name: domain.Staff_menu
+Log Time: 2025-11-04 12:58:18  | Error Type: invalid literal for int() with base 10: 'yes'  | Module Name: domain.Table_booking
+Log Time: 2025-11-04 12:58:36  | Error Type: invalid literal for int() with base 10: 'rice and biryani4'  | Module Name: domain.Staff_menu
+Log Time: 2025-11-04 13:07:30  | Error Type: cannot access local variable 'total_discount' where it is not associated with a value  | Module Name: domain.Table_booking
+Log Time: 2025-11-04 15:56:29  | Error Type: invalid literal for int() with base 10: 'python -u "c:\\Users\\lenovo\\Desktop\\Python Project\\Indixpert-July2025-Azure-Haven-Hotel\\main.py"'  | Module Name: domain.Staff_menu
+Log Time: 2025-11-04 16:18:45  | Error Type: invalid literal for int() with base 10: 'yes'  | Module Name: domain.Update_price
+Log Time: 2025-11-04 16:29:18  | Error Type: invalid literal for int() with base 10: 'na'  | Module Name: domain.Table_booking

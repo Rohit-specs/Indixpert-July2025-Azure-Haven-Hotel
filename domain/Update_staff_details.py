@@ -25,7 +25,6 @@ class update_staff:
         except Exception as error:
             log_obj=domain.log(error,__name__)
             print(Fore.RED+"Error while loading the file") 
-        # self.staff_data=domain.file_reader(self.path,__name__)
 
     def save(self):
         try:

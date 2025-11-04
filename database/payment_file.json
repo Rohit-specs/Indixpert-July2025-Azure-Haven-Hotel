@@ -82,5 +82,42 @@
     "booking duration(min)": 60,
     "no of seats": 1,
     "seats charge total": 50
+  },
+  {
+    "order_id": "e97e41",
+    "customer_name": "Name",
+    "payment_date": "2025-11-04",
+    "ordered_items": [
+      {
+        "Paneer Tikka": "220"
+      },
+      {
+        "Veg Manchurian": "180"
+      }
+    ],
+    "discount": 0,
+    "amount without discount": 882.0,
+    "total_amount": 882.0,
+    "payment_method": "Cash",
+    "booking duration(min)": 60,
+    "no of seats": 8,
+    "seats charge total": 320
+  },
+  {
+    "order_id": "43bdfd",
+    "customer_name": "Tara",
+    "payment_date": "2025-11-04",
+    "ordered_items": [
+      {
+        "Paneer Tikka": "220"
+      }
+    ],
+    "discount": 0,
+    "amount without discount": 714.0,
+    "total_amount": 714.0,
+    "payment_method": "Card",
+    "booking duration(min)": 90,
+    "no of seats": 7,
+    "seats charge total": 280
   }
 ]

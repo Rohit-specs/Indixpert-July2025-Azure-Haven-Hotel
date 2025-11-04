@@ -576,6 +576,7 @@ class tablebooking:
                     total=0
                     time=0
                     no_of_seats=0
+                    total_discount=0
 
                     for item in ordered_items:
                         for key, value in item.items():
@@ -722,11 +723,12 @@ class tablebooking:
                     print(Fore.CYAN+" "*27+"Sub Total :  ",sub_total)
                     print(Fore.CYAN+" "*27+"SGST(2.5%):  ",gst)
                     print(Fore.CYAN+" "*27+"CGST(2.5%):  ",gst)
-                    if discount!=None:
+                    if discount!=0:
                         print(Fore.CYAN+" "*27+"discount Rs:  ",discount)
                     print(Fore.YELLOW+" "*27+"--------------------")
                     print(Fore.CYAN+" "*26,"Food Total:  ",amount_without_discount)
-                    if discount!=None:
+                    if discount!=0:
+                        print(Fore.YELLOW+" "*27+"--------------------")
                         print(Fore.CYAN+" "*27+"After dis.:  ",total_amount)
                     print(Fore.YELLOW+"-"*47)
                     print(Fore.RED+str(datetime.datetime.now().date())," "*13,"TOTAL:"," "*7,Fore.RED,round(amount_without_discount))

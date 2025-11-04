@@ -106,5 +106,43 @@
         "Butter Naan": "30"
       }
     ]
+  },
+  {
+    "id": "e97e41",
+    "customer name": "Name",
+    "table no": 8,
+    "date": "2025-11-04",
+    "ordered items": [
+      {
+        "Paneer Tikka": "full plate"
+      },
+      {
+        "Veg Manchurian": "full plate"
+      }
+    ],
+    "prices": [
+      {
+        "Paneer Tikka": "220"
+      },
+      {
+        "Veg Manchurian": "180"
+      }
+    ]
+  },
+  {
+    "id": "43bdfd",
+    "customer name": "Tara",
+    "table no": 1,
+    "date": "2025-11-04",
+    "ordered items": [
+      {
+        "Paneer Tikka": "full plate"
+      }
+    ],
+    "prices": [
+      {
+        "Paneer Tikka": "220"
+      }
+    ]
   }
 ]

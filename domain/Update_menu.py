@@ -13,7 +13,6 @@ class update_menu:
         except Exception as error:
             log_obj=domain.log(error,__name__)
             print(error)
-        # self.menu=domain.file_reader(self.path,__name__)
 
     def save(self):
         try:
@@ -43,7 +42,7 @@ class update_menu:
             else:
                 print("Category not found")
         except Exception as error:
-            domain.log(error,__name__)
+            log_obj=domain.log(error,__name__)
             print("Something went wrong while deleting the dishes")
 
     def add_dish(self):

@@ -2,7 +2,7 @@ import json
 import os
 from colorama import init,Fore,Style
 init(autoreset=True)
-from domain import log
+import domain
 
 
 class update_pricing_structure():
@@ -13,7 +13,7 @@ class update_pricing_structure():
             self.price_update_file=json.loads(file.read())
 
     def price_save(self):
-        with open(self.price_update_file_path,'r') as file:
+        with open(self.price_update_file_path,'w') as file:
             file.write(json.dumps(self.price_update_file))
             print(Fore.GREEN+"Price updated")
 
@@ -32,7 +32,7 @@ class update_pricing_structure():
                     break
                 except Exception as error:
                     print("Invalid input. Please try again")
-                    log_obj=log(error,__name__)
+                    log_obj=domain.log(error,__name__)
             if choice==1:
                 self.update_per_seat_cost()
             elif choice==2:
@@ -61,7 +61,7 @@ class update_pricing_structure():
                 break
             except Exception as error:
                     print(Fore.RED+"Invalid input. Please try again with numbers")
-                    log_obj=log(error,__name__)
+                    log_obj=domain.log(error,__name__)
         print(Fore.RED+"Please confirm you want to change the price ",end="")
         print(seat_price+Fore.YELLOW+Style.DIM+" -->",new_seat_price)
         confirm=input("(yes/no):")
@@ -76,16 +76,16 @@ class update_pricing_structure():
         print("Time per minute cost: ",current_time_cost,"\n")
         while True:
             try:
-                new_time_cost=int(input("\nEnter price to update: "))
+                new_time_cost=int(input("\nEnter per minute cost to update: "))
                 if new_time_cost<0:
                     print(Fore.RED+"Price be must be positive number")
                     continue
                 break
             except Exception as error:
                     print(Fore.RED+"Invalid input. Please try again with numbers\n")
-                    log_obj=log(error,__name__)
+                    log_obj=domain.log(error,__name__)
         print(Fore.RED+"Please confirm you want to change the price ",end="")
-        print(current_time_cost+Fore.YELLOW+Style.DIM+" -->",new_time_cost)
+        print(str(current_time_cost)+Fore.YELLOW+Style.DIM+" -->",str(new_time_cost))
         confirm=input("(yes/no):").lower()
         if confirm!="yes":
             print(Fore.RED+"Update canceled")
@@ -105,7 +105,7 @@ class update_pricing_structure():
                     continue
             except Exception as error:
                     print(Fore.RED+"Invalid input. Please try again with numbers\n")
-                    log_obj=log(error,__name__)
+                    log_obj=domain.log(error,__name__)
             if discount==100:
                 print(Fore.RED+"You entered 100%\nAll orders will be free")
                 confirm=input(Fore.RED+"Are you sure about discount percentage(yes/no)").lower()
@@ -121,7 +121,7 @@ class update_pricing_structure():
                 break
             except Exception as error:
                 print(Fore.RED+"Invalid input. Please try again")
-                log_obj=log(error,__name__)
+                log_obj=domain.log(error,__name__)
         if choice==1:
             while True:
                 comment=input("Enter on which occation you are giving discount: ").strip()
@@ -156,9 +156,9 @@ class update_pricing_structure():
                 break
             except Exception as error:
                     print(Fore.RED+"Invalid input. Please try again with numbers\n")
-                    log_obj=log(error,__name__)
+                    log_obj=domain.log(error,__name__)
         print(Fore.RED+"Please confirm you want to change the no of seats ",end="")
-        print(current_no_of_seats+Fore.YELLOW+Style.DIM+" -->",new_no_of_seats)
+        print(str(current_no_of_seats)+Fore.YELLOW+Style.DIM+" -->",str(new_no_of_seats))
         confirm=input("(yes/no):").lower()
         if confirm!="yes":
             print(Fore.RED+"Update canceled")
@@ -182,9 +182,9 @@ class update_pricing_structure():
                 break
             except Exception as error:
                     print(Fore.RED+"Invalid input. Please try again with numbers\n")
-                    log_obj=log(error,__name__)
+                    log_obj=domain.log(error,__name__)
         print(Fore.RED+"Please confirm you want to change the no of tables ",end="")
-        print(current_no_of_tables+Fore.YELLOW+Style.DIM+" -->",new_no_of_tables)
+        print(str(current_no_of_tables)+Fore.YELLOW+Style.DIM+" -->",str(new_no_of_tables))
         confirm=input("(yes/no):").lower()
         if confirm!="yes":
             print(Fore.RED+"Update canceled")
