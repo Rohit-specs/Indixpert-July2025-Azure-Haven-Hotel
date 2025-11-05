@@ -133,11 +133,11 @@ class update_pricing_structure():
                     continue
                 break
 
-        self.price_update_file["discount"]==discount
+        self.price_update_file["discount"]=discount
         if choice==1:
-            self.price_update_file["discount comment"]==comment
+            self.price_update_file["discount comment"]=comment
         else :
-            self.price_update_file["discount comment"]==None
+            self.price_update_file["discount comment"]=None
         self.price_save()
                 
 

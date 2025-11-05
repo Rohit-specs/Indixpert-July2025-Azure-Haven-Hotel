@@ -119,5 +119,25 @@
     "booking duration(min)": 90,
     "no of seats": 7,
     "seats charge total": 280
+  },
+  {
+    "order_id": "b8fa13",
+    "customer_name": "Sanjay",
+    "payment_date": "2025-11-05",
+    "ordered_items": [
+      {
+        "Veg Manchurian": "180"
+      },
+      {
+        "Cold Coffee": "60"
+      }
+    ],
+    "discount": 91.35,
+    "amount without discount": 609.0,
+    "total_amount": 517.65,
+    "payment_method": "Cash",
+    "booking duration(min)": 30,
+    "no of seats": 7,
+    "seats charge total": 280
   }
 ]

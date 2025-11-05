@@ -144,5 +144,27 @@
         "Paneer Tikka": "220"
       }
     ]
+  },
+  {
+    "id": "b8fa13",
+    "customer name": "Sanjay",
+    "table no": 1,
+    "date": "2025-11-05",
+    "ordered items": [
+      {
+        "Veg Manchurian": "full plate"
+      },
+      {
+        "Cold Coffee": "full plate"
+      }
+    ],
+    "prices": [
+      {
+        "Veg Manchurian": "180"
+      },
+      {
+        "Cold Coffee": "60"
+      }
+    ]
   }
 ]

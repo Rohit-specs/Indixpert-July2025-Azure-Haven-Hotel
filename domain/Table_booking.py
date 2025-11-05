@@ -599,7 +599,7 @@ class tablebooking:
                     print(Fore.CYAN+"ID                :",id)
                     print(Fore.CYAN+"Customer Name     :",customer_name)
                     print(Fore.CYAN+"Seat Charge("+str(seat_charge_per_person)+"ea.):",seat_total)
-                    print(Fore.CYAN+"Booking duration  :","(",time,"x"+str(self.time_cost)+") =",time_charge)
+                    print(Fore.CYAN+"Booking duration  :","("+str(time)+"x"+str(self.time_cost)+") =",time_charge)
                     print(Fore.CYAN+"Booking time Price:",time_charge)
                     print(Fore.YELLOW+"\t\tDishes"+" "*16+"Price")
                     for item in ordered_items:
@@ -731,7 +731,7 @@ class tablebooking:
                         print(Fore.YELLOW+" "*27+"--------------------")
                         print(Fore.CYAN+" "*27+"After dis.:  ",total_amount)
                     print(Fore.YELLOW+"-"*47)
-                    print(Fore.RED+str(datetime.datetime.now().date())," "*13,"TOTAL:"," "*7,Fore.RED,round(amount_without_discount))
+                    print(Fore.RED+str(datetime.datetime.now().date())," "*13,"TOTAL:"," "*7,Fore.RED,round(total_amount))
                     print(Fore.YELLOW+"-"*47)
                     print(Fore.RED+"time:",datetime.datetime.now().time(),end="   ")
                     print(Fore.RED+"Thank you",end="   ")

@@ -139,5 +139,16 @@
     "customer name": "Tara",
     "no of seats": 7,
     "booked time in min": 90
+  },
+  {
+    "id": "b8fa13",
+    "table no": 1,
+    "table booking date": "2025-11-05",
+    "booking start time": "16:0",
+    "booking end time": "16:30",
+    "staff who booked": "Amit",
+    "customer name": "Sanjay",
+    "no of seats": 7,
+    "booked time in min": 30
   }
 ]
