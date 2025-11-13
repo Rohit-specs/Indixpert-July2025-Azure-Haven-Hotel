@@ -139,5 +139,22 @@
     "booking duration(min)": 30,
     "no of seats": 7,
     "seats charge total": 280
+  },
+  {
+    "order_id": "aaec06",
+    "customer_name": "Kunal",
+    "payment_date": "2025-11-10",
+    "ordered_items": [
+      {
+        "Veg Manchurian": "180"
+      }
+    ],
+    "discount": 0,
+    "amount without discount": 714.0,
+    "total_amount": 714.0,
+    "payment_method": "Cash",
+    "booking duration(min)": 90,
+    "no of seats": 8,
+    "seats charge total": 320
   }
 ]

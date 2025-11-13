@@ -166,5 +166,21 @@
         "Cold Coffee": "60"
       }
     ]
+  },
+  {
+    "id": "aaec06",
+    "customer name": "Kunal",
+    "table no": 1,
+    "date": "2025-11-10",
+    "ordered items": [
+      {
+        "Veg Manchurian": "full plate"
+      }
+    ],
+    "prices": [
+      {
+        "Veg Manchurian": "180"
+      }
+    ]
   }
 ]
