@@ -714,7 +714,6 @@ class tablebooking:
                     time_price=time*self.time_cost
                     gst=((time_price+dish_total+seat_total)*(2.5/100))
                     sub_total=dish_total+(time_price)
-                    # price_without_discount=Fore.RED,((time_price)+dish_total+seat_total+(gst*2))
                     
                     print(Fore.YELLOW+" "*27+"--------------------")
                     print(Fore.CYAN+" "*27+"Seat total:  ",seat_total)

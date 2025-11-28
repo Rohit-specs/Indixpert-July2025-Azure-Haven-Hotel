@@ -23,20 +23,20 @@ class show_menu:
             for dish in dishes:
                 item=dish["item"]
                 if "half plate" in dish and "full plate" in dish: 
-                    spaces1=" "*(22-len(item))
-                    spaces2=" "*(12-len(dish["half plate"]))
-                    spaces3=" "*(16-len(dish["full plate"]))+"|"
+                    spaces1=" "*(24-len(item))
+                    spaces2=" "*(18-len(dish["half plate"]))
+                    spaces3=" "*(13-len(dish["full plate"]))+"|"
                     if flag==1:
-                        print(Fore.GREEN+"|"+Fore.RED+" DISHES",9*" "+Fore.RED+"HALF PLATE PRICE",3*" "+Fore.RED+"FULL PLATE PRICE",1*" ",Fore.GREEN+"|")
-                    print(Fore.GREEN+"|",Fore.YELLOW+item,spaces1,Style.RESET_ALL+dish["half plate"],spaces2,dish["full plate"],Fore.GREEN+spaces3)
+                        print(Fore.GREEN+"|"+Fore.RED+" DISHES"+10*" "+Fore.RED+"HALF PLATE PRICE"+4*" "+Fore.RED+"FULL PLATE PRICE"+3*" "+Fore.GREEN+"|")
+                    print(Fore.GREEN+"| "+Fore.YELLOW+item+spaces1+Style.RESET_ALL+dish["half plate"]+spaces2+dish["full plate"]+Fore.GREEN+spaces3)
                     flag=0
 
                 elif "price" in dish:
-                    spaces1=" "*(22-len(item))
-                    spaces2=" "*(30-len(dish["price"]))+"|"
+                    spaces1=" "*(28-len(item))
+                    spaces2=" "*(27-len(dish["price"]))+"|"
                     if flag==1:
-                        print(Fore.GREEN+"|"+Fore.RED+" DISHES",15*" "+Fore.RED+"PRICE",26*" ",Fore.GREEN+"|")
-                    print(Fore.GREEN+"|",Fore.YELLOW+item,spaces1,Style.RESET_ALL+dish["price"],Fore.GREEN+spaces2)
+                        print(Fore.GREEN+"|"+Fore.RED+" DISHES"+20*" "+Fore.RED+"PRICE"+24*" "+Fore.GREEN+"|")
+                    print(Fore.GREEN+"| "+Fore.YELLOW+item+spaces1+Style.RESET_ALL+dish["price"]+Fore.GREEN+spaces2)
                     flag=0
             print(Fore.GREEN+"__________________________________________________________"+Style.RESET_ALL)
 

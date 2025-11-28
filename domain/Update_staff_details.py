@@ -99,19 +99,17 @@ class update_staff:
                         print(Fore.YELLOW+Style.DIM+"you have now"+str(attempt)+"attempt left.")
 
     def staff_details(self):
-        staff_count=1
        
         try:
             print(Fore.GREEN+"\n--------------ALL USERS--------------")
-            for staff in self.staff_data:
+            for staff_count,staff in enumerate(self.staff_data,1):
                 
                 print()
-                print(Fore.RED+"User-",staff_count)
-                print("Name     : ",staff.get("name"))
-                print("Email    : ",staff.get("email"))
-                print("Password : ","*"*len(staff.get("password")))
-                print("Role     : ",staff.get("role"))
-                staff_count+=1
+                print(Fore.RED+f"User-  {staff_count}")
+                print(f"Name     :  {staff.get('name')}")
+                print(f"Email    :  {staff.get('email')}")
+                print(f"Password :  {'*'*len(staff.get('password'))}")
+                print(f"Role     :  {staff.get('role')}")
                 
         except Exception as error:
             log_obj=domain.log(error,__name__)

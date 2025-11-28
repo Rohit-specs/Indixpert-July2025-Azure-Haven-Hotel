@@ -5,15 +5,15 @@ import domain
 def staff_menu(name):
     while True:
         print(Fore.RED+"\n-------------------STAFF_MENU-------------------")
-        print(Fore.CYAN+"1.","Show Menu")
-        print(Fore.CYAN+"2.","Book Table")
-        print(Fore.CYAN+"3.","View Booking")
-        print(Fore.CYAN+"4.","Take Order")
-        print(Fore.CYAN+"5.","View Orders")
-        print(Fore.CYAN+"6.","Take Payment")
-        print(Fore.CYAN+"7.","Show Invoice")
-        print(Fore.CYAN+"8.","Cancel Booked Table")
-        print(Fore.CYAN+"9.","Log Out")
+        print(Fore.CYAN+"1. "+Style.RESET_ALL+"Show Menu"+Style.RESET_ALL)
+        print(Fore.CYAN+"2. "+Style.RESET_ALL+"Book Table"+Style.RESET_ALL)
+        print(Fore.CYAN+"3. "+Style.RESET_ALL+"View Booking"+Style.RESET_ALL)
+        print(Fore.CYAN+"4. "+Style.RESET_ALL+"Take Order"+Style.RESET_ALL)
+        print(Fore.CYAN+"5. "+Style.RESET_ALL+"View Orders"+Style.RESET_ALL)
+        print(Fore.CYAN+"6. "+Style.RESET_ALL+"Take Payment"+Style.RESET_ALL)
+        print(Fore.CYAN+"7. "+Style.RESET_ALL+"Show Invoice"+Style.RESET_ALL)
+        print(Fore.CYAN+"8. "+Style.RESET_ALL+"Cancel Booked Table"+Style.RESET_ALL)
+        print(Fore.CYAN+"9. "+Style.RESET_ALL+"Log Out"+Style.RESET_ALL)
         try:
             choice=int(input(Fore.YELLOW+"Enter your choice: "))
         except Exception as error:

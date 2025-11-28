@@ -1173,3 +1173,5 @@ Log Time: 2025-11-04 13:07:30  | Error Type: cannot access local variable 'total
 Log Time: 2025-11-04 15:56:29  | Error Type: invalid literal for int() with base 10: 'python -u "c:\\Users\\lenovo\\Desktop\\Python Project\\Indixpert-July2025-Azure-Haven-Hotel\\main.py"'  | Module Name: domain.Staff_menu
 Log Time: 2025-11-04 16:18:45  | Error Type: invalid literal for int() with base 10: 'yes'  | Module Name: domain.Update_price
 Log Time: 2025-11-04 16:29:18  | Error Type: invalid literal for int() with base 10: 'na'  | Module Name: domain.Table_booking
+Log Time: 2025-11-28 22:15:21  | Error Type: loads() takes 1 positional argument but 2 were given  | Module Name: domain.Update_staff_details
+Log Time: 2025-11-28 22:25:19  | Error Type: invalid literal for int() with base 10: 'python -u "c:\\Users\\Rohit\\Desktop\\Indixpert-July2025-Azure-Haven-Hotel\\main.py"'  | Module Name: authentication.authentication_menu
