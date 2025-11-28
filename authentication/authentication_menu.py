@@ -29,12 +29,12 @@ def menu():
 
         print(Fore.RED+"\n-----------------AZURE HEAVEN HOTEL-----------------")
         if admin_flag == 0:
-            print(Fore.GREEN+"1. Signup")
-            print(Fore.GREEN+"2. Signin")
-            print(Fore.GREEN+"3. Exit")
+            print(Fore.GREEN+"1. Signup"+Style.RESET_ALL)
+            print(Fore.GREEN+"2. Signin"+Style.RESET_ALL)
+            print(Fore.GREEN+"3. Exit"+Style.RESET_ALL)
         else:
-            print(Fore.GREEN+"1. Login")
-            print(Fore.GREEN+"2. Exit")
+            print(Fore.GREEN+"1. Login"+Style.RESET_ALL)
+            print(Fore.GREEN+"2. Exit"+Style.RESET_ALL)
         try:
             choice = int(input(Fore.YELLOW+"Enter your choice: "))
         except ValueError as error:
