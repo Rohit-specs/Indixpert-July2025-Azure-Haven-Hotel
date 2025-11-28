@@ -45,7 +45,7 @@ def menu():
         
         if admin_flag == 0:
             if choice == 1:
-                    domain.update_staff(path)
+                    signup_obj=domain.update_staff(path).add_staff()
             elif choice == 2:
                 if data == []:
                     print("No users have signed up yet. Please sign up first")
