@@ -20,12 +20,12 @@ class update_pricing_structure():
     def update_price_menu(self):
         while True:
             print(Fore.GREEN+"\n------------Price & Discount Management Menu------------")
-            print(Fore.CYAN+"1.","Change per seat cost")
-            print(Fore.CYAN+"2.","Change time cost")
-            print(Fore.CYAN+"3.","Apply discount and Can Change discount percentage")
-            print(Fore.CYAN+"4.","Change no of seats")
-            print(Fore.CYAN+"5.","Change no of table")
-            print(Fore.CYAN+"6.","Back to Admin menu")
+            print(Fore.CYAN+"1."+Style.RESET_ALL+"Change per seat cost")
+            print(Fore.CYAN+"2."+Style.RESET_ALL+"Change time cost")
+            print(Fore.CYAN+"3."+Style.RESET_ALL+"Apply discount and Can Change discount percentage")
+            print(Fore.CYAN+"4."+Style.RESET_ALL+"Change no of seats")
+            print(Fore.CYAN+"5."+Style.RESET_ALL+"Change no of table")
+            print(Fore.CYAN+"6."+Style.RESET_ALL+"Back to Admin menu")
             while True:
                 try:    
                     choice=int(input("\nEnter your choice: "))
@@ -47,7 +47,7 @@ class update_pricing_structure():
                 print(Fore.YELLOW+Style.DIM+"Exiting Price and Discount Management Menu")
                 return
             else:
-                print(Fore.RED+str(choice)+"is not a valid choice")
+                print(Fore.RED+f"{choice} is not a valid choice")
     
     def update_per_seat_cost(self):
         seat_price=str(self.price_update_file.get("seat cost"))
@@ -73,7 +73,7 @@ class update_pricing_structure():
         
     def update_time_duration_cost(self):
         current_time_cost=self.price_update_file.get("time cost")
-        print("Time per minute cost: ",current_time_cost,"\n")
+        print(f"Time per minute cost: {current_time_cost}\n")
         while True:
             try:
                 new_time_cost=int(input("\nEnter per minute cost to update: "))
@@ -85,7 +85,7 @@ class update_pricing_structure():
                     print(Fore.RED+"Invalid input. Please try again with numbers\n")
                     log_obj=domain.log(error,__name__)
         print(Fore.RED+"Please confirm you want to change the price ",end="")
-        print(str(current_time_cost)+Fore.YELLOW+Style.DIM+" -->",str(new_time_cost))
+        print(str(current_time_cost)+Fore.YELLOW+Style.DIM+" -->  "+Style.RESET_ALL+str(new_time_cost))
         confirm=input("(yes/no):").lower()
         if confirm!="yes":
             print(Fore.RED+"Update canceled")
@@ -113,8 +113,8 @@ class update_pricing_structure():
                     continue
             break
         print(Fore.GREEN+Style.DIM+"Will you want to add comment on discount")
-        print(Fore.CYAN+"1.","yes")
-        print(Fore.CYAN+"2.","no")
+        print(Fore.CYAN+"1."+Style.RESET_ALL+"yes")
+        print(Fore.CYAN+"2."+Style.RESET_ALL+"no")
         while True:
             try:    
                 choice=int(input("Enter your choice: "))
@@ -143,7 +143,7 @@ class update_pricing_structure():
 
     def update_no_of_seats(self):
         current_no_of_seats=self.price_update_file.get("no of seats")
-        print("Total no of seats currently: ",current_no_of_seats,"\n")
+        print(f"Total no of seats currently: {current_no_of_seats}\n")
         while True:
             try:
                 new_no_of_seats=int(input("\nEnter no of seats to update: "))
@@ -158,7 +158,7 @@ class update_pricing_structure():
                     print(Fore.RED+"Invalid input. Please try again with numbers\n")
                     log_obj=domain.log(error,__name__)
         print(Fore.RED+"Please confirm you want to change the no of seats ",end="")
-        print(str(current_no_of_seats)+Fore.YELLOW+Style.DIM+" -->",str(new_no_of_seats))
+        print(str(current_no_of_seats)+Fore.YELLOW+Style.DIM+" -->  "+Style.RESET_ALL+str(new_no_of_seats))
         confirm=input("(yes/no):").lower()
         if confirm!="yes":
             print(Fore.RED+"Update canceled")
@@ -169,7 +169,7 @@ class update_pricing_structure():
     
     def update_no_of_tables(self):
         current_no_of_tables=self.price_update_file.get("no of tables")
-        print("Total no of tables currently: ",current_no_of_tables,"\n")
+        print(f"Total no of tables currently:  {current_no_of_tables}\n")
         while True:
             try:
                 new_no_of_tables=int(input("\nEnter no of tables to update: "))
@@ -184,7 +184,7 @@ class update_pricing_structure():
                     print(Fore.RED+"Invalid input. Please try again with numbers\n")
                     log_obj=domain.log(error,__name__)
         print(Fore.RED+"Please confirm you want to change the no of tables ",end="")
-        print(str(current_no_of_tables)+Fore.YELLOW+Style.DIM+" -->",str(new_no_of_tables))
+        print(str(current_no_of_tables)+Fore.YELLOW+Style.DIM+" -->  "+Style.RESET_ALL+str(new_no_of_tables))
         confirm=input("(yes/no):").lower()
         if confirm!="yes":
             print(Fore.RED+"Update canceled")

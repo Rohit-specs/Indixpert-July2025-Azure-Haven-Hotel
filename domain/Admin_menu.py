@@ -54,10 +54,10 @@ def admin_menu():
             elif choice==11:
                 domain.report_menu()
             elif choice==12:
-                print(Fore.RED,"Exiting Admin Menu...")
+                print(Fore.RED+"Exiting Admin Menu...")
                 break
             else:
-                print(Fore.RED,choice,"is not a valid option")
+                print(Fore.RED+f"{choice} is not a valid option")
         except Exception as error:
             print(error)
             log_obj=domain.log(error,__name__)

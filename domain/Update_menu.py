@@ -173,7 +173,7 @@ class update_menu:
                 print("Category already exists")
                 return
             self.menu[category]=[]
-            print("Category"+str(category)+"added")
+            print(f"Category {category} added")
             self.save()
         except Exception as error:
             domain.log(error,__name__)
@@ -215,7 +215,7 @@ class update_menu:
                                     break
                                 except Exception as error:
                                     log_obj=domain.log(error,__name__)
-                                    print("invalid price,please try again")
+                                    print("invalid price, please try again")
                                     
                             while True:
                                 try:
@@ -225,7 +225,7 @@ class update_menu:
                                     break
                                 except Exception as error:
                                     log_obj=domain.log(error,__name__)
-                                    print("invalid price,please try again")
+                                    print("invalid price, please try again")
                                 
                             
                             dish["half plate"]=str(half_price)

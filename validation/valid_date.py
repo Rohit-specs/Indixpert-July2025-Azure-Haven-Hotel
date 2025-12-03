@@ -33,7 +33,7 @@ def valid_date():
                 print("You can't accept that long booking")
                 continue
             if year<current_year or len(str(year))!=4:
-                print(Fore.RED+"Please enter a valid year. you have entered"+str(year)+"\n")
+                print(Fore.RED+f"Please enter a valid year. you have entered {year}\n")
                 continue
             else:
                 break
@@ -48,7 +48,7 @@ def valid_date():
             if month<10:
                 month="0"+str(month)
             if month>12 or month<current_month:
-                print(Fore.RED+"You have entered"+str(month)+"\nPlease enter a valid month\n")
+                print(Fore.RED+f"You have entered {month}\nPlease enter a valid month\n")
                 continue
             else:
                 break
@@ -63,7 +63,7 @@ def valid_date():
             if day<10:
                 day="0"+str(day)
             if day>31 or day<current_day:
-                print(Fore.RED+"you have entered"+str(day)+"Please enter a valid day\n")
+                print(Fore.RED+f"you have entered {day} Please enter a valid day\n")
                 continue
             else:
                 break

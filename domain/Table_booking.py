@@ -128,7 +128,7 @@ class tablebooking:
 
 
                 total_capacity=self.total_no_of_seats
-                print(Fore.BLUE+"\nAviliable table on",self.booked_table_date,"from",self.booked_table_starttime,"to",self.booked_table_endtime)
+                print(Fore.BLUE+"\nAviliable table on"+Fore.GREEN+self.booked_table_date+"from"+Fore.GREEN+self.booked_table_starttime+"to"+Fore.GREEN+self.booked_table_endtime)
                 print()
 
                 table_no=1

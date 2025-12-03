@@ -21,7 +21,7 @@ def report_menu():
             try:
                 choice=int(input(Fore.YELLOW+"Enter your choice: "))
             except Exception as error:
-                print(Fore.RED,"Invalid input. Please try again")
+                print(Fore.RED+"Invalid input. Please try again")
                 log_obj=domain.log(error,__name__)
                 continue
             if choice==1:
@@ -59,7 +59,7 @@ def report_menu():
                 return
 
             else:
-                print(Fore.RED+choice,"is not a valid option")
+                print(Fore.RED+f"{choice} is not a valid option")
     except Exception as error:
         print(Fore.RED+"Error occurred while loading Report Menu")
         log_obj=domain.log(error,__name__)

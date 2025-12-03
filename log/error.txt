@@ -1175,3 +1175,4 @@ Log Time: 2025-11-04 16:18:45  | Error Type: invalid literal for int() with base
 Log Time: 2025-11-04 16:29:18  | Error Type: invalid literal for int() with base 10: 'na'  | Module Name: domain.Table_booking
 Log Time: 2025-11-28 22:15:21  | Error Type: loads() takes 1 positional argument but 2 were given  | Module Name: domain.Update_staff_details
 Log Time: 2025-11-28 22:25:19  | Error Type: invalid literal for int() with base 10: 'python -u "c:\\Users\\Rohit\\Desktop\\Indixpert-July2025-Azure-Haven-Hotel\\main.py"'  | Module Name: authentication.authentication_menu
+Log Time: 2025-11-28 23:01:47  | Error Type: invalid literal for int() with base 10: 'python -u "c:\\Users\\Rohit\\Desktop\\Indixpert-July2025-Azure-Haven-Hotel\\main.py"'  | Module Name: authentication.authentication_menu

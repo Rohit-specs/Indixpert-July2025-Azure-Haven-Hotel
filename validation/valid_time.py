@@ -7,7 +7,7 @@ def valid_time(option="starting"):
     current_minute=datetime.datetime.now().minute
     while True:
         try:
-            print("Enter",option,"hour: ",end="")
+            print(f"Enter {option} hour: ",end="")
             hour=int(input())
             if hour>=22:
                 print(Fore.RED+"22:00 is closing time of our Resturant\nYou can book till 21:59\n")
@@ -16,7 +16,7 @@ def valid_time(option="starting"):
                 print(Fore.RED+"7:00 is opening time of our Resturant\nYou can book after 07:00\n")
                 continue
             if hour<current_hour:
-                print(Fore.RED+hour,"is incorrect\nWe can't travel back in time\n")
+                print(Fore.RED+hour+"is incorrect\nWe can't travel back in time\n")
                 continue
         except Exception as error:
             obj=domain.log(error,__name__)
@@ -26,7 +26,7 @@ def valid_time(option="starting"):
     time=str(hour)+":"
     while True:
         try:
-            print("Enter",option,"minute: ",end="")
+            print(f"Enter {option} minute: ",end="")
             minute=int(input())
             if hour==current_hour and current_minute>minute:
                 print(Fore.RED+"That time has already passed\n")

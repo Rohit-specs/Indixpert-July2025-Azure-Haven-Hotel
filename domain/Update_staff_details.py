@@ -94,14 +94,17 @@ class update_staff:
                         elif choice.lower()=="no":
                             domain.admin_menu()
                         else:
-                            print(Fore.GREEN+str(choice)+"is not a valid option")                            
+                            print(Fore.GREEN+f"{choice} is not a valid option")                            
                     else:        
-                        print(Fore.YELLOW+Style.DIM+"you have now"+str(attempt)+"attempt left.")
+                        print(Fore.YELLOW+Style.DIM+f"you have now {attempt} attempt left.")
 
     def staff_details(self):
        
         try:
             print(Fore.GREEN+"\n--------------ALL USERS--------------")
+            if not self.staff_data:
+                print("No staff detail in the database")
+                return
             for staff_count,staff in enumerate(self.staff_data,1):
                 
                 print()
