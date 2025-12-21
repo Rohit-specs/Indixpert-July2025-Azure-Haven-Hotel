@@ -1,0 +1,230 @@
+[
+  {
+    "id": "f21f18",
+    "customer name": "Nitin",
+    "date": "25-10-2025",
+    "ordered items": [
+      {
+        "Mix Veg Curry": "full plate"
+      }
+    ],
+    "prices": [
+      {
+        "Mix Veg Curry": "160"
+      }
+    ]
+  },
+  {
+    "id": "121fec",
+    "customer name": "Harshit",
+    "date": "2025-10-27 12:08:39.865257",
+    "ordered items": [
+      {
+        "Paneer Tikka": "full plate"
+      },
+      {
+        "Plain Naan": "full plate"
+      },
+      {
+        "Cold Coffee": "full plate"
+      }
+    ],
+    "prices": [
+      {
+        "Paneer Tikka": "220"
+      },
+      {
+        "Plain Naan": "25"
+      },
+      {
+        "Cold Coffee": "60"
+      }
+    ]
+  },
+  {
+    "id": "229328",
+    "customer name": "Rohit",
+    "date": "2025-10-27 13:18:56.969331",
+    "ordered items": [
+      {
+        "Paneer Butter Masala": "full plate"
+      }
+    ],
+    "prices": [
+      {
+        "Paneer Butter Masala": "200"
+      }
+    ]
+  },
+  {
+    "id": "9e2804",
+    "customer name": "Rahul",
+    "date": "2025-10-28 12:56:53.877141",
+    "ordered items": [
+      {
+        "Paneer Tikka": "full plate"
+      }
+    ],
+    "prices": [
+      {
+        "Paneer Tikka": "220"
+      }
+    ]
+  },
+  {
+    "id": "9e2804",
+    "customer name": "Rahul",
+    "date": "2025-10-28 12:58:12.950818",
+    "ordered items": [
+      {
+        "Butter Naan": "full plate"
+      }
+    ],
+    "prices": [
+      {
+        "Butter Naan": "30"
+      }
+    ]
+  },
+  {
+    "id": "2bcb86",
+    "customer name": "Jay",
+    "date": "2025-10-29 12:11:33.780456",
+    "ordered items": [
+      {
+        "Kadhai Paneer": "full plate"
+      },
+      {
+        "Butter Naan": "full plate"
+      }
+    ],
+    "prices": [
+      {
+        "Kadhai Paneer": "200"
+      },
+      {
+        "Butter Naan": "30"
+      }
+    ]
+  },
+  {
+    "id": "e97e41",
+    "customer name": "Name",
+    "table no": 8,
+    "date": "2025-11-04",
+    "ordered items": [
+      {
+        "Paneer Tikka": "full plate"
+      },
+      {
+        "Veg Manchurian": "full plate"
+      }
+    ],
+    "prices": [
+      {
+        "Paneer Tikka": "220"
+      },
+      {
+        "Veg Manchurian": "180"
+      }
+    ]
+  },
+  {
+    "id": "43bdfd",
+    "customer name": "Tara",
+    "table no": 1,
+    "date": "2025-11-04",
+    "ordered items": [
+      {
+        "Paneer Tikka": "full plate"
+      }
+    ],
+    "prices": [
+      {
+        "Paneer Tikka": "220"
+      }
+    ]
+  },
+  {
+    "id": "b8fa13",
+    "customer name": "Sanjay",
+    "table no": 1,
+    "date": "2025-11-05",
+    "ordered items": [
+      {
+        "Veg Manchurian": "full plate"
+      },
+      {
+        "Cold Coffee": "full plate"
+      }
+    ],
+    "prices": [
+      {
+        "Veg Manchurian": "180"
+      },
+      {
+        "Cold Coffee": "60"
+      }
+    ]
+  },
+  {
+    "id": "aaec06",
+    "customer name": "Kunal",
+    "table no": 1,
+    "date": "2025-11-10",
+    "ordered items": [
+      {
+        "Veg Manchurian": "full plate"
+      }
+    ],
+    "prices": [
+      {
+        "Veg Manchurian": "180"
+      }
+    ]
+  },
+  {
+    "id": "44c671",
+    "customer name": "Arjun",
+    "table no": 1,
+    "date": "2025-12-02",
+    "ordered items": [
+      {
+        "Crispy Chilli Potato": "full plate"
+      }
+    ],
+    "prices": [
+      {
+        "Crispy Chilli Potato": "150"
+      }
+    ]
+  },
+  {
+    "id": "8d7c26",
+    "customer name": "Adhiraj",
+    "table no": 2,
+    "date": "2025-12-11",
+    "ordered items": [
+      {
+        "Veg Fried Rice": "full plate"
+      },
+      {
+        "Plain Rice": "full plate"
+      },
+      {
+        "Sweet Lassi": "full plate"
+      }
+    ],
+    "prices": [
+      {
+        "Veg Fried Rice": "150"
+      },
+      {
+        "Plain Rice": "70"
+      },
+      {
+        "Sweet Lassi": "50"
+      }
+    ]
+  }
+]

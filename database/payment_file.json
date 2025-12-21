@@ -1,0 +1,183 @@
+[
+  {
+    "order_id": "f21f18",
+    "customer_name": "Nitin",
+    "payment_date": "25-10-2025",
+    "ordered_items": [
+      {
+        "Mix Veg Curry": "160"
+      }
+    ],
+    "total_amount": 735.0,
+    "payment_method": "UPI",
+    "booking duration(min)": 60,
+    "no of seats": 6,
+    "seats charge total": 300
+  },
+  {
+    "order_id": "121fec",
+    "customer_name": "Harshit",
+    "payment_date": "2025-10-27",
+    "ordered_items": [
+      {
+        "Paneer Tikka": "220"
+      },
+      {
+        "Plain Naan": "25"
+      },
+      {
+        "Cold Coffee": "60"
+      }
+    ],
+    "total_amount": 761.25,
+    "payment_method": "Cash",
+    "booking duration(min)": 30,
+    "no of seats": 6,
+    "seats charge total": 300
+  },
+  {
+    "order_id": "229328",
+    "customer_name": "Rohit",
+    "payment_date": "2025-10-27",
+    "ordered_items": [
+      {
+        "Paneer Butter Masala": "200"
+      }
+    ],
+    "total_amount": 546.0,
+    "payment_method": "UPI",
+    "booking duration(min)": 30,
+    "no of seats": 4,
+    "seats charge total": 200
+  },
+  {
+    "order_id": "9e2804",
+    "customer_name": "Rahul",
+    "payment_date": "2025-10-28",
+    "ordered_items": [
+      {
+        "Paneer Tikka": "220"
+      }
+    ],
+    "total_amount": 1543.5,
+    "payment_method": "UPI",
+    "booking duration(min)": 300,
+    "no of seats": 1,
+    "seats charge total": 50
+  },
+  {
+    "order_id": "2bcb86",
+    "customer_name": "Jay",
+    "payment_date": "2025-10-29",
+    "ordered_items": [
+      {
+        "Kadhai Paneer": "200"
+      },
+      {
+        "Butter Naan": "30"
+      }
+    ],
+    "total_amount": 546.0,
+    "payment_method": "Card",
+    "booking duration(min)": 60,
+    "no of seats": 1,
+    "seats charge total": 50
+  },
+  {
+    "order_id": "e97e41",
+    "customer_name": "Name",
+    "payment_date": "2025-11-04",
+    "ordered_items": [
+      {
+        "Paneer Tikka": "220"
+      },
+      {
+        "Veg Manchurian": "180"
+      }
+    ],
+    "discount": 0,
+    "amount without discount": 882.0,
+    "total_amount": 882.0,
+    "payment_method": "Cash",
+    "booking duration(min)": 60,
+    "no of seats": 8,
+    "seats charge total": 320
+  },
+  {
+    "order_id": "43bdfd",
+    "customer_name": "Tara",
+    "payment_date": "2025-11-04",
+    "ordered_items": [
+      {
+        "Paneer Tikka": "220"
+      }
+    ],
+    "discount": 0,
+    "amount without discount": 714.0,
+    "total_amount": 714.0,
+    "payment_method": "Card",
+    "booking duration(min)": 90,
+    "no of seats": 7,
+    "seats charge total": 280
+  },
+  {
+    "order_id": "b8fa13",
+    "customer_name": "Sanjay",
+    "payment_date": "2025-11-05",
+    "ordered_items": [
+      {
+        "Veg Manchurian": "180"
+      },
+      {
+        "Cold Coffee": "60"
+      }
+    ],
+    "discount": 91.35,
+    "amount without discount": 609.0,
+    "total_amount": 517.65,
+    "payment_method": "Cash",
+    "booking duration(min)": 30,
+    "no of seats": 7,
+    "seats charge total": 280
+  },
+  {
+    "order_id": "aaec06",
+    "customer_name": "Kunal",
+    "payment_date": "2025-11-10",
+    "ordered_items": [
+      {
+        "Veg Manchurian": "180"
+      }
+    ],
+    "discount": 0,
+    "amount without discount": 714.0,
+    "total_amount": 714.0,
+    "payment_method": "Cash",
+    "booking duration(min)": 90,
+    "no of seats": 8,
+    "seats charge total": 320
+  },
+  {
+    "order_id": "8d7c26",
+    "customer_name": "Adhiraj",
+    "payment_date": "2025-12-11",
+    "ordered_items": [
+      {
+        "Veg Fried Rice": "150"
+      },
+      {
+        "Plain Rice": "70"
+      },
+      {
+        "Sweet Lassi": "50"
+      }
+    ],
+    "discount": 86.94,
+    "amount without discount": 724.5,
+    "total_amount": 637.56,
+    "payment_method": "UPI",
+    "booking duration(min)": 30,
+    "no of seats": 9,
+    "seats charge total": 360
+  }
+]
