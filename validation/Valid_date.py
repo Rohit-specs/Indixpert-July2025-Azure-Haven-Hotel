@@ -28,10 +28,11 @@ def valid_date():
                 print("Please enter a valid year\n")
                 log_obj=domain.log(error,__name__)
                 continue
-            if year<current_year+1:
+            if not year<(current_year+1):
+                print(current_year)
                 print("You can't accept that long booking")
                 continue
-            if year<current_year or len(str(year))!=4:
+            if  year<current_year or len(str(year))!=4:
                 print(f"Please enter a valid year. you have entered {year}\n")
                 continue
             else:
@@ -44,12 +45,12 @@ def valid_date():
                 print("Please enter a month in numbers\n")
                 log_obj=domain.log(error,__name__)
                 continue
-            if month<10:
-                month="0"+str(month)
             if month>12 or month<current_month:
                 print(f"You have entered {month}\nPlease enter a valid month\n")
                 continue
             else:
+                if month<10:
+                    month="0"+str(month)
                 break
         date=date+str(month)+"-"
         while True:
@@ -59,12 +60,12 @@ def valid_date():
                 print("Please enter day in number\n")
                 log_obj=domain.log(error,__name__)
                 continue
-            if day<10:
-                day="0"+str(day)
             if day>31 or day<current_day:
                 print(f"you have entered {day} Please enter a valid day\n")
                 continue
             else:
+                if day<10:
+                    day="0"+str(day)
                 break
         date=date+str(day)
         return date
